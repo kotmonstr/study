@@ -30,10 +30,12 @@ class AdminController extends Controller
 	}
 	public function actionEdit()
 	{
-        
+         $model = new User;   
+        //if ($model->performAjaxValidation($model )){
          $this->layout='admin'; 
 		$this->render('edit');
                 $this->redirect('index.php?r=films/admin/users');
+        //}
 	}
 
 }
