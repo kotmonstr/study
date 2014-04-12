@@ -79,4 +79,18 @@ input{
 .logout{
     float:right;
 }
+.info{
+    color:green;
+    background-color: #CCFF66;
+    width:300px;
+    text-align:center;
+    font-size: 20px;
+}
+.info-error{
+    color:red;
+    background-color: #4bb1cf;
+    width:300px;
+    text-align:center;
+    font-size: 20px;
+}
 

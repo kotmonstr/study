@@ -35,7 +35,7 @@ if($id){
 	<div class="row">
 		<?php echo $form->labelEx($model,'user_name'); ?>
 		<?php echo $form->textField($model,'user_name',array('size'=>60,'maxlength'=>255,'value'=>$userName)); ?>
-		<?php echo $form->error($model,'user_name'); ?>
+		<?php echo $form->error($model,'user_name','не пустое'); ?>
 	</div>
 
 	<div class="row">
