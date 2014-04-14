@@ -2412,3 +2412,47 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/reg
 HTTP_REFERER=http://study/index.php?r=site/index
 ---
+2014/04/14 18:29:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('reg')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('reg')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('user/reg')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/reg
+HTTP_REFERER=http://study/index.php
+---
+2014/04/14 18:48:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('reg')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('reg')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('user/reg')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/reg
+HTTP_REFERER=http://study/index.php
+---
+2014/04/14 18:48:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('reg')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('reg')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('user/reg')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/reg
+HTTP_REFERER=http://study/index.php?r=user/reg
+---
+2014/04/14 18:49:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reg".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('reg')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('reg')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('user/reg')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=user/reg
+HTTP_REFERER=http://study/index.php?r=user/reg
+---
