@@ -95,9 +95,14 @@ class SiteController extends Controller {
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
-    public function actionrEG() {
-       
-         $this->render('reg');
+
+    public function actionReg() {
+       if(isset($_POST['User'])) {
+            $model = new User;
+            $model->attributes = $_POST['User'];
+            $model->save();
+        }
+        $this->render('reg');
     }
 
 }

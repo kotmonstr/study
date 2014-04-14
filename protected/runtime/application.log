@@ -2456,3 +2456,14 @@ Stack trace:
 REQUEST_URI=/index.php?r=user/reg
 HTTP_REFERER=http://study/index.php?r=user/reg
 ---
+2014/04/14 20:21:52 [error] [php] Undefined index: User (C:\server\www\study\protected\controllers\SiteController.php:102)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/reg
+in C:\server\www\study\protected\controllers\SiteController.php (102)
+in C:\server\www\study\index.php (13)
