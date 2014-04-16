@@ -1,5 +1,6 @@
 <?php
 $a = User::model()->findAll();
+VarDumper::dump($a);
 ?>
 <h1>Users</h1>
 <div>

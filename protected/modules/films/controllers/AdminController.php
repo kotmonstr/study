@@ -1,5 +1,6 @@
 <?php
-
+Yii::import('application.vendors.*');
+require_once('VarDumper.php');
 class AdminController extends Controller {
 
     public function actionIndex() {
