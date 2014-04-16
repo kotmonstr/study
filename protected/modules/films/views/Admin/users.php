@@ -1,6 +1,6 @@
 <?php
 $a = User::model()->findAll();
-VarDumper::dump($a);
+VarDumper::dump(Yii::app()->user);
 ?>
 <h1>Users</h1>
 <div>

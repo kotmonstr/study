@@ -2476,3 +2476,29 @@ Stack trace:
 REQUEST_URI=/index.php?r=video/index
 HTTP_REFERER=http://study/
 ---
+2014/04/16 17:11:52 [error] [php] Use of undefined constant User - assumed 'User' (C:\server\www\study\protected\modules\films\views\Admin\users.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): AdminController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): AdminController->renderPartial()
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(15): AdminController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionUsers()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/users
+in C:\server\www\study\protected\modules\films\views\Admin\users.php (3)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (15)
+in C:\server\www\study\index.php (14)
+2014/04/16 17:24:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "video/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/index')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=video/index
+HTTP_REFERER=http://study/index.php?r=site/index
+---

@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends Controller
+class VideoController extends Controller
 {
 	//работа
 	public $layout='//layouts/column2';
@@ -9,7 +9,7 @@ class UserController extends Controller
 
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('User');
+	
 		$this->render('index');
 	}
 
