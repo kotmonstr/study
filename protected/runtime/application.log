@@ -2467,3 +2467,12 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/reg
 in C:\server\www\study\protected\controllers\SiteController.php (102)
 in C:\server\www\study\index.php (13)
+2014/04/16 16:59:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "video/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/index')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=video/index
+HTTP_REFERER=http://study/
+---
