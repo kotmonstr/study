@@ -37,4 +37,15 @@ PRIMARY KEY(`news_id`))";
 
 mysql_query($sql,$link);
     echo "Создание таблицы news завершено.".'<br>';
+    
+$sql = "CREATE TABLE IF NOT EXISTS `curs`(
+`curs_id`         INT(11) NOT NULL AUTO_INCREMENT,
+`curs_value`      INT(11) NOT NULL,
+PRIMARY KEY(`curs_id`))";
+
+mysql_query($sql,$link);
+    echo "Создание таблицы curs завершено.".'<br>';
+
+    
+    
 }

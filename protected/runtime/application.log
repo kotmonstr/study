@@ -2531,3 +2531,1392 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/login
 HTTP_REFERER=http://study/index.php?r=site/login
 ---
+2014/04/17 11:34:19 [error] [php] Trying to get property of non-object (C:\server\www\study\protected\modules\films\controllers\AdminController.php:24)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (24)
+in C:\server\www\study\index.php (14)
+2014/04/17 11:38:59 [error] [php] Trying to get property of non-object (C:\server\www\study\protected\modules\films\controllers\AdminController.php:24)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (24)
+in C:\server\www\study\index.php (14)
+2014/04/17 11:42:15 [error] [php] Object of class Curs could not be converted to string (C:\server\www\study\protected\modules\films\controllers\AdminController.php:22)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (22)
+in C:\server\www\study\index.php (14)
+2014/04/17 11:46:58 [error] [php] Undefined variable: Curs (C:\server\www\study\protected\modules\films\views\Admin\calculator.php:4)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): AdminController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): AdminController->renderPartial()
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): AdminController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\views\Admin\calculator.php (4)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (30)
+in C:\server\www\study\index.php (14)
+2014/04/17 11:52:08 [error] [php] Undefined variable: Curs (C:\server\www\study\protected\modules\films\views\Admin\calculator.php:4)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): AdminController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): AdminController->renderPartial()
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): AdminController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\views\Admin\calculator.php (4)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (30)
+in C:\server\www\study\index.php (14)
+2014/04/17 11:52:39 [error] [exception.CException] exception 'CException' with message 'Property "AdminController.Curs" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\views\Admin\calculator.php(4): CComponent->__get('Curs')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', '5', true)
+#3 C:\server\www\study\framework\web\CController.php(869): CBaseController->renderFile('C:\server\www\s...', '5', true)
+#4 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('calculator', '5', true)
+#5 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): CController->render('calculator', '5')
+#6 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#7 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('calculator')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cal...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=films/admin/calculator
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/04/17 11:54:31 [error] [exception.CException] exception 'CException' with message 'Property "AdminController.Curs" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\views\Admin\calculator.php(4): CComponent->__get('Curs')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', '5', true)
+#3 C:\server\www\study\framework\web\CController.php(869): CBaseController->renderFile('C:\server\www\s...', '5', true)
+#4 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('calculator', '5', true)
+#5 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): CController->render('calculator', '5')
+#6 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#7 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('calculator')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cal...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=films/admin/calculator
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/04/17 11:57:32 [error] [exception.CException] exception 'CException' with message 'Property "AdminController.Curs" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\views\Admin\calculator.php(4): CComponent->__get('Curs')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\CController.php(869): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('calculator', Array, true)
+#5 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): CController->render('calculator', Array)
+#6 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#7 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('calculator')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cal...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=films/admin/calculator
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/04/17 11:59:52 [error] [php] Undefined variable: curs (C:\server\www\study\protected\modules\films\views\Admin\calculator.php:17)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): AdminController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): AdminController->renderPartial()
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(30): AdminController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCalculator()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/calculator
+in C:\server\www\study\protected\modules\films\views\Admin\calculator.php (17)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (30)
+in C:\server\www\study\index.php (14)
+2014/04/17 12:36:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=7".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=7
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=8".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=8
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=9".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=9
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=10".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=10
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=11".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=11
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=12".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=12
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=13".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=13
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=14".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=14
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=15".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=15
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=16".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=16
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=17".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=17
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=18".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=18
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=19".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=19
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=20".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=20
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=21".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=21
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=22".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=22
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=23".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=23
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=24".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=24
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=25".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=25
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=26".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=26
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=27".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=27
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=28".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=28
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=29".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=29
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=30".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=30
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=31".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=31
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=32".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=32
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=33".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=33
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=34".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=34
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=35".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=35
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=36".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=36
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=37".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=37
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=38".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=38
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=39".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=39
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=40".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=40
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=41".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=41
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=42".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=42
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=43".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=43
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=44".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=44
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=45".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=45
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=46".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=46
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=47".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=47
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=48".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=48
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=49".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=49
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=50".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=50
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=51".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=51
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=52".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=52
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=53".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=53
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=54".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=54
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=55".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=55
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=56".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=56
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=57".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=57
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=58".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=58
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=59".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=59
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=60".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=60
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=61".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=61
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=62".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=62
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=63".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=63
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=64".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=64
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=65".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=65
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=66".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=66
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=67".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=67
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=68".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=68
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=69".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=69
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=70".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=70
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=71".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=71
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=72".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=72
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=73".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=73
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=74".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=74
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=75".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=75
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=76".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=76
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=77".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=77
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=78".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=78
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=79".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=79
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=80".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=80
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=81".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=81
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:36:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=82".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=82
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:37:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:37:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=5".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=5
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=4".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=4
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=3".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=3
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=2".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=2
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=3".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=3
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=4".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=4
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=7".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=7
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=8".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=8
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=9".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=9
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=10".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=10
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:38:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=11".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=11
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=7".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=7
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=5".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=5
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=4".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=4
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:40:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=3".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=3
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:54:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 12:54:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=7".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=7
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:16:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/film/admin/setcurs/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/film/admin/set...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/film/admin/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:19:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "setcurs".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('setcurs')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:20:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:22:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:50:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:50:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:52:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:53:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=7
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:55:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=8
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 13:55:12 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=9
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:37:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=10
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:38:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/films/view/admin/curs=6".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/films/view/adm...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=/films/view/admin/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:39:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "curs=6".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('curs=6')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('curs=6')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/films/admin/cu...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=/films/admin/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:40:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:42:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:44:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:45:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:46:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:55:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs/c...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs/curs=6
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:55:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('setcurs')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/setcurs')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/setcurs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:56:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "curs".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('curs')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('curs')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/curs')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=/user/curs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:57:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "curs".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('curs')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('curs')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/curs')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=/user/curs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---
+2014/04/17 14:58:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "curs".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('curs')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('curs')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/curs')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=/user/curs
+HTTP_REFERER=http://study/index.php?r=films/admin/calculator
+---

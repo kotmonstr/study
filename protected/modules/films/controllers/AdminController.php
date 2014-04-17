@@ -3,10 +3,16 @@ Yii::import('application.vendors.*');
 require_once('VarDumper.php');
 class AdminController extends Controller {
 
+ 
+
+
     public function actionIndex() {
 
         $this->layout = 'admin';
         $this->render('index');
+    }
+    public function actionСurs() {
+
     }
 
     public function actionUsers() {
@@ -18,7 +24,13 @@ class AdminController extends Controller {
     public function actionCalculator() {
 
         $this->layout = 'admin';
-        $this->render('calculator');
+        $ObjCurs=Curs::model()->findByPk(1);
+        $Curs=$ObjCurs->curs_value;
+       
+        VarDumper::dump($Curs);
+       
+        
+        $this->render('calculator',array('Curs' => $Curs));
     }
 
     public function actionAdd() {
