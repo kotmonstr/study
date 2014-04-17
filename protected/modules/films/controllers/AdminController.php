@@ -35,12 +35,15 @@ class AdminController extends Controller {
 
         $this->layout = 'admin';
         $ObjCurs=Curs::model()->findByPk(1);
+        if($ObjCurs){
         $Curs=$ObjCurs->curs_value;
        
         VarDumper::dump($Curs);
-       
-        
         $this->render('calculator',array('Curs' => $Curs));
+        }else{
+        
+        $this->render('calculator',array('Curs' => 3));
+        }
     }
 
     public function actionAdd() {
