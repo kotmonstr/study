@@ -2,14 +2,14 @@
 
 if (isset($_POST)) {
 
-    $curs = trim(strip_tags($_POST['curs']));
-    
-    //$post = Curs::model()->findByPk($id);
+    $curs = trim(strip_tags($_POST['curs_value']));
 
     $post = Curs::model()->findByPk(1);
-    $post->Curs = $curs;
-    $post->update(array('curs'));
-    
-     json_encode(array('curs' => $curs));
-    
-}
+    $post->curs_value = $curs;
+    $post->update(false);
+
+
+
+    echo json_encode($curs);
+} 
+

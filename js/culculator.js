@@ -28,14 +28,13 @@ $(document).ready(function() {
             console.log('курс изменился:' + curs);
 
             $.ajax({
-                type: "JSON",
-                url: "/protected/views/user/curs.php",
-                 data:{'curs': curs},
-
+                type: "POST",
+                url: "index.php?r=/films/admin/curs",
+                data: { curs : curs },
                 success: function(data) {
 
-                    console.log('вернули ' + data);
-                    //location.reload();
+                    console.log(data);
+                
 
                 }
             });
