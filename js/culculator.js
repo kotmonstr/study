@@ -26,15 +26,34 @@ $(document).ready(function() {
         getcurs: function() {
             var curs = $('.curs').val();
             console.log('курс изменился:' + curs);
-
+            var one;
+            var two;
             $.ajax({
                 type: "POST",
-                url: "index.php?r=/films/admin/curs",
-                data: { curs : curs },
+                url: "/protected/views/user/curs.php",
+                data: "curs=" + curs,
                 success: function(data) {
 
                     console.log(data);
-                
+                    if (data == 'ok') {
+                        one = $('.src').val();
+                        two = one / curs;
+                        tree= two.toFixed(2);
+                    
+                        $('input.target').val(tree);                       
+                        oneA = $('.src2').val();
+                        twoA = oneA * curs;
+                        treeA= twoA.toFixed(2);                    
+                        $('input.target2').val(treeA);
+   
+                    }
+                    if (data == 'error') {
+                        $('#sum').show().html('<span style="color:red;font-weight:bold">Incorect Email or Password</span>');
+                        setTimeout(function() {
+                            $('#sum').fadeOut('slow')
+                        }, 5000)
+                                ;
+                    }
 
                 }
             });
