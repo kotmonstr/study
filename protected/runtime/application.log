@@ -4542,3 +4542,97 @@ REQUEST_URI=/index.php?r=video/showvideo
 in C:\server\www\study\protected\views\video\showvideo.php (14)
 in C:\server\www\study\protected\controllers\VideoController.php (27)
 in C:\server\www\study\index.php (14)
+2014/04/20 16:30:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('upload')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=upload
+---
+2014/04/20 16:30:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('upload/index')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=upload/index
+---
+2014/04/20 16:32:11 [error] [php] Undefined variable: model (C:\server\www\study\protected\controllers\UploadController.php:18)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (18)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:32:39 [error] [php] Undefined variable: uploaded (C:\server\www\study\protected\controllers\UploadController.php:19)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (19)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:33:19 [error] [exception.CException] exception 'CException' with message 'Property "UploadController.menu" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\views\layouts\column2.php(15): CComponent->__get('menu')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\CController.php(784): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\protected\controllers\UploadController.php(20): CController->render('index', Array)
+#5 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#6 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('index')
+#10 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('upload/index')
+#11 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\server\www\study\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=upload/index
+---
+2014/04/20 16:33:57 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (12)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:33:57 [error] [php] move_uploaded_file(C:\server\www\study\protected\uploads/WP_000271.jpg): failed to open stream: No such file or directory (C:\server\www\study\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:34:52 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (12)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:34:52 [error] [php] move_uploaded_file(C:\server\www\study\protected\uploads/никита-костюм.jpg): failed to open stream: No such file or directory (C:\server\www\study\framework\web\CUploadedFile.php:198)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:35:26 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (12)
+in C:\server\www\study\index.php (14)
+2014/04/20 16:36:00 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (12)
+in C:\server\www\study\index.php (14)
