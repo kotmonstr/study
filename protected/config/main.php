@@ -38,7 +38,13 @@ return array(
 		),
             'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
-        ),
+            ),    
+     'file'=>array(
+        'class'=>'application.extensions.file.CFile',
+    ),    
+                
+                
+        
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

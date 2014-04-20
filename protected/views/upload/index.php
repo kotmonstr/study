@@ -17,11 +17,39 @@
 <?php echo Chtml::submitButton('Upload') ?>
 <?php echo CHtml::endForm() ?>
 
- <script type="text/javascript">
-$( document ).ready(function() {
-   setTimeout(function(){ $(".info").fadeOut("slow"); },3000);
-   setTimeout(function(){ $(".info-error").fadeOut("slow"); },3000);
-});
+
+<?php
+$myfile = Yii::app()->file->set('protected/uploads/test.jpg', true);
+
+$entries = scandir("protected/uploads/");
+$filelist = array();
+
+foreach ($entries as $entry) {
+    $filelist[] = $entry;
+}
+//VarDumper::dump($filelist);
+foreach ($filelist as $file) {
+    $myfile = Yii::app()->file->set('protected/uploads/' . $file, true);
+    if ($myfile->extension == 'jpg') {
+        echo CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/' . $myfile->basename, 'img', array('width'=>'300'));
+        //echo $myfile->basename;
+        
+    }
+}
+?>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".info").fadeOut("slow");
+        }, 3000);
+        setTimeout(function() {
+            $(".info-error").fadeOut("slow");
+        }, 3000);
+    });
 
 
 </script>

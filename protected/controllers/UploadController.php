@@ -1,5 +1,8 @@
 <?php
 
+Yii::import('application.vendors.*');
+require_once('VarDumper.php');
+
 class UploadController extends CController {
 
     public $layout = '//layouts/column1';
@@ -12,9 +15,11 @@ class UploadController extends CController {
             $model->attributes = $_POST['Upload'];
             $file = CUploadedFile::getInstance($model, 'file');
             if ($model->validate()) {
-                $uploaded = $file->saveAs($dir . '/' . $file->getName());
-                 Yii::app()->user->setFlash('success', "Data saved!");
-            }else{
+               $new_name = $model->translit($file->getName());
+              
+                $uploaded = $file->saveAs($dir . '/' . $new_name);
+                Yii::app()->user->setFlash('success', "Data saved!");
+            } else {
                 Yii::app()->user->setFlash('error', "Data not saved!");
             }
         }
@@ -22,5 +27,7 @@ class UploadController extends CController {
             'uploaded' => $uploaded,
             'dir' => $dir));
     }
+
+    
 
 }
