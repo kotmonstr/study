@@ -6,7 +6,7 @@
 <h1>Showvideo</h1>
 
 
-    <div style="width:480px; height: 480px; margin: 0px auto;">
+    <div style="width:480px; margin: 0px auto;">
         
         
         
@@ -14,7 +14,7 @@
         
         foreach($a as $video)
         {
-            echo $video->url;
+            echo $video->url.'<br><br>';
         }
         ?>
     </div>
