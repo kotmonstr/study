@@ -4525,3 +4525,20 @@ Stack trace:
 REQUEST_URI=/index.php?r=video/showvideo
 in C:\server\www\study\protected\controllers\VideoController.php (23)
 in C:\server\www\study\index.php (14)
+2014/04/20 13:13:53 [error] [php] Undefined variable: totalitems (C:\server\www\study\protected\views\video\showvideo.php:14)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): VideoController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): VideoController->renderPartial()
+#2 C:\server\www\study\protected\controllers\VideoController.php(27): VideoController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionShowvideo()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): VideoController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): VideoController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): VideoController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=video/showvideo
+in C:\server\www\study\protected\views\video\showvideo.php (14)
+in C:\server\www\study\protected\controllers\VideoController.php (27)
+in C:\server\www\study\index.php (14)

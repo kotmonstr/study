@@ -21,9 +21,10 @@ class VideoController extends Controller {
             'limit' => 5,
             
         ));
+        $totalItems = $model->count();
         $a = $model::model()->findAll($criteria);
         //vardumper($a);
-        $this->render('showvideo', array('a' => $a));
+        $this->render('showvideo', array('a' => $a ,'totalItems' => $totalItems ));
     }
 
 }

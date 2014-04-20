@@ -11,7 +11,7 @@
         
         
         <?php
-        
+        echo 'Всего записей '.$totalItems;
         foreach($a as $video)
         {
             echo $video->url.'<br><br>';
