@@ -1,5 +1,6 @@
 <?php
-
+Yii::import('application.vendors.*');
+require_once('VarDumper.php');
 class VideoController extends Controller
 {
 	//работа
@@ -11,6 +12,14 @@ class VideoController extends Controller
 	{
 	
 		$this->render('index');
+	}
+        
+	public function actionShowvideo()
+	{
+                $model= new Video;
+                $a=$model::model()->findAll();
+                //vardumper($a);
+		$this->render('showvideo',array('a'=>$a));
 	}
 
 }
