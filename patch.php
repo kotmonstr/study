@@ -45,6 +45,30 @@ PRIMARY KEY(`curs_id`))";
 
 mysql_query($sql,$link);
     echo "Создание таблицы curs завершено.".'<br>';
+    
+$sql = "CREATE TABLE IF NOT EXISTS `text`(
+`text_id`         INT(11) NOT NULL AUTO_INCREMENT,
+`text_header`     TEXT NOT NULL,
+`text_body`       TEXT NOT NULL,
+`text_avtor`      TEXT NOT NULL,
+`text_dt_greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+PRIMARY KEY(`text_id`))";
+
+mysql_query($sql,$link);
+    echo "Создание таблицы text завершено.".'<br>';
+    
+$sql = "CREATE TABLE IF NOT EXISTS `message`(
+`message_id`      INT(11) NOT NULL AUTO_INCREMENT,
+`message`         TEXT NOT NULL,
+`message_avtor`   TEXT NOT NULL,
+`message_text`      TEXT NOT NULL,
+`message_dt_greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+PRIMARY KEY(`message_id`))";
+
+mysql_query($sql,$link);
+    echo "Создание таблицы message завершено.".'<br>';
+    
+    
 
     
     
