@@ -6222,3 +6222,64 @@ Stack trace:
 REQUEST_URI=/index.php?r=video/showvideo
 HTTP_REFERER=http://study/index.php?r=upload/index
 ---
+2014/04/24 15:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('blog')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=blog
+---
+2014/04/24 15:59:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('blog/index')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=blog/index
+---
+2014/04/24 16:17:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('blog/index.php')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=blog/index.php
+HTTP_REFERER=http://study/index.php?r=blog
+---
+2014/04/24 16:21:03 [error] [php] Use of undefined constant data - assumed 'data' (C:\server\www\study\protected\views\blog\index.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): BlogController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): BlogController->renderPartial()
+#2 C:\server\www\study\protected\controllers\BlogController.php(6): BlogController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): BlogController->actionIndex()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): BlogController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): BlogController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): BlogController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=blog
+in C:\server\www\study\protected\views\blog\index.php (3)
+in C:\server\www\study\protected\controllers\BlogController.php (6)
+in C:\server\www\study\index.php (14)
+2014/04/24 16:21:24 [error] [php] Undefined index: data (C:\server\www\study\protected\views\blog\index.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): BlogController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): BlogController->renderPartial()
+#2 C:\server\www\study\protected\controllers\BlogController.php(6): BlogController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): BlogController->actionIndex()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): BlogController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): BlogController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): BlogController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(14): CWebApplication->run()
+REQUEST_URI=/index.php?r=blog
+in C:\server\www\study\protected\views\blog\index.php (3)
+in C:\server\www\study\protected\controllers\BlogController.php (6)
+in C:\server\www\study\index.php (14)
