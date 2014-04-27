@@ -31,18 +31,17 @@ class UploadController extends CController {
     function actionDelete() {
         $dir = Yii::getPathOfAlias('application.uploads');
 
-      
-        if (isset($_POST['id'])) {
-            
-              VarDumper::dump($_POST['id']);
-        die;
-            $file = $_POST['id'];
+        $key = Yii::app()->getRequest()->getParam('id');
+
+        if ($key) {
+
+            $file = $key;
             if (is_file($dir . '/' . $file)) {
                 unlink($dir . '/' . $file);
             }
-             $this->redirect('index.php?r=upload/index'); 
+            $this->redirect('index.php?r=upload/index');
         }
-      echo 'error';
+        $this->redirect('index.php?r=upload/index');
     }
 
 }

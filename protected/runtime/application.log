@@ -7709,3 +7709,9 @@ Stack trace:
 REQUEST_URI=/index.php?r=upload/delete&id/Izobrazhenie%20140.jpg
 in C:\server\www\study\protected\controllers\UploadController.php (34)
 in C:\server\www\study\index.php (13)
+2014/04/27 04:28:46 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 04:28:59 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
