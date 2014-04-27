@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "tracks".
+ * This is the model class for table "lookup".
  *
- * The followings are the available columns in table 'tracks':
- * @property integer $track_id
- * @property string $track_album
- * @property string $track_artist
- * @property string $track_genres
- * @property string $track_links
+ * The followings are the available columns in table 'lookup':
+ * @property integer $id
+ * @property string $name
+ * @property string $type
+ * @property string $code
+ * @property integer $position
  */
-class Tracks extends CActiveRecord
+class Lookup extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tracks';
+		return 'lookup';
 	}
 
 	/**
@@ -28,11 +28,11 @@ class Tracks extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('track_album, track_artist, track_genres, track_links', 'required'),
-			array('track_album, track_artist, track_genres, track_links', 'length', 'max'=>255),
+			array('name, type, code, position', 'required'),
+			array('position', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('track_id, track_album, track_artist, track_genres, track_links', 'safe', 'on'=>'search'),
+			array('id, name, type, code, position', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,11 +53,11 @@ class Tracks extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'track_id' => 'Track',
-			'track_album' => 'Track Album',
-			'track_artist' => 'Track Artist',
-			'track_genres' => 'Track Genres',
-			'track_links' => 'Track Links',
+			'id' => 'ID',
+			'name' => 'Name',
+			'type' => 'Type',
+			'code' => 'Code',
+			'position' => 'Position',
 		);
 	}
 
@@ -79,11 +79,11 @@ class Tracks extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('track_id',$this->track_id);
-		$criteria->compare('track_album',$this->track_album,true);
-		$criteria->compare('track_artist',$this->track_artist,true);
-		$criteria->compare('track_genres',$this->track_genres,true);
-		$criteria->compare('track_links',$this->track_links,true);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('code',$this->code,true);
+		$criteria->compare('position',$this->position);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +94,7 @@ class Tracks extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Tracks the static model class
+	 * @return Lookup the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

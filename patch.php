@@ -19,10 +19,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `user`(
 `user_name`       VARCHAR(255) NOT NULL,
 `user_email`      VARCHAR(255) NOT NULL,
 `user_password`   VARCHAR(255) NOT NULL,
-
-
 PRIMARY KEY(`user_id`))";
-
 mysql_query($sql,$link);
     echo "Создание таблицы user завершено.".'<br>';
     
@@ -30,11 +27,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `news`(
 `news_id`         INT(11) NOT NULL AUTO_INCREMENT,
 `news_name`       VARCHAR(255) NOT NULL,
 `news_content`      VARCHAR(255) NOT NULL,
-
-
-
 PRIMARY KEY(`news_id`))";
-
 mysql_query($sql,$link);
     echo "Создание таблицы news завершено.".'<br>';
     
@@ -42,33 +35,50 @@ $sql = "CREATE TABLE IF NOT EXISTS `curs`(
 `curs_id`         INT(11) NOT NULL AUTO_INCREMENT,
 `curs_value`      INT(11) NOT NULL,
 PRIMARY KEY(`curs_id`))";
-
 mysql_query($sql,$link);
     echo "Создание таблицы curs завершено.".'<br>';
     
-$sql = "CREATE TABLE IF NOT EXISTS `text`(
-`text_id`         INT(11) NOT NULL AUTO_INCREMENT,
-`text_header`     TEXT NOT NULL,
-`text_body`       TEXT NOT NULL,
-`text_avtor`      TEXT NOT NULL,
-`text_dt_greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
-PRIMARY KEY(`text_id`))";
-
+$sql = "CREATE TABLE IF NOT EXISTS `post`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`title`      TEXT NOT NULL,
+`content`    TEXT NOT NULL,
+`tags`       TEXT NOT NULL,
+`status`     TEXT NOT NULL,
+`avtor_id`   TEXT NOT NULL,
+`greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+`update`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+PRIMARY KEY(`id`))";
 mysql_query($sql,$link);
-    echo "Создание таблицы text завершено.".'<br>';
+    echo "Создание таблицы post завершено.".'<br>';
     
-$sql = "CREATE TABLE IF NOT EXISTS `message`(
-`message_id`      INT(11) NOT NULL AUTO_INCREMENT,
-`message`         TEXT NOT NULL,
-`message_avtor`   TEXT NOT NULL,
-`message_text`      TEXT NOT NULL,
-`message_dt_greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
-PRIMARY KEY(`message_id`))";
-
+$sql = "CREATE TABLE IF NOT EXISTS `comment`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`content`    TEXT NOT NULL,
+`status`     TEXT NOT NULL,
+`email`      TEXT NOT NULL,
+`url`        TEXT NOT NULL,
+`avtor`      TEXT NOT NULL,
+PRIMARY KEY(`id`))";
 mysql_query($sql,$link);
-    echo "Создание таблицы message завершено.".'<br>';
+    echo "Создание таблицы comment завершено.".'<br>';
     
+ $sql = "CREATE TABLE IF NOT EXISTS `tag`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`name`       TEXT NOT NULL,
+`frequency`  INT(11) NOT NULL,
+PRIMARY KEY(`id`))";
+mysql_query($sql,$link);
+    echo "Создание таблицы tbl_tag завершено.".'<br>';  
     
+ $sql = "CREATE TABLE IF NOT EXISTS `lookup`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`name`       TEXT NOT NULL,
+`type`       TEXT NOT NULL,
+`code`       TEXT NOT NULL,
+`position`   INT(11) NOT NULL,
+PRIMARY KEY(`id`))";
+mysql_query($sql,$link);
+    echo "Создание таблицы lookup завершено.".'<br>';   
 
     
     

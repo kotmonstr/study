@@ -52,7 +52,6 @@ class UserController extends Controller {
             'model' => $this->loadModel($id),
         ));
     }
- 
 
     /**
      * Creates a new model.
@@ -128,8 +127,7 @@ class UserController extends Controller {
     }
 
     public function actionСurs() {
-              
-     
+        
     }
 
     /**
@@ -169,6 +167,8 @@ class UserController extends Controller {
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
+
+
 
     /**
      * Performs the AJAX validation.

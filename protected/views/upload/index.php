@@ -31,7 +31,7 @@ foreach ($entries as $entry) {
 foreach ($filelist as $file) {
     $myfile = Yii::app()->file->set('protected/uploads/' . $file, true);
     if ($myfile->extension == 'jpg') {
-        echo CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/' . $myfile->basename, 'img', array('width'=>'300'));
+        echo '<a href="index.php?r=upload/delete/id='.$file.'">'.CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/' . $myfile->basename, 'img', array('width'=>'300')).'</a>';
         //echo $myfile->basename;
         
     }
