@@ -7715,3 +7715,332 @@ in C:\server\www\study\index.php (13)
 2014/04/27 04:28:59 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
 in C:\server\www\study\protected\controllers\UploadController.php (15)
 in C:\server\www\study\index.php (13)
+2014/04/27 13:24:53 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 13:24:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "text/view".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('text/view')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=text/view
+HTTP_REFERER=http://study/index.php?r=upload/index
+---
+2014/04/27 13:27:09 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 13:27:21 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 13:27:27 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 17:21:16 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (15)
+in C:\server\www\study\index.php (13)
+2014/04/27 18:14:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "text/view".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('text/view')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=text/view
+HTTP_REFERER=http://study/index.php?r=upload/index
+---
+2014/04/27 18:30:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view
+---
+2014/04/27 18:30:24 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view/1')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view/1
+---
+2014/04/27 18:35:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view/1')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view/1
+---
+2014/04/27 18:35:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view/id=1')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view/id=1
+---
+2014/04/27 18:42:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=post/admin
+HTTP_REFERER=http://study/index.php?r=post/view&id=3
+---
+2014/04/27 20:58:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view/1')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view/1
+---
+2014/04/27 22:13:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "text/view".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('text/view')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=text/view
+HTTP_REFERER=http://study/
+---
+2014/04/27 22:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "text/view".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('text/view')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=text/view
+HTTP_REFERER=http://study/index.php?r=site/contact
+---
+2014/04/27 22:21:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "зщые".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('????????')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=%D0%B7%D1%89%D1%8B%D0%B5
+---
+2014/04/27 22:21:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view
+---
+2014/04/27 22:24:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view
+---
+2014/04/27 22:24:20 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=post/view
+---
+2014/04/27 22:25:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=post/admin
+HTTP_REFERER=http://study/index.php?r=post/create
+---
+2014/04/28 00:02:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/admin')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=post/admin
+HTTP_REFERER=http://study/index.php?r=post
+---
+2014/04/28 00:27:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Запрашиваемая страница не существует.' in C:\server\www\study\protected\controllers\PostController.php:69
+Stack trace:
+#0 C:\server\www\study\protected\controllers\PostController.php(52): PostController->loadModel('ID')
+#1 [internal function]: PostController->actionView('ID')
+#2 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=post/view&id=ID
+HTTP_REFERER=http://study/index.php?r=post
+---
+2014/04/28 00:27:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Запрашиваемая страница не существует.' in C:\server\www\study\protected\controllers\PostController.php:69
+Stack trace:
+#0 C:\server\www\study\protected\controllers\PostController.php(52): PostController->loadModel('ID')
+#1 [internal function]: PostController->actionView('ID')
+#2 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=post/view&id=ID
+HTTP_REFERER=http://study/index.php?r=post
+---
+2014/04/28 00:27:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Запрашиваемая страница не существует.' in C:\server\www\study\protected\controllers\PostController.php:69
+Stack trace:
+#0 C:\server\www\study\protected\controllers\PostController.php(52): PostController->loadModel('ID')
+#1 [internal function]: PostController->actionView('ID')
+#2 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=post/view&id=ID
+HTTP_REFERER=http://study/index.php?r=post
+---
+2014/04/28 00:30:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('post/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=post/delete&id=4
+HTTP_REFERER=http://study/index.php?r=post/view&id=4
+---

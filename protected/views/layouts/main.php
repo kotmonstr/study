@@ -37,7 +37,7 @@
 				array('label'=>'Video', 'url'=>array('/video/index')),
 				array('label'=>'Video from archiv', 'url'=>array('/video/showvideo')),
 				array('label'=>'Upload', 'url'=>array('/upload/index')),
-				array('label'=>'Blog', 'url'=>array('/text/view')),
+				array('label'=>'Blog', 'url'=>array('/post')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Registration', 'url'=>array('/site/reg'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),

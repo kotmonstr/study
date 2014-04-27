@@ -23,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'content',
+		'content:html',
 		'tags',
 		'status',
 		'avtor_id',
