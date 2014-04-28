@@ -1,8 +1,11 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
 
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+    <div class="info-error">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+<?php endif; ?>
+
+<?php
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
 	'Login',
@@ -56,3 +59,17 @@ $this->breadcrumbs=array(
     </div>
 <?php endif; ?>
 </div><!-- form -->
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".info").fadeOut("slow");
+        }, 3000);
+        setTimeout(function() {
+            $(".info-error").fadeOut("slow");
+        }, 3000);
+    });
+
+
+</script>

@@ -95,7 +95,9 @@ class User extends CActiveRecord {
     public function getIdbyName($name) {
 
         $objUser = User::model()->find('user_name=:user_name', array(':user_name' => $name));
+        if($objUser){
         return $objUser->user_id;
+        }
     }
 
 }

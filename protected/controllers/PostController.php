@@ -58,12 +58,11 @@ class PostController extends Controller {
     public function loadModel() {
         if ($this->_model === null) {
             if (isset($_GET['id'])) {
-                if (Yii::app()->user->isGuest)
-                    $condition = 'status=' . Post::STATUS_PUBLISHED
-                            . ' OR status=' . Post::STATUS_ARCHIVED;
-                else
+                if (Yii::app()->user->isGuest) {
+                    
+                } else
                     $condition = '';
-                $this->_model = Post::model()->findByPk($_GET['id'], $condition);
+                $this->_model = Post::model()->findByPk($_GET['id']);
             }
             if ($this->_model === null)
                 throw new CHttpException(404, 'Запрашиваемая страница не существует.');
@@ -132,9 +131,14 @@ class PostController extends Controller {
      */
     public function actionIndex() {
         $dataProvider = new CActiveDataProvider('Post');
+      if(Yii::app()->user->name && Yii::app()->user->name !='Guest'){
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
+        }else{
+                 Yii::app()->user->setFlash('error', "Not logined yet!");  
+              $this->redirect('index.php?r=site/login');
+        }
     }
 
     /**
