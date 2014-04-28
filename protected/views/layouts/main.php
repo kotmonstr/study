@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" href="http://study/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://study/favicon.ico" type="image/x-icon">
 	<meta name="language" content="en" />
 
 	<!-- blueprint CSS framework -->
