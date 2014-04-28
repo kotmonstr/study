@@ -1,7 +1,5 @@
 <?php
-/* @var $this PostController */
-/* @var $model Post */
-/* @var $form CActiveForm */
+$arrStatus=array(1=>'Active',2=>'Disables',3=>'Archive');
 ?>
 
 <script src="/tinymce/tinymce.min.js"></script>
@@ -46,13 +44,18 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->dropDownList($model, 'status', $arrStatus) ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
-
 	<div class="row">
+		<?php echo $form->labelEx($model,'created'); ?>
+		<?php echo $form->textField($model,'created',array('value' => date("Y-m-d H:i:s"))); ?>
+		<?php echo $form->error($model,'created'); ?>
+	</div>
+
+	<div class="row" style="display:none">
 		<?php echo $form->labelEx($model,'avtor_id'); ?>
-		<?php echo $form->textField($model,'avtor_id',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textField($model,'avtor_id',array('rows'=>6, 'cols'=>50,'value' => Yii::app()->user->name,'display'=>'none')); ?>
 		<?php echo $form->error($model,'avtor_id'); ?>
 	</div>
 

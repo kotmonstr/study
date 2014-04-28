@@ -45,7 +45,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `post`(
 `tags`       TEXT NOT NULL,
 `status`     TEXT NOT NULL,
 `avtor_id`   TEXT NOT NULL,
-`greated` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+`created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
 `update`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
 PRIMARY KEY(`id`))";
 mysql_query($sql,$link);

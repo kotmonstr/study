@@ -23,8 +23,8 @@
 	<?php echo CHtml::encode($data->avtor_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('greated')); ?>:</b>
-	<?php echo CHtml::encode($data->greated); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created')); ?>:</b>
+	<?php echo CHtml::encode($data->created); ?>
 	<br />
 
 	<?php /*

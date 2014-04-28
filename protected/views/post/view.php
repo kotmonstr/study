@@ -27,7 +27,7 @@ $this->menu=array(
 		'tags',
 		'status',
 		'avtor_id',
-		'greated',
+		'created',
 		'update',
 	),
 )); ?>

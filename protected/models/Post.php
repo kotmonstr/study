@@ -10,7 +10,7 @@
  * @property string $tags
  * @property string $status
  * @property string $avtor_id
- * @property string $greated
+ * @property string $created
  * @property string $update
  */
 class Post extends CActiveRecord
@@ -32,10 +32,10 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, content, tags, status, avtor_id', 'required'),
-			array('greated, update', 'safe'),
+			array('created, update', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, tags, status, avtor_id, greated, update', 'safe', 'on'=>'search'),
+			array('id, title, content, tags, status, avtor_id, created, update', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +62,7 @@ class Post extends CActiveRecord
 			'tags' => 'Tags',
 			'status' => 'Status',
 			'avtor_id' => 'Avtor',
-			'greated' => 'Greated',
+			'created' => 'Created',
 			'update' => 'Update',
 		);
 	}
@@ -91,7 +91,7 @@ class Post extends CActiveRecord
 		$criteria->compare('tags',$this->tags,true);
 		$criteria->compare('status',$this->status,true);
 		$criteria->compare('avtor_id',$this->avtor_id,true);
-		$criteria->compare('greated',$this->greated,true);
+		$criteria->compare('created',$this->created,true);
 		$criteria->compare('update',$this->update,true);
 
 		return new CActiveDataProvider($this, array(
