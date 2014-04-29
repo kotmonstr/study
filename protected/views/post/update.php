@@ -1,3 +1,5 @@
+<?php echo $this->pageTitle; ?>
+
 <?php
 /* @var $this PostController */
 /* @var $model Post */
