@@ -9,9 +9,6 @@ $userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
 
 }
 
-
-
-
 ?>
 
 <div class="form">
@@ -22,13 +19,13 @@ $userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
 	'enableAjaxValidation'=>false,
 )); ?>
 
-
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'content',array('rows' => '6',
+                                                                  'cols' => '100',
+                                                                  'style' => 'width:400px;font-size: 20px;background-color:#F4FAFA')); ?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 
@@ -38,8 +35,6 @@ $userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
 		<?php echo $form->textField($model,'email',array('value' => $userEmail)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
-
-
 
 	<div class="row" style="display:none">
 		<?php echo $form->labelEx($model,'avtor'); ?>
