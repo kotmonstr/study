@@ -38,7 +38,7 @@ class AdminController extends Controller {
         if($ObjCurs){
         $Curs=$ObjCurs->curs_value;
        
-        VarDumper::dump($Curs);
+        //VarDumper::dump($Curs);
         $this->render('calculator',array('Curs' => $Curs));
         }else{
         

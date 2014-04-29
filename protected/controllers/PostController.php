@@ -1,5 +1,6 @@
 <?php
-
+Yii::import('application.vendors.*');
+require_once('VarDumper.php');
 class PostController extends Controller {
 
     /**
@@ -48,8 +49,21 @@ class PostController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        
+      //вывести коментаррии по id от post(criteria)  
+       $criteria=new CDbCriteria(); 
+      
+       
+       $criteria->condition=('post_id = :post_id');
+       $criteria->params[':post_id'] = $id;
+        
+        
+       $comment = Comment::model()->findAll($criteria);
+       
+        
         $this->render('view', array(
             'model' => $this->loadModel($id),
+            'comment'=> $comment,
         ));
     }
 

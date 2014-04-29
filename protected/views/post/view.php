@@ -21,13 +21,45 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'title',
+		
+	        'title',
 		'content:html',
 		'tags',
 		'status',
 		'avtor_id',
 		'created',
 		'update',
+              
 	),
+      'htmlOptions'=>array('style'=>'{background-color:#FFFFCC;}'),
 )); ?>
+<h3>Add Сomments:</h3>
+
+<?php 
+$comment2= new Comment;
+ $this->renderPartial('/comment/form_set',array(
+            'model'=>$comment2,
+        ));
+?>
+
+<h3>Сomments:</h3>
+<?php 
+ //VarDumper::dump($comment);
+
+foreach($comment as $com){
+$this->widget('zii.widgets.CDetailView', array(
+	'data'=>$com,
+	'attributes'=>array(
+		
+	        'id',
+		'content',
+		'status',
+                'avtor',
+              
+	),
+     
+));
+echo"<br>";
+
+}
+?>

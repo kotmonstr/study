@@ -99,5 +99,16 @@ class User extends CActiveRecord {
         return $objUser->user_id;
         }
     }
+      public function getEmailbyName($name) {
+        $criteria=new CDbCriteria();    
+        $criteria->condition=('user_name = :user_name');
+        $criteria->params[':user_name'] = $name;
+        $model = User::model()->find($criteria);
+        if($model){
+        return $model->user_email;
+        }else{
+           return 'admin'; 
+        }
+    }
 
 }

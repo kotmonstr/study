@@ -1,0 +1,56 @@
+<?php
+if(Yii::app()->user->name && Yii::app()->user->name !='Guest'){
+//echo "Имя:".Yii::app()->user->name.'<br>';
+
+$objUser = new User;
+//echo "Your Id:".$objUser->getIdbyName(Yii::app()->user->name);
+
+$userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
+
+}
+
+
+
+
+?>
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'comment-form',
+
+	'enableAjaxValidation'=>false,
+)); ?>
+
+
+
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'content'); ?>
+		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'content'); ?>
+	</div>
+
+
+	<div class="row" style="display:none">
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('value' => $userEmail)); ?>
+		<?php echo $form->error($model,'email'); ?>
+	</div>
+
+
+
+	<div class="row" style="display:none">
+		<?php echo $form->labelEx($model,'avtor'); ?>
+		<?php echo $form->textArea($model,'avtor',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'avtor'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
