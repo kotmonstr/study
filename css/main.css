@@ -13,6 +13,9 @@ body
 	margin-bottom: 5px;
 	background: white;
 	border: 1px solid #C9E0ED;
+       
+    box-shadow: 10px 10px 15px #2b2e32;
+
 }
 
 #header
@@ -230,4 +233,17 @@ div.search-form
 table.detail-view th {
 
 width: 51px!important;
+}
+.bottom-logo{
+    width:185px;
+    height:40px;
+    position: absolute;
+    right:50px;
+    bottom:10px;
+  
+   
+    font-family: 'Kaushan Script', 'cursive';
+    font-size: 48px;
+    text-shadow: 6px 4px 7px black;
+    color:white;
 }

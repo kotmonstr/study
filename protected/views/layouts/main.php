@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -56,9 +57,13 @@
 
 	<?php echo $content; ?>
 
-	<div class="clear"></div>
-
+	
+  <div class="clear"></div>
+   
 	<div id="footer">
+                 
+        <div class="bottom-logo"><b>Kotmonstr</b></div>
+          
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
