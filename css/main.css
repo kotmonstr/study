@@ -237,7 +237,7 @@ width: 51px!important;
 .bottom-logo{
     width:185px;
     height:40px;
-    position: absolute;
+    position: fixed;
     right:50px;
     bottom:10px;
   
