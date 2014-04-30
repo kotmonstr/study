@@ -43,7 +43,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `post`(
 `title`      TEXT NOT NULL,
 `content`    TEXT NOT NULL,
 `tags`       TEXT NOT NULL,
-`status`     TEXT NOT NULL,
+`status`     LONGTEXT NOT NULL,
 `avtor_id`   TEXT NOT NULL,
 `created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
 `update`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
