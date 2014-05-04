@@ -12,6 +12,10 @@ class VideoController extends Controller {
 
         $this->render('index');
     }
+    public function actionChannel5() {
+
+        $this->render('channel5');
+    }
 
     public function actionShowvideo() {
         $model = new Video;
