@@ -18,6 +18,11 @@ class TestController extends Controller
 		
 		$this->render('slider');
 	}
+	public function actionAll()
+	{
+		
+		$this->render('all');
+	}
 
 	
 }

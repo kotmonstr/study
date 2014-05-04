@@ -15,11 +15,13 @@
 	<![endif]-->
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/up.js"></script>
             
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/up.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="www.sila-ra.com/rss.php" />
@@ -47,9 +49,11 @@
 				array('label'=>'Video from archiv', 'url'=>array('/video/showvideo')),
 				array('label'=>'Upload', 'url'=>array('/upload/index')),
 				array('label'=>'Blog', 'url'=>array('/post')),
-				array('label'=>'RSS', 'url'=>array('/test')),
-				array('label'=>'RSS-new', 'url'=>array('/test/rss')),
-				array('label'=>'Slider', 'url'=>array('/test/slider')),
+				array('label'=>'All video', 'url'=>array('/test/all')),
+				array('label'=>'RSS', 'url'=>array('/test') ,'items'=>array(
+                                    array('label'=>'RSS', 'url'=>array('/test')),
+                                    array('label'=>'RSS-new', 'url'=>array('/test/rss')),
+                                    array('label'=>'Slider', 'url'=>array('/test/slider')))),		
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Registration', 'url'=>array('/site/reg'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
@@ -68,6 +72,9 @@
 
 	
   <div class="clear"></div>
+    <p id="back-top" style="display: block;">
+        <a href="#top"><span></span>Вверх</a>
+    </p>
    
 	<div id="footer">
                  
@@ -82,3 +89,5 @@
 
 </body>
 </html>
+
+
