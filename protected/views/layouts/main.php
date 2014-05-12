@@ -49,6 +49,7 @@
 				array('label'=>'Video from archiv', 'url'=>array('/video/showvideo')),
 				array('label'=>'Upload', 'url'=>array('/upload/index')),
 				array('label'=>'Blog', 'url'=>array('/post')),
+				array('label'=>'Lessons', 'url'=>array('/test/lessons')),
 				array('label'=>'All video', 'url'=>array('/test/all')),
 				array('label'=>'RSS', 'url'=>array('/test') ,'items'=>array(
                                     array('label'=>'RSS', 'url'=>array('/test')),

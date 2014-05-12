@@ -23,6 +23,11 @@ class TestController extends Controller
 		
 		$this->render('all');
 	}
+	public function actionLessons()
+	{
+		
+		$this->render('lessons');
+	}
 
 	
 }

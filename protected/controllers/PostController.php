@@ -1,6 +1,8 @@
 <?php
+
 Yii::import('application.vendors.*');
 require_once('VarDumper.php');
+
 class PostController extends Controller {
 
     /**
@@ -49,21 +51,21 @@ class PostController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        
-      //вывести коментаррии по id от post(criteria)  
-       $criteria=new CDbCriteria(); 
-      
-       
-       $criteria->condition=('post_id = :post_id');
-       $criteria->params[':post_id'] = $id;
-        
-        
-       $comment = Comment::model()->findAll($criteria);
-       
-        
+
+        //вывести коментаррии по id от post(criteria)  
+        $criteria = new CDbCriteria();
+
+
+        $criteria->condition = ('post_id = :post_id');
+        $criteria->params[':post_id'] = $id;
+
+
+        $comment = Comment::model()->findAll($criteria);
+
+
         $this->render('view', array(
             'model' => $this->loadModel($id),
-            'comment'=> $comment,
+            'comment' => $comment,
         ));
     }
 
@@ -145,13 +147,13 @@ class PostController extends Controller {
      */
     public function actionIndex() {
         $dataProvider = new CActiveDataProvider('Post');
-      if(Yii::app()->user->name && Yii::app()->user->name !='Guest'){
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        ));
-        }else{
-                 Yii::app()->user->setFlash('error', "Not logined yet!");  
-              $this->redirect('index.php?r=site/login');
+        if (Yii::app()->user->name && Yii::app()->user->name != 'Guest') {
+            $this->render('index', array(
+                'dataProvider' => $dataProvider,
+            ));
+        } else {
+            Yii::app()->user->setFlash('error', "Not logined yet!");
+            $this->redirect('index.php?r=site/login');
         }
     }
 
@@ -186,6 +188,13 @@ class PostController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public function actionFormset($id) {
+        $id2 = Yii::app()->request->getParam('id');
+        VarDumper::dump($id2);
+        VarDumper::dump($id);
+        $this->render('post/formset');
     }
 
 }

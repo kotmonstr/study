@@ -39,7 +39,7 @@ $this->widget('zii.widgets.CDetailView', array(
 
 <?php
 $comment2 = new Comment;
-$this->renderPartial('/comment/form_set', array(
+$this->renderPartial('/post/formset', array(
     'model' => $comment2,
    
 ));
