@@ -29,10 +29,10 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, status, email, url, avtor', 'required'),
+			array('content, status, email, url, avtor, date', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, content, status, email, url, avtor, post_id', 'safe', 'on'=>'search'),
+			array('id, content, status, email, url, avtor, post_id,date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +60,7 @@ class Comment extends CActiveRecord
 			'url' => 'Url',
 			'avtor' => 'Avtor',
 			'post_id' => 'Post_id',
+			'date' => 'Date',
 		);
 	}
 
@@ -88,6 +89,7 @@ class Comment extends CActiveRecord
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('avtor',$this->avtor,true);
 		$criteria->compare('post_id',$this->post_id,true);
+		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

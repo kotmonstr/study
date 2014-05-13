@@ -4,7 +4,6 @@ require_once('VarDumper.php');
 
 class PostController extends Controller {
 
-
     public $layout = '//layouts/column2';
 
     /**
@@ -17,7 +16,6 @@ class PostController extends Controller {
         );
     }
 
- 
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
@@ -37,7 +35,6 @@ class PostController extends Controller {
             ),
         );
     }
-
 
     public function actionView($id) {
 
@@ -76,7 +73,6 @@ class PostController extends Controller {
         return $this->_model;
     }
 
-
     public function actionCreate() {
         $model = new Post;
 
@@ -93,7 +89,6 @@ class PostController extends Controller {
             'model' => $model,
         ));
     }
-
 
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
@@ -147,7 +142,6 @@ class PostController extends Controller {
         ));
     }
 
-
     protected function performAjaxValidation($model) {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'post-form') {
             echo CActiveForm::validate($model);
@@ -168,17 +162,24 @@ class PostController extends Controller {
         $criteria = new CDbCriteria();
         $criteria->condition = ('post_id = :post_id');
         $criteria->params[':post_id'] = $post_id;
-        
-    
-            $criteria->order = 'id DESC';
+
+
+
+        $criteria->order = 'id DESC';
         $model = Comment::model()->findAll($criteria);
         ?><center><div style="background-color: #F4FAFA"><?php
         foreach ($model as $comment) {
-        echo '<span style="">'.$comment->content.'</span><br>';
-        echo '<span class="small" style=color:#c0c>'.$comment->avtor.'</span><br>';
-        }
-        }
+            echo '<span class="small" style="color:green;float:left">' . $comment->avtor . '</span>  '.'&nbsp;';
+            if ($comment->date) {
+                echo '<span class="small" style="color:#ccc;float:left">&nbsp;' . $comment->date . '</span><br>';
+            }
 
-   
-}?>
-</div></center>
+            echo '<span style="">' . $comment->content . '</span><br>';
+
+            echo '<hr>';
+        }
+    }
+
+}
+?>
+    </div></center>

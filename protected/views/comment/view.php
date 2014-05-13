@@ -27,5 +27,6 @@ $this->menu=array(
 		'email',
 		'url',
 		'avtor',
+		'date',
 	),
 )); ?>

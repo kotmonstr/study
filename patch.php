@@ -58,6 +58,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `comment`(
 `email`      TEXT NOT NULL,
 `avtor`      TEXT NOT NULL,
 `post_id`    INT(11) NOT NULL,
+`date`       DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
 PRIMARY KEY(`id`))";
 mysql_query($sql,$link);
     echo "Создание таблицы comment завершено.".'<br>';

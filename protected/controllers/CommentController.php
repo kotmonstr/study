@@ -66,7 +66,7 @@ class CommentController extends Controller {
         $content = $_POST['Comment']['content'];
         $email = Yii::app()->request->getParam('email');
         $avtor = Yii::app()->request->getParam('avtor_id');
-        VarDumper::dump('stop by me  id:' . $id . ' content: ' . $content.' email '.$email);
+        //VarDumper::dump('stop by me  id:' . $id . ' content: ' . $content.' email '.$email);
 
         //save comments heare
         $model= new Comment;
@@ -75,6 +75,7 @@ class CommentController extends Controller {
         $model->status=1;
         $model->email=$email;
         $model->avtor=$avtor;
+        $model->date=date("Y-m-d H:i:s",time());
         
         $model->save(false);
         //die;
@@ -161,12 +162,6 @@ class CommentController extends Controller {
         }
     }
 
-    public function actionFormset() {
-        echo"form set";die;
-        $id = Yii::app()->request->getParam('id');
-        $content = $_POST['Comment_content'];
-        VarDumper::dump($id);
-        VarDumper::dump($content);
-    }
+
 
 }
