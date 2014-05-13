@@ -64,15 +64,17 @@ class CommentController extends Controller {
         //VarDumper::dump($_POST);die;
         $id = Yii::app()->request->getParam('post_id');
         $content = $_POST['Comment']['content'];
-        VarDumper::dump('stop by me  id:' . $id . ' content: ' . $content);
+        $email = Yii::app()->request->getParam('email');
+        $avtor = Yii::app()->request->getParam('avtor_id');
+        VarDumper::dump('stop by me  id:' . $id . ' content: ' . $content.' email '.$email);
 
         //save comments heare
         $model= new Comment;
         $model->post_id=$id;
         $model->content=$content;
         $model->status=1;
-        $model->email='email';
-        $model->avtor='avtor';
+        $model->email=$email;
+        $model->avtor=$avtor;
         
         $model->save(false);
         //die;

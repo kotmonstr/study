@@ -1,5 +1,4 @@
 <?php
-
 Yii::import('application.vendors.*');
 require_once('VarDumper.php');
 
@@ -58,7 +57,7 @@ class PostController extends Controller {
 
         $criteria->condition = ('post_id = :post_id');
         $criteria->params[':post_id'] = $id;
-
+        $post_id = $id;
 
         $comment = Comment::model()->findAll($criteria);
 
@@ -66,6 +65,7 @@ class PostController extends Controller {
         $this->render('view', array(
             'model' => $this->loadModel($id),
             'comment' => $comment,
+            'post_id' => $post_id
         ));
     }
 
@@ -190,6 +190,29 @@ class PostController extends Controller {
         }
     }
 
+    public function actionFormset() {
+        echo"form set";
+        die;
+        $id = Yii::app()->request->getParam('id');
+        $content = $_POST['Comment_content'];
+        VarDumper::dump($id);
+        VarDumper::dump($content);
+    }
 
+    public function showallcomments($post_id) {
+        $criteria = new CDbCriteria();
+        $criteria->condition = ('post_id = :post_id');
+        $criteria->params[':post_id'] = $post_id;
+    
+            $criteria->order = 'id DESC';
+        $model = Comment::model()->findAll($criteria);
+        ?><center><div style="background-color: #D4E7CB"><?php
+        foreach ($model as $comment) {
+        echo '<span style="color: red">'.$comment->content.'</span><br>';
+        echo '<span class="smal" style=color:#ccc>'.$comment->avtor.'</span><br>';
+        }
+        }
 
-}
+   
+}?>
+</div></center>

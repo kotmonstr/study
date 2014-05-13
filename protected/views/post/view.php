@@ -35,32 +35,23 @@ $this->widget('zii.widgets.CDetailView', array(
 ?>
 <div style="width:100%">
     <center>
-<h3>Add Сomments:</h3>
+        <h3>Add Сomments:</h3>
 
-<?php
-$comment2 = new Comment;
-$this->renderPartial('/comment/formset', array(
-    'model' => $comment2,
-   
-));
-?>
+        <?php
+        $comment2 = new Comment;
+        $this->renderPartial('/comment/formset', array(
+            'model' => $comment2,
+        ));
+        ?>
 
         <h3>Сomments:</h3>
+
+
+
         <?php
         //VarDumper::dump($comment);
 
-        foreach ($comment as $com) {
-            $this->widget('zii.widgets.CDetailView', array(
-                'data' => $com,
-                'attributes' => array(
-                    'id',
-                    'content',
-                    'status',
-                    'avtor',
-                ),
-            ));
-            echo"<br>";
-        }
-        ?>
+        $this->showAllComments($post_id);
+        ?> 
     </center>
 </div>

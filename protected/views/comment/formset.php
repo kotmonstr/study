@@ -4,7 +4,7 @@ if(Yii::app()->user->name && Yii::app()->user->name !='Guest'){
 
 $objUser = new User;
 //echo "Your Id:".$objUser->getIdbyName(Yii::app()->user->name);
-
+$avtor_id=Yii::app()->user->name;
 $userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
 
 }
@@ -34,7 +34,7 @@ $post_id=Yii::app()->request->getParam('id');
 
 	<div class="row buttons">
 		
-            <?php echo CHtml::submitButton('Save',array('submit' => 'index.php?r=comment/create&post_id='.$post_id)); ?>
+            <?php echo CHtml::submitButton('Save',array('submit' => 'index.php?r=comment/create&post_id='.$post_id.'&email='.$userEmail.'&avtor_id='.$avtor_id)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
