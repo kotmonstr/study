@@ -34,7 +34,7 @@ $post_id=Yii::app()->request->getParam('id');
 
 	<div class="row buttons">
 		
-            <?php echo CHtml::submitButton('Save',array('submit' => 'index.php?r=comment/create&post_id='.$post_id.'&email='.$userEmail.'&avtor_id='.$avtor_id)); ?>
+            <?php echo CHtml::submitButton('Add comment',array('submit' => 'index.php?r=comment/create&post_id='.$post_id.'&email='.$userEmail.'&avtor_id='.$avtor_id)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

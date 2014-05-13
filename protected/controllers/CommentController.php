@@ -79,7 +79,7 @@ class CommentController extends Controller {
         $model->save(false);
         //die;
 
-        $this->redirect('index.php?r=post/index');
+        $this->redirect('index.php?r=post/view&id='.$id);
     }
 
     public function actionUpdate($id) {
