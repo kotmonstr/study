@@ -32,7 +32,7 @@ class Comment extends CActiveRecord
 			array('content, status, email, url, avtor', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, content, status, email, url, avtor', 'safe', 'on'=>'search'),
+			array('id, content, status, email, url, avtor, post_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,6 +59,7 @@ class Comment extends CActiveRecord
 			'email' => 'Email',
 			'url' => 'Url',
 			'avtor' => 'Avtor',
+			'post_id' => 'Post_id',
 		);
 	}
 
@@ -86,6 +87,7 @@ class Comment extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('avtor',$this->avtor,true);
+		$criteria->compare('post_id',$this->post_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

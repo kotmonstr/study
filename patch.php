@@ -79,7 +79,5 @@ mysql_query($sql,$link);
 PRIMARY KEY(`id`))";
 mysql_query($sql,$link);
     echo "Создание таблицы lookup завершено.".'<br>';   
-
-    
-    
+  
 }

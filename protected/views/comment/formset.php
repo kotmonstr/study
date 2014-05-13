@@ -8,8 +8,8 @@ $objUser = new User;
 $userEmail= $objUser->getEmailbyName(Yii::app()->user->name);
 
 }
-$id=Yii::app()->request->getParam('id');
-VarDumper::dump($id);
+$post_id=Yii::app()->request->getParam('id');
+//VarDumper::dump($id);
 ?>
 
 <div class="form">
@@ -34,7 +34,7 @@ VarDumper::dump($id);
 
 	<div class="row buttons">
 		
-            <?php echo CHtml::submitButton('Save',array('submit' => 'index.php?r=post/formset&id='.$id)); ?>
+            <?php echo CHtml::submitButton('Save',array('submit' => 'index.php?r=comment/create&post_id='.$post_id)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

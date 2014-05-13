@@ -61,12 +61,21 @@ class CommentController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $id = Yii::app()->request->getParam('id');
-        $content = Yii::app()->request->getParam('Comment_content');
+        //VarDumper::dump($_POST);die;
+        $id = Yii::app()->request->getParam('post_id');
+        $content = $_POST['Comment']['content'];
         VarDumper::dump('stop by me  id:' . $id . ' content: ' . $content);
 
         //save comments heare
-        die;
+        $model= new Comment;
+        $model->post_id=$id;
+        $model->content=$content;
+        $model->status=1;
+        $model->email='email';
+        $model->avtor='avtor';
+        
+        $model->save(false);
+        //die;
 
         $this->redirect('index.php?r=post/index');
     }
@@ -150,9 +159,12 @@ class CommentController extends Controller {
         }
     }
 
-    public function actionFormset($id) {
-
+    public function actionFormset() {
+        echo"form set";die;
+        $id = Yii::app()->request->getParam('id');
+        $content = $_POST['Comment_content'];
         VarDumper::dump($id);
+        VarDumper::dump($content);
     }
 
 }

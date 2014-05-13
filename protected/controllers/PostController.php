@@ -190,11 +190,6 @@ class PostController extends Controller {
         }
     }
 
-    public function actionFormset($id) {
-        $id2 = Yii::app()->request->getParam('id');
-        VarDumper::dump($id2);
-        VarDumper::dump($id);
-        $this->render('post/formset');
-    }
+
 
 }
