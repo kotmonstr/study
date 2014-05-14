@@ -48,7 +48,10 @@
 				array('label'=>'5 Канал', 'url'=>array('/video/channel5')),
 				array('label'=>'Video from archiv', 'url'=>array('/video/showvideo')),
 				array('label'=>'Upload', 'url'=>array('/upload/index')),
-				array('label'=>'Blog', 'url'=>array('/post')),
+				array('label'=>'Blog', 'url'=>array('/post'), 'items'=>array(
+                                    array('label'=>'Blog', 'url'=>array('/post')),
+                                    array('label'=>'Get Post', 'url'=>array('/post/get')),
+                                    array('label'=>'Set Post', 'url'=>array('/post/set')))),      
 				array('label'=>'Lessons', 'url'=>array('/test/lessons')),
 				array('label'=>'All video', 'url'=>array('/test/all')),
 				array('label'=>'RSS', 'url'=>array('/test') ,'items'=>array(

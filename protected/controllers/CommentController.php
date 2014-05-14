@@ -1,8 +1,5 @@
 <?php
 
-Yii::import('application.vendors.*');
-require_once('VarDumper.php');
-
 class CommentController extends Controller {
 
     /**

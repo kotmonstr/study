@@ -1,7 +1,7 @@
 <?php
 
-Yii::import('application.vendors.*');
-require_once('VarDumper.php');
+//Yii::import('application.vendors.*');
+//require_once('VarDumper.php');
 
 class VideoController extends Controller {
 

@@ -1,11 +1,9 @@
 <?php
-Yii::import('application.vendors.*');
-require_once('VarDumper.php');
 
 class PostController extends Controller {
 
     public $layout = '//layouts/column2';
-
+    public $result;
     /**
      * @return array action filters
      */
@@ -27,7 +25,7 @@ class PostController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin', 'delete','get','set'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -162,24 +160,44 @@ class PostController extends Controller {
         $criteria = new CDbCriteria();
         $criteria->condition = ('post_id = :post_id');
         $criteria->params[':post_id'] = $post_id;
-
-
-
         $criteria->order = 'id DESC';
         $model = Comment::model()->findAll($criteria);
         ?><center><div style="background-color: #F4FAFA"><?php
-        foreach ($model as $comment) {
-            echo '<span class="small" style="color:green;float:left">' . $comment->avtor . '</span>  '.'&nbsp;';
-            if ($comment->date) {
-                echo '<span class="small" style="color:#ccc;float:left">&nbsp;' . $comment->date . '</span><br>';
-            }
+                foreach ($model as $comment) {
+                    echo '<span class="small" style="color:green;float:left">' . $comment->avtor . '</span>  ' . '&nbsp;';
+                    if ($comment->date) {
+                        echo '<span class="small" style="color:#ccc;float:left">&nbsp;' . $comment->date . '</span><br>';
+                    }
 
-            echo '<span style="">' . $comment->content . '</span><br>';
+                    echo '<span style="">' . $comment->content . '</span><br>';
 
-            echo '<hr>';
-        }
+                    echo '<hr>';
+                }
+                ?> </div></center><?php
+    }
+       public function actionGet() {
+           
+           $a=Yii::app()->request->getParam('go');
+           //VarDumper::dump($a);die;
+           if($a == 1){
+             
+               $this->render('get',array('results'=>'go')); 
+           }else{
+               
+              $this->render('get');   
+           }
+           
+           
+           
+       
     }
 
+    public function actionSet() {
+        $this->render('set'); 
+    }
+
+
+ 
 }
-?>
-    </div></center>
+
+   
