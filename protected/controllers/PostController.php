@@ -4,6 +4,8 @@ class PostController extends Controller {
 
     public $layout = '//layouts/column2';
     public $result;
+    public $q;
+
     /**
      * @return array action filters
      */
@@ -25,7 +27,7 @@ class PostController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete','get','set'),
+                'actions' => array('admin', 'delete', 'get', 'set'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -175,29 +177,79 @@ class PostController extends Controller {
                 }
                 ?> </div></center><?php
     }
-       public function actionGet() {
-           
-           $a=Yii::app()->request->getParam('go');
-           //VarDumper::dump($a);die;
-           if($a == 1){
-             
-               $this->render('get',array('results'=>'go')); 
-           }else{
-               
-              $this->render('get');   
-           }
-           
-           
-           
-       
+
+    public function actionGet() {
+
+        $a = Yii::app()->request->getParam('go');
+
+        if ($a == 1) {
+            $this->render('get', array('q' => 'start'));
+            /*
+              VarDumper::dump($a);
+              $allPosts = array();
+              $allPosts2 = array();
+              $i = 0;
+              $model = new Post;
+              $result = $model::model()->findAll();
+              $quantity= count($result );
+              VarDumper::dump($quantity);
+              //VarDumper::dump($result);
+              foreach ($result as $objPost) {
+              sleep(1);
+
+              $i++;
+              $quantity--;
+              $this->render('get', array('q' => $quantity));
+              //$str = $objPost->id . '|||' . $objPost->title . '|||' . $objPost->content . '|||' . $objPost->tags . '|||' . $objPost->status . '|||' . $objPost->avtor_id . '|||' . $objPost->avtor_id . '|||' . $objPost->created . '|||' . $objPost->update;
+              $allPosts2[$i] = $str;
+              }
+              //VarDumper::dump($allPosts);
+
+
+              $result = implode(',', $allPosts2);
+              unlink('out.txt');
+              $file = fopen("out.txt", "w");
+              fwrite($file, $result);
+              fclose($file);
+              //VarDumper::dump($allPosts2);
+             */
+        } else {
+            VarDumper::dump('case 2');
+            $this->render('get', array('q' => 'stop'));
+        }
     }
 
     public function actionSet() {
-        $this->render('set'); 
+        $a = Yii::app()->request->getParam('go');
+        $array = array();
+        if ($a == 1) {
+
+
+            if (!file_exists("out.txt")) {
+                Yii::app()->user->setFlash('error', "No data!");
+            }
+
+            $i = 0;
+
+            //подготовить модель
+            $postTemp = new PostTemp;
+
+            $homepage = file_get_contents('out.txt');
+            $result = unserialize($homepage);
+            //VarDumper::dump($result);die;
+            foreach ($result as $objectPost) {
+                foreach ($objectPost as $key => $value) {
+                    //echo $key.' '. $value;   
+                    $postTemp->$key = $value;
+                }
+                $postTemp->save();
+            }
+
+            $this->render('set', array('q' => 'start'));
+        } else {
+            VarDumper::dump('case 2');
+            $this->render('set', array('q' => 'stop'));
+        }
     }
 
-
- 
 }
-
-   

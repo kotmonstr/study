@@ -51,6 +51,19 @@ PRIMARY KEY(`id`))";
 mysql_query($sql,$link);
     echo "Создание таблицы post завершено.".'<br>';
     
+$sql = "CREATE TABLE IF NOT EXISTS `post_temp`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`title`      TEXT NOT NULL,
+`content`    LONGTEXT NOT NULL,
+`tags`       TEXT NOT NULL,
+`status`     LONGTEXT NOT NULL,
+`avtor_id`   TEXT NOT NULL,
+`created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+`update`  DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+PRIMARY KEY(`id`))";
+mysql_query($sql,$link);
+    echo "Создание таблицы post_temp завершено.".'<br>';
+    
 $sql = "CREATE TABLE IF NOT EXISTS `comment`(
 `id`         INT(11) NOT NULL AUTO_INCREMENT,
 `content`    TEXT NOT NULL,
