@@ -3,4 +3,5 @@
 <?php 
      if(isset($result)){VarDumper::dump($result);}
 
+     
  echo CHtml::button('Получить данные из бд', array('submit' => array('post/get&go=1'))); ?>
