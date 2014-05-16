@@ -227,7 +227,7 @@ class PostController extends Controller {
 
             if (!file_exists("out.txt")) {
                 Yii::app()->user->setFlash('error', "No data!");
-                $this->redirect('index.php?r=post/get');
+                
             }
 
             $i = 0;
@@ -249,7 +249,7 @@ class PostController extends Controller {
                         //провести проверку по дате создания - уникальность даты
                         if($key == 'created'){
                             $check = $this->check_date_create_for_uniq($value);
-                            if($check == 'double')break 2;
+                         
                         }  
                         
                         
@@ -257,7 +257,9 @@ class PostController extends Controller {
                     $postTemp->$key = $value;
                     }
                 }
+                  if($check != 'double'){
                 $postTemp->save();
+                  }
                  $postTemp = new PostTemp;
             }
 
@@ -275,6 +277,8 @@ class PostController extends Controller {
         //VarDumper::dump($model);die;
         if(isset($model->created ) && $model->created == $value )
         {return 'double';}
+        else{
+            return 'default';} 
         
         
     }
