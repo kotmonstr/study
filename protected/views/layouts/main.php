@@ -58,6 +58,7 @@
 				array('label'=>'RSS', 'url'=>array('/test') ,'items'=>array(
                                     array('label'=>'RSS', 'url'=>array('/test')),
                                     array('label'=>'RSS-new', 'url'=>array('/test/rss')),
+                                    array('label'=>'RSS-new2class', 'url'=>array('/test/rss_test')),
                                     array('label'=>'Slider', 'url'=>array('/test/slider')))),		
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Registration', 'url'=>array('/site/reg'), 'visible'=>Yii::app()->user->isGuest),

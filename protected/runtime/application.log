@@ -17134,3 +17134,30 @@ REQUEST_URI=/index.php?r=test/backup
 in C:\server\www\study\protected\components\class.db.backup.php (118)
 in C:\server\www\study\protected\components\class.db.backup.php (49)
 in C:\server\www\study\protected\components\class.db.backup.php (34)
+2014/05/16 17:56:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test.rss_test".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('test.rss_test')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=test.rss_test
+---
+2014/05/16 17:58:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "rss-test".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('rss-test')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('rss-test')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('test/rss-test')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=test/rss-test
+HTTP_REFERER=http://study/index.php?r=test/rss_test
+---
+2014/05/16 17:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "test.rss_test".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('test.rss_test')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=test.rss_test
+---

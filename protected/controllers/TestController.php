@@ -27,6 +27,10 @@ class TestController extends Controller
 	{	
 		$this->render('backup');
 	}
+	public function actionRss_test()
+	{	
+		$this->render('rss-test');
+	}
 
 	
 }
