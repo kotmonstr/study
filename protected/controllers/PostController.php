@@ -179,7 +179,7 @@ class PostController extends Controller {
     }
 
     public function actionGet() {
-
+ $this->layout='application.views.layouts.main';
         $a = Yii::app()->request->getParam('go');
 
         if ($a == 1) {
@@ -205,7 +205,7 @@ class PostController extends Controller {
                 $open = fopen("out.txt", "w");
                 fwrite($open, $All);
                 fclose($open);
-                Yii::app()->user->setFlash('error', $i." Постов были успешно сохранены на диск");
+                Yii::app()->user->setFlash('success', $i." Постов были успешно сохранены на диск");
                 //VarDumper::dump($allPosts2);
             }
              $this->render('get');
@@ -213,6 +213,7 @@ class PostController extends Controller {
     
 
     public function actionSet() {
+         $this->layout='application.views.layouts.main';
         $Iterator_of_save = 0;
         $a = Yii::app()->request->getParam('go');
         $array = array();
@@ -248,13 +249,13 @@ class PostController extends Controller {
                 $post = new Post;
             }
             if ($Iterator_of_save != 0) {
-                Yii::app()->user->setFlash('error', "Блог был обновлен на " . $Iterator_of_save . " поста");
+                Yii::app()->user->setFlash('success', "Блог был обновлен на " . $Iterator_of_save . " поста");
             } else {
                 Yii::app()->user->setFlash('error', "Нет новых постов");
             }
             $this->render('set');
         } else {
-            //VarDumper::dump('case 2');
+           
             $this->render('set');
         }
     }
