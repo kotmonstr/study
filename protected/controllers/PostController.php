@@ -227,22 +227,38 @@ class PostController extends Controller {
 
             if (!file_exists("out.txt")) {
                 Yii::app()->user->setFlash('error', "No data!");
+                $this->redirect('index.php?r=post/get');
             }
 
             $i = 0;
 
             //подготовить модель
             $postTemp = new PostTemp;
-
+            if(file_exists('out.txt')){
             $homepage = file_get_contents('out.txt');
-            $result = unserialize($homepage);
+            $result = unserialize($homepage);}
+            else{
+                  Yii::app()->user->setFlash('error', "No data!");
+                  $this->redirect('index.php?r=post/get');
+            }
             //VarDumper::dump($result);die;
             foreach ($result as $objectPost) {
                 foreach ($objectPost as $key => $value) {
-                    //echo $key.' '. $value;   
+                    //echo $key.' '. $value;
+                    if($key !='id'){
+                        //провести проверку по дате создания - уникальность даты
+                        if($key == 'created'){
+                            $check = $this->check_date_create_for_uniq($value);
+                            if($check == 'double')break 2;
+                        }  
+                        
+                        
+                        
                     $postTemp->$key = $value;
+                    }
                 }
                 $postTemp->save();
+                 $postTemp = new PostTemp;
             }
 
             $this->render('set', array('q' => 'start'));
@@ -250,6 +266,17 @@ class PostController extends Controller {
             VarDumper::dump('case 2');
             $this->render('set', array('q' => 'stop'));
         }
+    }
+    public function check_date_create_for_uniq($value){
+        $original_date=date("Y-m-d H:i:s",strtotime($value));
+        //VarDumper::dump($original_date);die;
+      
+        $model = PostTemp::model()->find('created=:created', array(':created'=>$original_date));
+        //VarDumper::dump($model);die;
+        if(isset($model->created ) && $model->created == $value )
+        {return 'double';}
+        
+        
     }
 
 }
