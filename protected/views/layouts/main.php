@@ -51,7 +51,8 @@
 				array('label'=>'Blog', 'url'=>array('/post'), 'items'=>array(
                                     array('label'=>'Blog', 'url'=>array('/post')),
                                     array('label'=>'Записать на диск', 'url'=>array('/post/get')),
-                                    array('label'=>'Обновить с диска', 'url'=>array('/post/set')))),      
+                                    array('label'=>'Обновить с диска', 'url'=>array('/post/set')),      
+                                    array('label'=>'Создание дампа бд', 'url'=>array('/test/backup')))),      
 				array('label'=>'Lessons', 'url'=>array('/test/lessons')),
 				array('label'=>'All video', 'url'=>array('/test/all')),
 				array('label'=>'RSS', 'url'=>array('/test') ,'items'=>array(
