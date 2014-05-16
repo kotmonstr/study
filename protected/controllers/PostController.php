@@ -183,104 +183,90 @@ class PostController extends Controller {
         $a = Yii::app()->request->getParam('go');
 
         if ($a == 1) {
-            $this->render('get', array('q' => 'start'));
-            /*
-              VarDumper::dump($a);
-              $allPosts = array();
-              $allPosts2 = array();
-              $i = 0;
-              $model = new Post;
-              $result = $model::model()->findAll();
-              $quantity= count($result );
-              VarDumper::dump($quantity);
-              //VarDumper::dump($result);
-              foreach ($result as $objPost) {
-              sleep(1);
-
-              $i++;
-              $quantity--;
-              $this->render('get', array('q' => $quantity));
-              //$str = $objPost->id . '|||' . $objPost->title . '|||' . $objPost->content . '|||' . $objPost->tags . '|||' . $objPost->status . '|||' . $objPost->avtor_id . '|||' . $objPost->avtor_id . '|||' . $objPost->created . '|||' . $objPost->update;
-              $allPosts2[$i] = $str;
-              }
-              //VarDumper::dump($allPosts);
-
-
-              $result = implode(',', $allPosts2);
-              unlink('out.txt');
-              $file = fopen("out.txt", "w");
-              fwrite($file, $result);
-              fclose($file);
-              //VarDumper::dump($allPosts2);
-             */
-        } else {
-            VarDumper::dump('case 2');
-            $this->render('get', array('q' => 'stop'));
-        }
-    }
+         
+                $allPosts = array();
+                $i = 0;
+                $model = new Post;
+                $result = $model::model()->findAll();
+                $quantity = count($result);
+                foreach ($result as $objPost) {
+                    $i++;
+                    $allPosts[$i]['id'] = $objPost->id;
+                    $allPosts[$i]['title'] = $objPost->title;
+                    $allPosts[$i]['content'] = $objPost->content;
+                    $allPosts[$i]['tags'] = $objPost->tags;
+                    $allPosts[$i]['status'] = $objPost->status;
+                    $allPosts[$i]['avtor_id'] = $objPost->avtor_id;
+                    $allPosts[$i]['created'] = $objPost->created;
+                    $allPosts[$i]['update'] = $objPost->update;
+                }
+                //VarDumper::dump($allPosts);
+                $All = serialize($allPosts);
+                $open = fopen("out.txt", "w");
+                fwrite($open, $All);
+                fclose($open);
+                Yii::app()->user->setFlash('error', $i." Постов были успешно сохранены на диск");
+                //VarDumper::dump($allPosts2);
+            }
+             $this->render('get');
+        } 
+    
 
     public function actionSet() {
+        $Iterator_of_save = 0;
         $a = Yii::app()->request->getParam('go');
         $array = array();
         if ($a == 1) {
-
-
             if (!file_exists("out.txt")) {
                 Yii::app()->user->setFlash('error', "No data!");
-                
             }
-
             $i = 0;
-
-            //подготовить модель
-            $postTemp = new PostTemp;
-            if(file_exists('out.txt')){
-            $homepage = file_get_contents('out.txt');
-            $result = unserialize($homepage);}
-            else{
-                  Yii::app()->user->setFlash('error', "No data!");
-                  $this->redirect('index.php?r=post/get');
+            $post = new Post;
+            if (file_exists('out.txt')) {
+                $homepage = file_get_contents('out.txt');
+                $result = unserialize($homepage);
+            } else {
+                Yii::app()->user->setFlash('error', "No data!");
+                $this->redirect('index.php?r=post/get');
             }
-            //VarDumper::dump($result);die;
             foreach ($result as $objectPost) {
                 foreach ($objectPost as $key => $value) {
                     //echo $key.' '. $value;
-                    if($key !='id'){
+                    if ($key != 'id') {
                         //провести проверку по дате создания - уникальность даты
-                        if($key == 'created'){
+                        if ($key == 'created') {
                             $check = $this->check_date_create_for_uniq($value);
-                         
-                        }  
-                        
-                        
-                        
-                    $postTemp->$key = $value;
+                        }
+                        $post->$key = $value;
                     }
                 }
-                  if($check != 'double'){
-                $postTemp->save();
-                  }
-                 $postTemp = new PostTemp;
-            }
+                if ($check != 'double') {
+                    $Iterator_of_save++;
 
-            $this->render('set', array('q' => 'start'));
+                    $post->save();
+                }
+                $post = new Post;
+            }
+            if ($Iterator_of_save != 0) {
+                Yii::app()->user->setFlash('error', "Блог был обновлен на " . $Iterator_of_save . " поста");
+            } else {
+                Yii::app()->user->setFlash('error', "Нет новых постов");
+            }
+            $this->render('set');
         } else {
-            VarDumper::dump('case 2');
-            $this->render('set', array('q' => 'stop'));
+            //VarDumper::dump('case 2');
+            $this->render('set');
         }
     }
-    public function check_date_create_for_uniq($value){
-        $original_date=date("Y-m-d H:i:s",strtotime($value));
-        //VarDumper::dump($original_date);die;
-      
-        $model = PostTemp::model()->find('created=:created', array(':created'=>$original_date));
-        //VarDumper::dump($model);die;
-        if(isset($model->created ) && $model->created == $value )
-        {return 'double';}
-        else{
-            return 'default';} 
-        
-        
+
+    public function check_date_create_for_uniq($value) {
+        $original_date = date("Y-m-d H:i:s", strtotime($value));
+        $model = Post::model()->find('created=:created', array(':created' => $original_date));
+        if (isset($model->created) && $model->created == $value) {
+            return 'double';
+        } else {
+            return 'default';
+        }
     }
 
 }

@@ -16965,3 +16965,19 @@ Stack trace:
 REQUEST_URI=/index.php?r=post/set&go=1
 in C:\server\www\study\protected\controllers\PostController.php (237)
 in C:\server\www\study\index.php (13)
+2014/05/16 12:24:27 [error] [php] Undefined variable: Iterator_of_sav (C:\server\www\study\protected\controllers\PostController.php:230)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): PostController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): PostController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=post/set&go=1
+in C:\server\www\study\protected\controllers\PostController.php (230)
+in C:\server\www\study\index.php (13)

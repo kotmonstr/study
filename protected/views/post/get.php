@@ -1,50 +1,24 @@
 
-<center><h3>Get</h3></center>
-<?php
+<center>
+    <h3>Пополнить записи блога</h3>
+    <?php echo CHtml::button('Пополнить', array('submit' => array('post/get&go=1'))); ?>
+</center>
 
-echo CHtml::button('Получить данные из бд', array('submit' => array('post/get&go=1')));
+<?php if (Yii::app()->user->hasFlash('error')): ?>
+    <div class="info-error">
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+<?php endif; ?>
 
-
-
-if ($q == 'start') {
-
-
-
-
-
-    $allPosts = array();
-
-    $i = 0;
-    $model = new Post;
-    $result = $model::model()->findAll();
-    $quantity = count($result);
-
-    foreach ($result as $objPost) {
-
-
-        $i++;
-        $allPosts[$i]['id'] = $objPost->id;
-        $allPosts[$i]['title'] = $objPost->title;
-        $allPosts[$i]['content'] = $objPost->content;
-        $allPosts[$i]['tags'] = $objPost->tags;
-        $allPosts[$i]['status'] = $objPost->status;
-        $allPosts[$i]['avtor_id'] = $objPost->avtor_id;
-        $allPosts[$i]['created'] = $objPost->created;
-        $allPosts[$i]['update'] = $objPost->update;
-    }
-    //VarDumper::dump($allPosts);
- $All =  serialize($allPosts);
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+            $(".info").fadeOut("slow");
+        }, 3000);
+        setTimeout(function() {
+            $(".info-error").fadeOut("slow");
+        }, 3000);
+    });
 
 
-    $open = fopen("out.txt", "w");
-
-            fwrite($open, $All);
-     
-    
-    fclose($open);
-    //VarDumper::dump($allPosts2);
-}
-if (isset($q) && $q == 'stop') {
-    VarDumper::dump('ничего нет');
-}
-?>
+</script>

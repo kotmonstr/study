@@ -1,14 +1,10 @@
 
-<center><h3>Set</h3></center>
-<?php 
-if($q == 'no'){
-    echo "нет файла";
-}
+<center>
+    <h3>Пополнить записи блога</h3>
+    <?php echo CHtml::button('Пополнить', array('submit' => array('post/set&go=1'))); ?>
+</center>
 
-
- echo CHtml::button('Записать  данные из файла в бд', array('submit' => array('post/set&go=1'))); 
- ?>
- <?php if (Yii::app()->user->hasFlash('error')): ?>
+<?php if (Yii::app()->user->hasFlash('error')): ?>
     <div class="info-error">
         <?php echo Yii::app()->user->getFlash('error'); ?>
     </div>
