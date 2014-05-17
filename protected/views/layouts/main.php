@@ -35,8 +35,9 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+		
+                <div class="header-logo"><b class="str-header">Sila-Ra.orgfree.com</b></div>
+	</div>
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -44,7 +45,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Росссия 24', 'url'=>array('/video/index')),
+				array('label'=>'Россия 24', 'url'=>array('/video/index')),
 				array('label'=>'5 Канал', 'url'=>array('/video/channel5')),
 				array('label'=>'Video from archiv', 'url'=>array('/video/showvideo')),
 				array('label'=>'Upload', 'url'=>array('/upload/index')),
@@ -59,7 +60,8 @@
                                     array('label'=>'RSS', 'url'=>array('/test')),
                                     array('label'=>'RSS-new', 'url'=>array('/test/rss')),
                                     array('label'=>'RSS-new2class', 'url'=>array('/test/rss_test')),
-                                    array('label'=>'Slider', 'url'=>array('/test/slider')))),		
+                                    array('label'=>'Slider', 'url'=>array('/test/slider')))),
+                                array('label'=>'Ajax', 'url'=>array('/ajax/index')),    
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Registration', 'url'=>array('/site/reg'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
