@@ -1,4 +1,669 @@
-a:6:{i:1;a:8:{s:2:"id";s:2:"41";s:5:"title";s:113:"Чистая установка веб-сервера Apache с PHP и базой данных MySQL на Windows";s:7:"content";s:44074:"<p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Сегодня мы вместе с вами шаг за шагом установим на Windows 7 (отличия установки на другие версии тоже обсудим) настоящий веб-сервер Apache.</p>
+a:9:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
+<div class="region region-content" style="color: #3b3b3b; font-family: Arial, sans-serif; font-size: 12px;">
+<div id="node-5" class="node node-articles node-promoted node-full clearfix" style="background-image: none; border: none; padding: 0px; background-position: initial initial; background-repeat: initial initial;">
+<div class="meta submitted" style="font-size: 0.857em; color: #68696b; margin-bottom: -5px;">
+<div class="user-picture"><img style="border: 0px; outline: 0px; margin: 1px 5px 0px 0px; float: left; height: 20px;" title="Аватар пользователя Mike Khasaya" src="http://www.gravatar.com/avatar/42171d196c75bae3609468b6c62e628c.jpg?d=http%3A//www.webdev.ru/sites/all/modules/gravatar/avatar.png&amp;s=80&amp;r=G" alt="Аватар пользователя Mike Khasaya" /></div>
+Опубликовано 10.04.2007 14:32 пользователем&nbsp;<span class="username" xml:lang="">Mike Khasaya</span></div>
+<div class="content clearfix" style="margin-top: 10px; font-size: 14px; line-height: 22px;">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p style="margin: 0px 0px 1.2em;">RSS &mdash; семейство XML-форматов, предназначенных для описания лент новостей, анонсов статей, изменений в блогах и т. п. Информация из различных источников, представленная в формате RSS, может быть собрана, обработана и представлена пользователю в удобном для него виде специальными программами-агрегаторами. Обычно с помощью RSS 2.0 даётся краткое описание новой информации, появившейся на сайте, и ссылка на её полную версию. Интернет-ресурс в формате RSS называется RSS-каналом или RSS-лентой или RSS-фидом. Практически все популярные современные браузеры поддерживают RSS каналы: Safari, Maxthon, Mozilla Firefox, Mozilla Thunderbird, Opera, Microsoft Internet Explorer начиная с 7-й версии. Я не буду останавливаться на истории формата, скажу лишь что существуют версии 0.91, 1.0 и 2.0, причем не совместимые между собой. Крайне не рекомендую вам использовать версию 0.91, потому что умная Netscape 5 января 2006 года удалила с сайта my.netscape.com файл rss-0.91.dtd, ссылки на который были размещены в большом количестве трансляций формата RSS версии 0.91. Это событие привело к сбою некоторых онлайновых и офлайновых агрегаторов, так как потоки, ссылающиеся на этот DTD стали невалидными. Мы же рассмотрим самый последний формат на момент написания этой статьи - RSS 2.0.</p>
+<h2 style="font-weight: inherit; font-size: 1.429em; font-family: Scada, Helvetica, sans-serif; line-height: 1.4; margin: 0px !important 0px !important 2px 0px !important;">Пример формата RSS 2.0 и описание тегов</h2>
+<p style="margin: 0px 0px 1.2em;">По своей сути RSS напоминает обычный XML файл:</p>
+<code class="xml" style="padding: 10px 15px; font-size: 11px; font-family: Menlo, Consolas, 'Andale Mono', 'Lucida Console', 'Nimbus Mono L', 'DejaVu Sans Mono', monospace, 'Courier New'; background-color: #eeeeee; line-height: 16px; display: block; border-left-color: #cc3333; border-left-style: solid; border-left-width: 3px; margin: 10px 0px 10px 15px; white-space: pre-wrap;">&lt;?xml version="1.0"?&gt; &lt;rss version="2.0"&gt; &lt;channel&gt; &lt;title&gt;My News&lt;/title&gt; &lt;link&gt;http://mysite.com/&lt;/link&gt; &lt;description&gt;News from my family.&lt;/description&gt; &lt;language&gt;en-us&lt;/language&gt; &lt;pubDate&gt;Tue, 10 Jun 2006 04:00:00 GMT&lt;/pubDate&gt; &lt;lastBuildDate&gt;Tue, 10 Jun 2006 09:41:01 GMT&lt;/lastBuildDate&gt; &lt;docs&gt;http://blogs.law.harvard.edu/tech/rss&lt;/docs&gt; &lt;generator&gt;Weblog Editor 2.0&lt;/generator&gt; &lt;managingEditor&gt;editor@mysite.com&lt;/managingEditor&gt; &lt;webMaster&gt;webmaster@mysite.com&lt;/webMaster&gt; &lt;item&gt; &lt;title&gt;My Birthday&lt;/title&gt; &lt;link&gt;http://mysite.com/blog/2006/mybirthday.php&lt;/link&gt; &lt;description&gt;I celebrate my birthday today!&lt;/description&gt; &lt;pubDate&gt;Tue, 01 Jun 2006 09:39:21 GMT&lt;/pubDate&gt; &lt;guid&gt;http://mysite.com/blog/2006/06/01.html#item1&lt;/guid&gt; &lt;/item&gt; &lt;item&gt; &lt;title&gt;My new PC&lt;/title&gt; &lt;link&gt;http://mysite.com/blog/2006/mynewpc.php&lt;/link&gt; &lt;description&gt;I want to buy new PC.&lt;/description&gt; &lt;pubDate&gt;Tue, 27 May 2006 08:37:32 GMT&lt;/pubDate&gt; &lt;guid&gt;http://mysite.com/blog/2006/05/27.html#item1&lt;/guid&gt; &lt;/item&gt; &lt;/channel&gt; &lt;/rss&gt;</code>
+<table class="tbl1pxnowrap" style="border-collapse: collapse; border: 0px; border-spacing: 0px; font-size: 0.857em; margin: 10px 0px; width: 684px;" border="0" cellspacing="0" cellpadding="0">
+<tbody style="border-top-width: 1px; border-top-style: solid; border-top-color: #cccccc;">
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;"><th style="border-width: 1px; border-style: solid solid none; border-color: #ffffff; padding: 4px 9px; background-color: rgba(0, 0, 0, 0.509804); color: #ffffff; vertical-align: top;" colspan="2">Обязательные элементы канала</th></tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">title</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Имя RSS канала. Оно например может совпадать с названием сайта.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">description</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Краткое описание RSS канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">link</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Ссылка на сайт, с которым связан канал.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;"><th style="border-width: 1px; border-style: solid solid none; border-color: #ffffff; padding: 4px 9px; background-color: rgba(0, 0, 0, 0.509804); color: #ffffff; vertical-align: top;" colspan="2">Необязательные элементы канала (channel)</th></tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">language</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Язык канала (en-us - Английский; ru - Русский).</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">copyright</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Сведения об авторстве на RSS канал.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">managingEditor</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Email адрес ответственного за контент канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">webMaster</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Email адрес ответственного за техническую часть публикации канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">pubDate</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Дата публикации канала, в соответствии с Date and Time Specification of&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://asg.web.cmu.edu/rfc/rfc822.html" target="_blank" rel="nofollow">RFC 822.</a></td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">lastBuildDate</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Время последней модификации канала в соответствии с Date and Time Specification of&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://asg.web.cmu.edu/rfc/rfc822.html" target="_blank" rel="nofollow">RFC 822.</a></td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">category</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Одна или несколько категорий, к которым принадлежит канал.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">generator</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Название программы, использованной для генерирования RSS канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">docs</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Ссылка на файл документации подвида RSS, который был использован для создания канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">ttl</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Ttl расшифровывается как &lsquo;time to live&rsquo;. Это число минут, в течение которых канал сохраняет свою актуальность.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">image</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Используется для подключения графического файла (GIF, JPEG, или PNG), который будет показан вместе с RSS каналом. Имеет следующие параметры:<br /><em>title</em>&nbsp;- обычно тот же текст, что и в RSS title;<br /><em>description</em>&nbsp;- описание графического файла, которое будет показано, если файл не доступен;<br /><em>link</em>&nbsp;- ссылка на страницу, с которой связан канал;<br /><em>url</em>&nbsp;- URL на файл формата JPEG, GIF или PNG, который связан с RSS каналом;<br /><em>width</em>&nbsp;- ширина рисунка.<br /><em>height</em>&nbsp;- высота рисунка.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">skipHours</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Число часов, в течение которых RSS ридеры могут не проверять канал на обновления.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">skipDays</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Число дней, в течение которых RSS ридеры могут не проверять канал на обновления.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;"><th style="border-width: 1px; border-style: solid solid none; border-color: #ffffff; padding: 4px 9px; background-color: rgba(0, 0, 0, 0.509804); color: #ffffff; vertical-align: top;" colspan="2">Обязательные элементы итема (item)</th></tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">title</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Имя итема (новости, сообщения) RSS канала.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">description</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Краткое описание итема.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">link</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">ссылка на страницу, содержащую полное описание события.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;"><th style="border-width: 1px; border-style: solid solid none; border-color: #ffffff; padding: 4px 9px; background-color: rgba(0, 0, 0, 0.509804); color: #ffffff; vertical-align: top;" colspan="2">Необязательные элементы итема (item)</th></tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">author</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Email адрес автора сообщения.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">category</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Категория итема.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">comments</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Ссылка на страницу с комментариями по итему.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">enclosure</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Описывает медиа-объект, присоединенный к итему. Имеет следующие параметры:<br /><em>url</em>&nbsp;- ссылка на файл объекта;<br /><em>length</em>&nbsp;- размер файла в байтах;<br /><em>type</em>&nbsp;- тип файла, в соответствии со спецификацией MIME.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">guid</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Уникальная строка, используемая для идетификации итема.</td>
+</tr>
+<tr style="background-color: rgba(0, 0, 0, 0.0627451); background-position: initial initial; background-repeat: initial initial;">
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">pubDate</td>
+<td style="padding: 4px 9px; border: 1px solid #ffffff;">Дата публикации итема, в соответствии с Date and Time Specification of&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://cyber.law.harvard.edu/rss/rss.html" target="_blank" rel="nofollow">RFC 822.</a></td>
+</tr>
+</tbody>
+</table>
+<p style="margin: 0px 0px 1.2em;">Конечно же тут приведены не все теги стандарта RSS, но я вас уверяю что этого больше чем достаточно для создания фида, ну а для особо интересующихся дам ссылку на спецификацию&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://blogs.law.harvard.edu/tech/rss" target="_blank" rel="nofollow">RSS 2.0</a>.</p>
+<h2 style="font-weight: inherit; font-size: 1.429em; font-family: Scada, Helvetica, sans-serif; line-height: 1.4; margin: 0px !important 0px !important 2px 0px !important;">Реализация на PHP 5</h2>
+<p style="margin: 0px 0px 1.2em;">Я не стал городить классы и шаблоны, а сделал все достаточно просто:</p>
+<code class="php" style="padding: 10px 15px; font-size: 11px; font-family: Menlo, Consolas, 'Andale Mono', 'Lucida Console', 'Nimbus Mono L', 'DejaVu Sans Mono', monospace, 'Courier New'; background-color: #eeeeee; line-height: 16px; display: block; border-left-color: #cc3333; border-left-style: solid; border-left-width: 3px; margin: 10px 0px 10px 15px; white-space: pre-wrap;">&lt;?php // Задаем формат даты define('DATE_FORMAT_RFC822','r'); // Сообщяем браузеру что передаем XML header("Content-type: text/xml; charset=windows-1251"); // Дата последней сборки фида $lastBuildDate=date(DATE_FORMAT_RFC822); echo &lt;&lt;&lt;END &lt;?xml version="1.0" encoding="windows-1251"?&gt; &lt;rss version="2.0"&gt; &lt;channel&gt; &lt;title&gt;mysite.com RSSFeed&lt;/title&gt; &lt;link&gt;http://mysite.com&lt;/link&gt; &lt;description&gt;Мой супер блог&lt;/description&gt; &lt;pubDate&gt;$lastBuildDate&lt;/pubDate&gt; &lt;lastBuildDate&gt;$lastBuildDate&lt;/lastBuildDate&gt; &lt;docs&gt;http://blogs.law.harvard.edu/tech/rss&lt;/docs&gt; &lt;generator&gt;Weblog Editor 2.0&lt;/generator&gt; &lt;copyright&gt;Copyright 2006 mysite.com&lt;/copyright&gt; &lt;managingEditor&gt;editor@mysite.com&lt;/managingEditor&gt; &lt;webMaster&gt;webmaster@mysite.com&lt;/webMaster&gt; &lt;language&gt;ru&lt;/language&gt; END; // В этом файле надо разместить подключение к базе данных include_once("db.php"); // Модифицируйте запрос под вашу таблицу $query = "SELECT name, anon, url, UNIX_TIMESTAMP(date) as pubdate FROM news WHERE visible=1 ORDER by date desc LIMIT 0,10"; $res = mysql_query($query); while ($row=mysql_fetch_array($res)) { // Убираем из тайтла html теги и лишние пробелы $title = strip_tags(trim($row['name'])); // С аноносом можно не проводить такие // манипуляции, т.к. мы вставим его в блок CDATA $anon = $row['annonce']; $url = $row['uri']; $pubDate = date(DATE_FORMAT_RFC822, $row['pubdate']); echo &lt;&lt;&lt;END &lt;item&gt; &lt;title&gt;$title&lt;/title&gt; &lt;description&gt;&lt;![CDATA[$anon]]&gt;&lt;/description&gt; &lt;link&gt;http://mysite.com/news/$url&lt;/link&gt; &lt;guid isPermaLink="true"&gt;http://mysite.com/news/$url&lt;/guid&gt; &lt;pubDate&gt;$pubDate&lt;/pubDate&gt; &lt;/item&gt; END; } echo &lt;&lt;&lt;END &lt;/channel&gt; &lt;/rss&gt; END; ?&gt;</code>
+<p style="margin: 0px 0px 1.2em;">Как видите все получилось довольно просто. Чтобы увидеть результат можно просто ввести в браузере Opera 9 адрес фида: http://mysite.com/rssfeed.php. Также можно сообщить браузеру о существовании фида, добавив в блок &lt;head&gt; страниц вашего сайта строку:<br />&lt;link rel="alternate" type="application/rss+xml" title="RSS" href="http://mysite.com/rssfeed.php" /&gt;</p>
+</div>
+</div>
+</div>
+<div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix" style="margin: 0px 0px 1.2em; font-size: 12px;">
+<div class="field-label" style="font-weight: bold; float: left; margin: 0px; padding-right: 5px;">Теги:</div>
+<ul class="links inline" style="display: inline; padding: 0px; margin: 0px; color: #68696b; list-style: none;">
+<li class="taxonomy-term-reference-0" style="display: inline; list-style-type: none; padding: 0px 5px 0px 0px; float: left; white-space: nowrap;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/tag/feed">Feed</a></li>
+<li class="taxonomy-term-reference-1" style="display: inline; list-style-type: none; padding: 0px 5px 0px 0px; float: left; white-space: nowrap;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/tag/php5">PHP5</a></li>
+<li class="taxonomy-term-reference-2" style="display: inline; list-style-type: none; padding: 0px 5px 0px 0px; float: left; white-space: nowrap;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/tag/rss">RSS</a></li>
+</ul>
+</div>
+<div id="block-block-2" class="block block-block">
+<div class="content" style="margin-top: 10px;">
+<div class="yashare-title"><strong>Поделись с друзьями:</strong></div>
+<div class="yashare-auto-init b-share_theme_counter" data-yasharel10n="ru" data-yasharequickservices="vkontakte,facebook,twitter,odnoklassniki,moimir,livejournal,gplus,yaru" data-yasharetheme="counter" data-yasharetype="small" data-yasharelink="http://www.webdev.ru/articles/rss-2-0-lenta-na-php-5.html">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="link-wrapper" style="text-align: right;">
+<ul class="links inline" style="display: inline; padding: 0px 0px 0.25em; margin: 1em 0px; color: #68696b; font-size: 0.821em;">
+<li class="comment_forbidden first last" style="display: inline; list-style-type: none; padding: 0px 0.5em;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/login?destination=node/5%23comment-form">Войдите</a>&nbsp;или&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/register?destination=node/5%23comment-form">зарегистрируйтесь</a>, чтобы отправлять комментарии</li>
+</ul>
+</div>
+<div id="comments" class="comment-wrapper" style="margin-top: 15px;">
+<div class="header" style="font-size: 24px; font-family: Scada, Helvetica, sans-serif; margin-bottom: 10px;">Комментарии</div>
+<a id="comment-51" style="color: #0071b3;"></a>
+<div class="comment comment-by-anonymous clearfix" style="margin-bottom: 20px; display: table; vertical-align: top;">
+<div class="attribution" style="display: table-cell; padding: 0px 30px 0px 0px; vertical-align: top; overflow: hidden;">
+<div class="user-picture"><img style="border: 1px solid #d3d7d9; outline: 0px; margin: 0px;" title="Аватар пользователя Вася" src="http://www.gravatar.com/avatar/07f9b1a48d6c0b01ba0bc94a3d16b93d.jpg?d=http%3A//www.webdev.ru/sites/all/modules/gravatar/avatar.png&amp;s=80&amp;r=G" alt="Аватар пользователя Вася" /></div>
+<div class="submitted">
+<p class="commenter-name" style="margin: 4px 0px; font-size: 1.071em; line-height: 1.2;"><span class="username" style="white-space: nowrap;" xml:lang="">Вася</span></p>
+<p class="comment-time" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; color: #68696b;">13.01.2008</p>
+<p class="comment-permalink" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; text-transform: lowercase;"><a class="permalink" style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/comment/51#comment-51" rel="bookmark">постоянная ссылка (permalink)</a></p>
+</div>
+</div>
+<div class="comment-text" style="padding: 10px 15px; border: 1px solid #d3d7d9; display: table-cell; vertical-align: top; position: relative; width: 538.7999877929688px;">
+<div class="comment-arrow" style="position: absolute; border-left-width: 1px; border-left-style: solid; border-color: #ffffff; border-right-width: 1px; border-right-style: solid; height: 20px; margin-left: -27px; margin-top: 10px; width: 10px; background-image: url('http://www.webdev.ru/sites/all/themes/webdev/img/comment-arrow.gif'); background-position: 0px 50%; background-repeat: no-repeat no-repeat;">&nbsp;</div>
+<div class="content" style="margin-top: 0px; font-size: 13px; line-height: 19px;">
+<div class="field field-name-comment-body field-type-text-long field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p style="margin: 0px 0px 1.2em;">Спасибо за статью! Я теперь сделал у себя в блоге RSS ленту, только возник вопрос: как вы сделали отображение количества комментариев в фиде через FeedBurner?</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="links inline" style="display: inline; padding: 0px 0px 0.25em; margin: 1em 0px; color: #68696b; font-size: 0.821em;">
+<li class="comment_forbidden first last" style="display: inline; list-style-type: none; padding: 0px 0.5em 0px 0px;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/login?destination=node/5%23comment-form">Войдите</a>&nbsp;или&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/register?destination=node/5%23comment-form">зарегистрируйтесь</a>, чтобы отправлять комментарии</li>
+</ul>
+</div>
+</div>
+<a id="comment-56" style="color: #0071b3;"></a>
+<div class="comment comment-by-anonymous clearfix" style="margin-bottom: 20px; display: table; vertical-align: top;">
+<div class="attribution" style="display: table-cell; padding: 0px 30px 0px 0px; vertical-align: top; overflow: hidden;">
+<div class="user-picture"><img style="border: 1px solid #d3d7d9; outline: 0px; margin: 0px;" title="Аватар пользователя Денис" src="http://www.gravatar.com/avatar/161817c3d54e4f9f4ba2724f3ce09d9b.jpg?d=http%3A//www.webdev.ru/sites/all/modules/gravatar/avatar.png&amp;s=80&amp;r=G" alt="Аватар пользователя Денис" /></div>
+<div class="submitted">
+<p class="commenter-name" style="margin: 4px 0px; font-size: 1.071em; line-height: 1.2;"><span class="username" style="white-space: nowrap;" xml:lang="">Денис</span></p>
+<p class="comment-time" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; color: #68696b;">30.01.2008</p>
+<p class="comment-permalink" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; text-transform: lowercase;"><a class="permalink" style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/comment/56#comment-56" rel="bookmark">постоянная ссылка (permalink)</a></p>
+</div>
+</div>
+<div class="comment-text" style="padding: 10px 15px; border: 1px solid #d3d7d9; display: table-cell; vertical-align: top; position: relative; width: 538.7999877929688px;">
+<div class="comment-arrow" style="position: absolute; border-left-width: 1px; border-left-style: solid; border-color: #ffffff; border-right-width: 1px; border-right-style: solid; height: 20px; margin-left: -27px; margin-top: 10px; width: 10px; background-image: url('http://www.webdev.ru/sites/all/themes/webdev/img/comment-arrow.gif'); background-position: 0px 50%; background-repeat: no-repeat no-repeat;">&nbsp;</div>
+<div class="content" style="margin-top: 0px; font-size: 13px; line-height: 19px;">
+<div class="field field-name-comment-body field-type-text-long field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p style="margin: 0px 0px 1.2em;">Спасибо за отличную статью. Всегда обращаюсь к ней если забываю те или иные теги RSS-канала.</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="links inline" style="display: inline; padding: 0px 0px 0.25em; margin: 1em 0px; color: #68696b; font-size: 0.821em;">
+<li class="comment_forbidden first last" style="display: inline; list-style-type: none; padding: 0px 0.5em 0px 0px;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/login?destination=node/5%23comment-form">Войдите</a>&nbsp;или&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/register?destination=node/5%23comment-form">зарегистрируйтесь</a>, чтобы отправлять комментарии</li>
+</ul>
+</div>
+</div>
+<a id="comment-162" style="color: #0071b3;"></a>
+<div class="comment comment-by-anonymous clearfix" style="margin-bottom: 20px; display: table; vertical-align: top;">
+<div class="attribution" style="display: table-cell; padding: 0px 30px 0px 0px; vertical-align: top; overflow: hidden;">
+<div class="user-picture"><img style="border: 1px solid #d3d7d9; outline: 0px; margin: 0px;" title="Аватар пользователя Виктор" src="http://www.gravatar.com/avatar/946aa6426cc8ee8bd54b46e9f77ba319.jpg?d=http%3A//www.webdev.ru/sites/all/modules/gravatar/avatar.png&amp;s=80&amp;r=G" alt="Аватар пользователя Виктор" /></div>
+<div class="submitted">
+<p class="commenter-name" style="margin: 4px 0px; font-size: 1.071em; line-height: 1.2;"><span class="username" style="white-space: nowrap;" xml:lang="">Виктор</span></p>
+<p class="comment-time" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; color: #68696b;">06.01.2009</p>
+<p class="comment-permalink" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; text-transform: lowercase;"><a class="permalink" style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/comment/162#comment-162" rel="bookmark">постоянная ссылка (permalink)</a></p>
+</div>
+</div>
+<div class="comment-text" style="padding: 10px 15px; border: 1px solid #d3d7d9; display: table-cell; vertical-align: top; position: relative; width: 538.7999877929688px;">
+<div class="comment-arrow" style="position: absolute; border-left-width: 1px; border-left-style: solid; border-color: #ffffff; border-right-width: 1px; border-right-style: solid; height: 20px; margin-left: -27px; margin-top: 10px; width: 10px; background-image: url('http://www.webdev.ru/sites/all/themes/webdev/img/comment-arrow.gif'); background-position: 0px 50%; background-repeat: no-repeat no-repeat;">&nbsp;</div>
+<div class="content" style="margin-top: 0px; font-size: 13px; line-height: 19px;">
+<div class="field field-name-comment-body field-type-text-long field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p style="margin: 0px 0px 1.2em;">На моём форуме есть закрытые разделы. Делаю RSS постов форума. Как сделать авторизацию по RSS? Чтобы ленту могли смотреть только те, кто имеет доступ в закрытые разделы? В RSS-ридерах есть поля Логин и Пароль, непонятно только, КАК они их передают скрипту.</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="links inline" style="display: inline; padding: 0px 0px 0.25em; margin: 1em 0px; color: #68696b; font-size: 0.821em;">
+<li class="comment_forbidden first last" style="display: inline; list-style-type: none; padding: 0px 0.5em 0px 0px;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/login?destination=node/5%23comment-form">Войдите</a>&nbsp;или&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/register?destination=node/5%23comment-form">зарегистрируйтесь</a>, чтобы отправлять комментарии</li>
+</ul>
+</div>
+</div>
+<a id="comment-244" style="color: #0071b3;"></a>
+<div class="comment comment-by-anonymous clearfix" style="margin-bottom: 20px; display: table; vertical-align: top;">
+<div class="attribution" style="display: table-cell; padding: 0px 30px 0px 0px; vertical-align: top; overflow: hidden;">
+<div class="user-picture"><img style="border: 1px solid #d3d7d9; outline: 0px; margin: 0px;" title="Аватар пользователя Влад" src="http://www.gravatar.com/avatar/459553309c7b0c966a6299b9ca9cf226.jpg?d=http%3A//www.webdev.ru/sites/all/modules/gravatar/avatar.png&amp;s=80&amp;r=G" alt="Аватар пользователя Влад" /></div>
+<div class="submitted">
+<p class="commenter-name" style="margin: 4px 0px; font-size: 1.071em; line-height: 1.2;"><span class="username" style="white-space: nowrap;" xml:lang="">Влад</span></p>
+<p class="comment-time" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; color: #68696b;">18.11.2009</p>
+<p class="comment-permalink" style="margin: 4px 0px; font-size: 0.786em; line-height: 1.2; text-transform: lowercase;"><a class="permalink" style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/comment/244#comment-244" rel="bookmark">постоянная ссылка (permalink)</a></p>
+</div>
+</div>
+<div class="comment-text" style="padding: 10px 15px; border: 1px solid #d3d7d9; display: table-cell; vertical-align: top; position: relative; width: 538.7999877929688px;">
+<div class="comment-arrow" style="position: absolute; border-left-width: 1px; border-left-style: solid; border-color: #ffffff; border-right-width: 1px; border-right-style: solid; height: 20px; margin-left: -27px; margin-top: 10px; width: 10px; background-image: url('http://www.webdev.ru/sites/all/themes/webdev/img/comment-arrow.gif'); background-position: 0px 50%; background-repeat: no-repeat no-repeat;">&nbsp;</div>
+<div class="content" style="margin-top: 0px; font-size: 13px; line-height: 19px;">
+<div class="field field-name-comment-body field-type-text-long field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p style="margin: 0px 0px 1.2em;">Очень помогла статья - у меня была ошибка с выводом даты в Яндекс-Виджете. Спасибо.</p>
+</div>
+</div>
+</div>
+</div>
+<ul class="links inline" style="display: inline; padding: 0px 0px 0.25em; margin: 1em 0px; color: #68696b; font-size: 0.821em;">
+<li class="comment_forbidden first last" style="display: inline; list-style-type: none; padding: 0px 0.5em 0px 0px;"><a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/login?destination=node/5%23comment-form">Войдите</a>&nbsp;или&nbsp;<a style="color: #0071b3; text-decoration: none;" href="http://www.webdev.ru/user/register?destination=node/5%23comment-form">зарегистрируйтесь</a>, чтобы отправлять комментарии</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>";s:4:"tags";s:6:"кыы";s:6:"status";s:1:"1";s:8:"avtor_id";s:3:"kot";s:7:"created";s:19:"2014-05-01 22:57:58";s:6:"update";s:19:"0000-00-00 00:00:00";}i:2;a:8:{s:2:"id";s:1:"5";s:5:"title";s:3:"rss";s:7:"content";s:72830:"<div id="ibm-leadspace-head" style="margin: 0px; padding: 0px; border-width: 0px 0px 1px; border-bottom-style: solid; border-bottom-color: #e5e5e5; outline: 0px; font-size: medium; vertical-align: baseline; font-family: Arial, sans-serif; clear: both; background-image: none; line-height: 19.200000762939453px; background-color: #f9f9f9 !important;">
+<div id="ibm-leadspace-body" style="margin: 0px auto; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; width: 940px; position: relative; min-height: 0px;">
+<h1 style="margin: 0px; border: 0px; outline: 0px; vertical-align: baseline; clear: both; line-height: 1em; text-shadow: #ffffff 0px 1px 0px; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; width: 920px !important; padding: 5px 10px !important 10px !important 0px !important;">Объединение PHP и RSS</h1>
+</div>
+<div id="dw-summary-area" class="dw-summary-columns" style="margin: 0px auto; padding: 0px 0px 20px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: both; width: 940px; overflow: hidden;">
+<div class="ibm-col-6-4" style="margin: 0px 20px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: none; float: left; width: 620px;">
+<p style="margin: 0px; padding: 0px 0px 10px; border: 0px; outline: 0px; font-size: 0.95em; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; width: 620px; line-height: 1.3em; color: #333333;">Использование синдикации RSS стало в наши дни практически повсеместным - это обязывает PHP-разработчиков как минимум понимать то, как RSS работает. В этой статье я расскажу об основах формата RSS, возможностях его использования, создании RSS-ленты из базы данных при помощи PHP, а также о чтении и переводе в HTML RSS-ленты с использованием модуля XML_RSS.</p>
+<p class="ibm-no-print ibm-ind-link" style="margin: 0px; padding: 0px 0px 10px; border: 0px; outline: 0px; font-size: 0.95em; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; width: 620px; line-height: 1.3em; color: #333333;"><span id="nCmts" style="margin: -2px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;"><span style="margin: 0px; padding: 0px 6px; border: 0px; outline: 0px; font-size: 0.8em; vertical-align: top; color: #ffffff; background-color: #287d9f;">0</span><img class="dw-cmts-arrow" style="margin: 0px 0px 1px -1px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: 1px;" src="http://dw1.s81c.com/developerworks/i/v17/dw-cmts-arrow.png" alt="" width="7" height="7" />&nbsp;<a class="dw-cmt-link" style="margin: 15px 0px 0px; padding: 0px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: 1em; vertical-align: baseline; color: #00528d; font-family: Arial, sans-serif; display: inline; text-decoration: none; line-height: 1em; opacity: 0.8;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#icomments">Комментарии:</a></span></p>
+</div>
+<div class="ibm-col-6-2 dw-toc-margin" style="margin: 0px 5px 90px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: none; float: left; width: 290px;">
+<p class="dw-summary-author" style="margin: 0px; padding: 4px 0px 0px; border: 0px; outline: 0px; font-size: 0.8em; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; width: 290px; line-height: 1.2em; color: #333333;"><a class="ibm-popup-link" style="margin: 15px 0px 0px; padding: 0px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: 1em; vertical-align: baseline; color: #745285; font-family: Arial, sans-serif; opacity: 0.8; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_links_blue_ON.png') !important; display: inline; text-decoration: none; background-position: 0px -601px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#authorN1001B">Трэйси Питерсон</a>, писатель, внештатный писатель</p>
+<p class="dw-summary-date" style="margin: 0px; padding: 12px 0px 6px; border: 0px; outline: 0px; font-size: 0.8em; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; width: 290px; line-height: 1.2em; color: #333333;">23.07.2007</p>
+<div id="dw-toc" class="ibm-container" style="margin: 10px 0px 0px; padding: 0px 5px 0px 0px; border: 1px solid #cccccc; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #ffffff; color: #666666; position: absolute; width: 290px; z-index: 900;">
+<div class="ibm-container-body" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: both;">
+<ul class="ibm-twisty" style="border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; padding: 0px; height: 26px; list-style: none; margin: 0px;">
+<li style="margin: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; padding: 5px 4px 5px 3px !important;"><a class="ibm-twisty-trigger ibm-twisty-trigger-closed" style="margin: 0px; padding: 0px 4px 0px 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; display: block; background-image: url('http://www.ibm.com/i/v17/icons/_icons/ibm_icon_blue_minimize.png'); background-attachment: scroll; float: left; height: 16px; overflow: hidden; width: 16px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#toggle"><img style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; height: 16px; width: 16px;" src="http://www.ibm.com/i/c.gif" alt="+" /></a><span class="ibm-twisty-head" style="margin: 0px 0px 0px 16px; padding: 0px; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial; display: block; cursor: pointer; font-weight: bold;">Содержание</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="ibm-pcon" style="margin: 20px auto; padding: 0px 0px 10px; border: 0px; outline: 0px; font-size: medium; vertical-align: baseline; font-family: Arial, sans-serif; width: 980px; line-height: 19.200000762939453px;">
+<div id="ibm-content" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.8em; vertical-align: baseline; float: left; width: 980px; position: inherit;">
+<div id="ibm-content-body" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<div id="ibm-content-main" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: left; float: left; width: 980px;">
+<div class="ibm-columns" style="margin: 0px; padding: 0px 10px 10px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; clear: both; overflow: hidden; width: 960px;">
+<div class="ibm-col-1-1" style="margin: 0px; padding: 0px 10px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; float: none; min-height: 1px; width: 940px; clear: both;">
+<h2 id="N10030" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Что? Вы не слышали о RSS?</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">RSS - одно из наиболее часто встречающихся сокращений. В разных версиях аббревиатура RSS имела разные расшифровки, но сейчас используется расшифровка Really Simple Syndication (по-настоящему простая синдикация) - последняя вариация этого очень удобного и успешного стандарта.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">На заре развития интернета существовало программное обеспечение, называвшееся Pointcast. Оно&nbsp;<em style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">размещало</em>&nbsp;данные на экранной заставке компьютера пользователя, таким образом предоставляя свежие новости всех видов. С течением времени разработчики браузеров Netscape и Microsoft работали над созданием чего-то подобного этому популярному сервису. Компания Netscape предоставила вариант, который, став популярным, в конечном итоге, привёл к появлению RSS.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">RSS распространяет недавно обновленную информацию множеству получателей по принципу широковещательных радиостанций. При достаточной популярности RSS-лента начинает действовать как маяк, возвращающий пользователей. Необычайная эффективность формата увеличила его популярность: RSS стал использоваться поставщиками оперативной информации, так как явился отличным инструментом в деле привлечения внимания общественности.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Если вы видите на сайте иконку, изображенную на рисунке 1, можете быть уверены: этот сайт имеет RSS-ленту. Эта иконка является стандартом де-факто, обозначающим возможность использования RSS для просмотра обновлений на сайте. Дуговые линии означают радиоволны, символ широковещательной природы RSS-ленты.</p>
+<h5 id="fig1" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Рисунок 1. Стандартная иконка RSS</h5>
+<img style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;" src="http://www.ibm.com/developerworks/ru/library/x-phprss/fig01.jpg" alt="Стандартная иконка RSS" width="16" />
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N10049" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Приложения RSS</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Существует множество приложений, большинство которых бесплатны и имеют возможность чтения и агрегирования RSS-лент. Возможность агрегирования позволяет пользователям проводить дальнейшую детализацию получаемых новостей по их количеству и природе. Каждая программа имеет свои возможности выделения нужной информации из множества, получаемой из интернета.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Например, Thunderbird и Firefox от Mozilla, Internet Explorer 7 и вскоре ожидаемые версии Office от Microsoft и др. уже сейчас настолько же близки к вам, как ближайший поисковый сервер. Множество различных способов работы с лентами позволяет выбрать среди них наиболее удобный и подходящий именно вам. Если, конечно, вы не придирчивый программист, желающий написать свою программу для работы с лентами! А именно к этому вопросу скоро перейдет эта статья!</p>
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N10052" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Как я могу использовать RSS?</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Допустим, на вашем сайте есть материалы, которыми вы хотите поделиться с целевой аудиторией. Думаете, существенное число пользователей, узнавшее о вашем сайте и материалах, размещённых на нём, будет возвращаться каждый день, чтобы проверить обновления? Вероятно, нет. Посещаете ли вы для проверки обновлений сайты, наиболее часто используемые вами, каждый день? Опять же, нет. Вот здесь и приходит на помощь RSS.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Для ваших пользователей RSS станет существенной выгодой, особенно если они оценивают мнения или новости, размещенные на вашем сайте. Даже не посещая часто ваш сайт, они всегда будут знать, что вы обновили старые материалы сайта или добавили новые. Это позволит пользователям экономить время и усилия и одновременно не пропустить обновления!</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Создание содержания не проблема, в случае если на вашем сайте вы используете RSS-ленты для обеспечения агрегирования содержания. Путём извлечения данных из ленты можно добиться наполнения сайта большим числом различных материалов быстро.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Лично я предпочитаю собирать материалы отобранных результатов с различных сайтов, таких как Craigslist (<a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285;" href="http://www.craigslist.org/">www.craigslist.org</a>). Небольшая уловка, которую я использую для покупки использованной электронной техники. Вы можете настроить поиск по сайту и в результате получить RSS-страницу. Если вы выбрали поиск материалов о камерах, находящихся в определенном ценовом диапазоне, у вас будет возможность увидеть, кто и когда выставил камеру на продажу на вашей RSS-ленте! Это даёт вам преимущество быть первым претендентом на покупку!</p>
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N10063" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Стандартный формат RSS 2.0</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Стандарт RSS описывает и содержит наполнение лент, которые могут быть созданы из различных источников для определения интернет-документов и создания в очень общем смысле списков ссылок и их описаний.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Взгляните на RSS-формат на листинге 1 - он использует образец документа из ленты NASA "Liftoff News" .</p>
+<h5 id="c1" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Листинг 1. Пример документа формата RSS 2.0</h5>
+<div class="codesection" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<pre class="displaycode" style="margin-top: 0px; border: 1px solid #cccccc; outline: 0px; font-size: 11px; vertical-align: baseline; width: 780px; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; overflow: auto; clear: right; margin-bottom: 6px !important; padding: 5px 10px 5px 3px !important; background-color: #f7f7f7 !important;">&lt;?xml version="1.0"?&gt;
+&lt;rss version="2.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;Liftoff News&lt;/title&gt;
+    &lt;link&gt;http://liftoff.msfc.nasa.gov/&lt;/link&gt;
+    &lt;description&gt;Liftoff to Space Exploration.&lt;/description&gt;
+    &lt;language&gt;en-us&lt;/language&gt;
+    &lt;pubDate&gt;Tue, 10 Jun 2003 04:00:00 GMT&lt;/pubDate&gt;
+    &lt;lastBuildDate&gt;Tue, 10 Jun 2003 09:41:01 GMT&lt;/lastBuildDate&gt;
+    &lt;docs&gt;http://blogs.law.harvard.edu/tech/rss&lt;/docs&gt;
+    &lt;generator&gt;Weblog Editor 2.0&lt;/generator&gt;
+    &lt;managingEditor&gt;editor@example.com&lt;/managingEditor&gt;
+    &lt;webMaster&gt;webmaster@example.com&lt;/webMaster&gt;
+
+    &lt;item&gt;
+      &lt;title&gt;Star City&lt;/title&gt;
+      &lt;link&gt;http://liftoff.msfc.nasa.gov/news/2003/news-starcity.asp&lt;/link&gt;
+      &lt;description&gt;How do Americans get ready to work with Russians aboard the
+        International Space Station? They take a crash course in culture, language
+        and protocol at Russia's Star City.&lt;/description&gt;
+      &lt;pubDate&gt;Tue, 03 Jun 2003 09:39:21 GMT&lt;/pubDate&gt;
+      &lt;guid&gt;http://liftoff.msfc.nasa.gov/2003/06/03.html#item573&lt;/guid&gt;
+    &lt;/item&gt;
+    
+    &lt;item&gt;
+      &lt;title&gt;Space Exploration&lt;/title&gt;
+      &lt;link&gt;http://liftoff.msfc.nasa.gov/&lt;/link&gt;
+      &lt;description&gt;Sky watchers in Europe, Asia, and parts of Alaska and Canada
+        will experience a partial eclipse of the Sun on Saturday, May 31st.&lt;/description&gt;
+      &lt;pubDate&gt;Fri, 30 May 2003 11:06:42 GMT&lt;/pubDate&gt;
+      &lt;guid&gt;http://liftoff.msfc.nasa.gov/2003/05/30.html#item572&lt;/guid&gt;
+    &lt;/item&gt;
+    
+    &lt;item&gt;
+      &lt;title&gt;The Engine That Does More&lt;/title&gt;
+      &lt;link&gt;http://liftoff.msfc.nasa.gov/news/2003/news-VASIMR.asp&lt;/link&gt;
+      &lt;description&gt;Before man travels to Mars, NASA hopes to design new engines
+        that will let us fly through the Solar System more quickly.  The proposed
+        VASIMR engine would do that.&lt;/description&gt;
+      &lt;pubDate&gt;Tue, 27 May 2003 08:37:32 GMT&lt;/pubDate&gt;
+      &lt;guid&gt;http://liftoff.msfc.nasa.gov/2003/05/27.html#item571&lt;/guid&gt;
+    &lt;/item&gt;
+    
+    &lt;item&gt;
+      &lt;title&gt;Astronauts' Dirty Laundry&lt;/title&gt;
+      &lt;link&gt;http://liftoff.msfc.nasa.gov/news/2003/news-laundry.asp&lt;/link&gt;
+      &lt;description&gt;Compared to earlier spacecraft, the International Space
+        Station has many luxuries, but laundry facilities are not one of them.
+        Instead, astronauts have other options.&lt;/description&gt;
+      &lt;pubDate&gt;Tue, 20 May 2003 08:56:02 GMT&lt;/pubDate&gt;
+      &lt;guid&gt;http://liftoff.msfc.nasa.gov/2003/05/20.html#item570&lt;/guid&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;</pre>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Первый порожденный объект XML-форматированного документа - определение&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">&lt;channel&gt;</code>. Канал является простой собственной лентой ассоциированной с ним информации. Множество RSS-лент имеет только один канал, но вы можете использовать несколько, возможно, для этого вам придётся использовать разделительный фильтр. Объекты&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">title</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">link</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">description</code>&nbsp;требуются канальным объектом. Они задают базовые описания ленты. Дополнительные объекты:&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">language</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">copyright</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">managingEditor</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">webMaster</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">pubDate</code>,<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">lastBuildDate</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">category</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">generator</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">docs</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">cloud</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">ttl</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">image</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">rating</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">textInput</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">skipHours</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">skipDays</code>.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Канал может содержать бесконечное количество элементов. Все элементы элемента ITEM необязательны, однако для успешной проверки правильности требуется хотя бы один заголовок или описание. Элементы:&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">title</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">link</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">description</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">author</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">category</code>,<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">comments</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">enclosure</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">guide</code>,&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">pubDate</code>&nbsp;и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">source</code>.</p>
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N100D1" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">В чём будет полезен PHP?</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Эта статья предполагает наличие у вас некоторого опыта использования PHP, в частности, что вы умеете передавать переменную в функцию и выводить из неё результат. В языке PHP существует множество функций, упрощающих работу с XML как внутри, так и снаружи приложений.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Сначала вы хотите получить информацию из локального источника данных, системы управления наполнением сайта, блога или любых других материалов, вписывающихся в формат интернет-документа, а затем вывести её на ленту. Вам понадобится получить эти данные, переформатировать их в RSS-объект и обработать запросы для него.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Узлы вашего сайта требуют дополнительного наполнения и лучшим вариантом станет их наполнение материалами со всего мира - для этого вы можете использовать множество готовых лент. Вы будете использовать&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS</code>&nbsp;для получения и обработки лент для своего сайта.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;"><code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS()</code>&nbsp;- это PEAR-пакет, который упростит решение многих комплексных проблем интерпретации файла XML RSS. PEAR - это бесплатная библиотека функций PHP с открытым кодом. Вы можете уже иметь на вашем компьютере эту библиотеку, если вы производили установку PHP-продуктов. В любом случае, эта статья требует её наличие (см. ссылку в разделе&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#resources">Ресурсы</a>).&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS()</code>&nbsp;- эта простая функция, передающая местонахождение RSS-ленты, загружает XML-ленты в массив, готовый для использования PHP-приложениями. Элементы массива имеют именованные ключи, ассоциированные с элементами и атрибутами файла чтения RSS.</p>
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N100EA" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Вывод данных</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Теперь, когда вы знаете, что такое формат данных RSS, вы можете определиться с данными, которые желаете выводить, и перевести их в этот формат. К счастью, PHP имеет мощные возможности по обработке RSS и XML, которые ускоряют процесс разработки. Как и большинство общих Web-стандартов, PHP имеет ряд готовых функций, готовых к использованию в ваших приложениях.</p>
+<div class="dw-sidebar ibm-inset" style="margin: 10px 0px 10px 15px; padding: 0px 8px 5px; border-width: 1px 0px; border-top-style: solid; border-bottom-style: solid; border-top-color: #aaaaaa; border-bottom-color: #aaaaaa; outline: 0px; vertical-align: baseline; background-color: #f5ede7; float: right; width: 300px; color: #333333; clear: right; font-size: 0.8em !important; line-height: 1.2 !important;">
+<h2 id="auto" style="margin: 5px 0px; padding: 5px 0px 0px; border: 0px; outline: 0px; font-size: 1.4em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial !important; color: #000000;">Вывод слова</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Вы создали ленту, но как дать людям знать о ней? Вы можете сообщить Mozilla Firefox и Microsoft Internet Explorer и другим программам для чтения о вашей ленте добавлением следующего тэга в заголовок вашей домашней страницы:</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;"><code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 11px !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">&lt;link rel="alternate" type="application/rss+xml"&nbsp;<br />href="URL_FOR_YOUR_FEED" title="FEED_TITLE" /&gt;</code></p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Обновите тэг соответственно вашему URL и типу ленты.</p>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">В этой статье описывается вывод данных из базы использованием&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">""</code>&nbsp;и последующий перевод их в формат RSS-ленты. Настройте её на поиск последних добавлений к набору данных при каждом обращении к ней и отсылке свежих сведений запрашивающему.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Лента может создаваться из любых источников данных вашего сайта, но в любом случае итоге вы должны быть уверены в том, что лента содержит достаточно данных, которыми может воспользоваться получатель. Как минимум должны присутствовать URL-адрес и краткое описание, однако в ленту могут быть включены любые данные, опубликованные на вашем сайте.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Вы будете использовать PHP для соединения вашей базы данных Web-приложений, вывода обновленной информации и перевода её в формат XML RSS документа.</p>
+<h3 id="N10108" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.4em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Базовые функции вывода данных</h3>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: -2px !important 0px 0px 0px;">Допустим, вы имеете базу данных вариантов. Вы создадите стандартное подключение и выведете страницу с удобночитаемым XML.</p>
+<h3 id="N1010F" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.4em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Отсылка страницы запрашивающей стороне</h3>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: -2px !important 0px 0px 0px;">Теперь, когда у вас есть данные, представленные в нужном формате в вашем собственном коде, вам необходимо удостовериться в том, что вы выводите данные верно: чтобы какой-либо пользователь, вводящий ваш URL-адрес в свою программу чтения, получал нужную ему XML RSS-ленту (см. листинг 2).</p>
+<h5 id="c2" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Листинг 2. Законченный файл RSS.php</h5>
+<div class="codesection" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<pre class="displaycode" style="margin-top: 0px; border: 1px solid #cccccc; outline: 0px; font-size: 11px; vertical-align: baseline; width: 780px; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; overflow: auto; clear: right; margin-bottom: 6px !important; padding: 5px 10px 5px 3px !important; background-color: #f7f7f7 !important;">&lt;?php
+
+$database =  "nameofthedatabase";
+$dbconnect = mysql_pconnect(localhost, dbuser, dbpassword);
+mysql_select_db($database, $dbconnect);
+$query = "select link, headline, description from `headlines` limit 15";
+$result = mysql_query($query, $dbconnect);
+
+while ($line = mysql_fetch_assoc($result))
+        {
+            $return[] = $line;
+        }
+
+$now = date("D, d M Y H:i:s T");
+
+$output = "&lt;?xml version=\"1.0\"?&gt;
+            &lt;rss version=\"2.0\"&gt;
+                &lt;channel&gt;
+                    &lt;title&gt;Our Demo RSS&lt;/title&gt;
+                    &lt;link&gt;http://www.tracypeterson.com/RSS/RSS.php&lt;/link&gt;
+                    &lt;description&gt;A Test RSS&lt;/description&gt;
+                    &lt;language&gt;en-us&lt;/language&gt;
+                    &lt;pubDate&gt;$now&lt;/pubDate&gt;
+                    &lt;lastBuildDate&gt;$now&lt;/lastBuildDate&gt;
+                    &lt;docs&gt;http://someurl.com&lt;/docs&gt;
+                    &lt;managingEditor&gt;you@youremail.com&lt;/managingEditor&gt;
+                    &lt;webMaster&gt;you@youremail.com&lt;/webMaster&gt;
+            ";
+            
+foreach ($return as $line)
+{
+    $output .= "&lt;item&gt;&lt;title&gt;".htmlentities($line['headline'])."&lt;/title&gt;
+                    &lt;link&gt;".htmlentities($line['link'])."&lt;/link&gt;
+                    
+&lt;description&gt;".htmlentities(strip_tags($line['description']))."&lt;/description&gt;
+                &lt;/item&gt;";
+}
+$output .= "&lt;/channel&gt;&lt;/rss&gt;";
+echo $output;
+?&gt;</pre>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Давайте пройдём по листингу шаг за шагом. Сначала вы устанавливаете объект подключения базы данных для локальной базы данных. Она имеет записи с полями, содержащими заголовок, ссылку и описание - их вы будете выводить в ваш XML-ответ. Выполните SQL-запрос для таблицы вызовом функции&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">MYSQL_QUERY()</code>, а полученный результат используйте совместно с&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">WHILE</code>&nbsp;для перевода формата данных в новый простой массив конечного объекта.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Используйте новый готовый массив для создания XML-файла в переменной&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">$output</code>&nbsp;добавлением новых элементов при проходе через массив&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">$line</code>&nbsp;единожды для каждого возвращаемого ответа. Это не займёт много времени, поскольку ранее в SQL-сообщении вы ограничили количество ответов до 15. Чтобы использовать этот фрагмент кода в качестве стандартного блока стартера, вам необходимо убрать фиктивные ссылки, имя базы данных и информацию о входе в систему для отображения вашей собственной среды.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">После выполнения скрипта вы получите хороший чистый RSS файл вывода, подобный тому, что вы видите в листинге 3.</p>
+<h5 id="c3" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Листинг 3. Файл вывода RSS.php</h5>
+<div class="codesection" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<pre class="displaycode" style="margin-top: 0px; border: 1px solid #cccccc; outline: 0px; font-size: 11px; vertical-align: baseline; width: 780px; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; overflow: auto; clear: right; margin-bottom: 6px !important; padding: 5px 10px 5px 3px !important; background-color: #f7f7f7 !important;">&lt;?xml version="1.0"?&gt;
+    &lt;rss version="0.97"&gt;
+        &lt;channel&gt;
+            &lt;title&gt;Our Demo RSS&lt;/title&gt;
+            &lt;link&gt;http://www.tracypeterson.com/RSS/RSS.php&lt;/link&gt;
+            &lt;description&gt;A Test RSS&lt;/description&gt;
+            &lt;language&gt;en-us&lt;/language&gt;
+            &lt;pubDate&gt;Mon, 13 Nov 2006 22:46:06 PST&lt;/pubDate&gt;
+            &lt;lastBuildDate&gt;Mon, 13 Nov 2006 22:46:06 PST&lt;/lastBuildDate&gt;
+            &lt;docs&gt;http://someurl.com&lt;/docs&gt;
+            &lt;managingEditor&gt;you@youremail.com&lt;/managingEditor&gt;
+            &lt;webMaster&gt;you@youremail.com&lt;/webMaster&gt;
+    &lt;item rdf:about="http://www.tracypeterson.com/"&gt;
+            &lt;title&gt;This is Tracy's Web Page!&lt;/title&gt;
+            &lt;link&gt;http://www.tracypeterson.com/&lt;/link&gt;
+            &lt;description&gt;This is a demonstration of how to get PHP to work for 
+your RSS feed.&lt;/description&gt;
+        &lt;/item&gt;&lt;item rdf:about="http://www.tracypeterson.com"&gt;
+            &lt;title&gt;This is Tracy's site again!&lt;/title&gt;
+            &lt;link&gt;http://www.tracypeterson.com&lt;/link&gt;
+            &lt;description&gt;Again, this is a demonstration of the power of PHP 
+coupled with RSS.&lt;/description&gt;
+        &lt;/item&gt;&lt;/channel&gt;&lt;/rss&gt;</pre>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Теперь любой может ввести URL-адрес в RSS.php и подгрузить свежий RSS-файл, содержащий новые материалы!</p>
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N10138" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">Ввод данных</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Вы будете использовать функции&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS()</code>&nbsp;для ввода RSS-ленты в PHP-скрипты, готовые для использования, как любой другой массив. Подобно запросу для базы данных, вы будете иметь массив, которые вы сможете использовать по своему усмотрению.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">В этом случае требуется вам необходимо подсоединить RSS.php и загрузить копию, отображающую его в неупорядоченном списке (см листинг 4).</p>
+<h5 id="c4" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Листинг 4. showfeed.php</h5>
+<div class="codesection" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<pre class="displaycode" style="margin-top: 0px; border: 1px solid #cccccc; outline: 0px; font-size: 11px; vertical-align: baseline; width: 780px; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; overflow: auto; clear: right; margin-bottom: 6px !important; padding: 5px 10px 5px 3px !important; background-color: #f7f7f7 !important;">&lt;?php
+require_once "XML/RSS.php";
+
+$rss =&amp; new XML_RSS("http://www.tracypeterson.com/RSS/RSS.php");
+$rss-&gt;parse();
+
+echo "&lt;h1&gt;Headlines from &lt;a
+href=\"http://www.tracypeterson.com/RSS/RSS.php\"&gt;Tracy 
+        Peterson's Site&lt;/a&gt;&lt;/h1&gt;\n"; echo "&lt;ul&gt;\n";
+
+foreach ($rss-&gt;getItems() as $item) {
+  echo "&lt;li&gt;&lt;a href=\"" . $item['link'] . "\"&gt;" . $item['title'] . 
+"&lt;/a&gt;&lt;/li&gt;\n";
+}
+echo "&lt;/ul&gt;\n";
+?&gt;</pre>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Этот краткий пример, показанный на&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#c4">листинге 4</a>, приведён в инструкции к PEAR. Давайте исследуем его строчка за строчкой и убедимся в том, что он в действительности использует исключительно спаренные методы, доступные в классе&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS()</code>, конструкторе и&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">parse()</code>. Последний производит вывод отображения в качестве массива, который я упоминал ранее.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Сначала используйте функцию&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">require_once()</code>&nbsp;для загрузки файла RSS.php из вашей инсталляции PEAR. Если PEAR настроена верно и установлен&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS</code>, его расположение будет корректно; объект&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS</code>&nbsp;готов к использованию. Затем создайте новый объект с именем&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">$rss</code>, который будет являться результатом передачи URL-адреса в конструктор&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">XML_RSS</code>.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Для возврата значений в RSS-ленту используйте метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">parse()</code>. Первая echo-строка запускает установку базового HTML, используемого вами для отображения RSS-ленты пользователю. В этом случае вы объявляете, что неупорядоченный список - список заголовков от моего сайта!</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Выражение&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">foreach()</code>&nbsp;передаёт каждый элемент из обработанной ленты, используя метод&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">getItems()</code>, в новый массив&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">$items</code>. Каждый из элементов массива именуется после абсолютного XML-тэга, в котором он содержится. В этом случае вы используете только ссылку и заголовок; через мгновение вы добавите описание, чтобы исследовать этот пункт. Каждый раз, когда выражение&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">foreach</code>завершает обработку, оно перемещается на следующий элемент. Это происходит до тех пор, пока не будет обработана вся RSS-лента.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Теперь добавьте описания к каждому из отображенных результатов.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Внутри цикла&nbsp;<code style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 0.95em !important; vertical-align: baseline; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; line-height: 1.5em; color: #000000 !important;">foreach()</code>&nbsp;добавьте линию, выделенную в листинге 5.</p>
+<h5 id="c5" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Листинг 5. Добавление описания</h5>
+<div class="codesection" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;">
+<pre class="displaycode" style="margin-top: 0px; border: 1px solid #cccccc; outline: 0px; font-size: 11px; vertical-align: baseline; width: 780px; font-family: 'Andale Mono', 'Lucida Console', Monaco, Liberation, fixed, monospace; overflow: auto; clear: right; margin-bottom: 6px !important; padding: 5px 10px 5px 3px !important; background-color: #f7f7f7 !important;">foreach ($rss-&gt;getItems() as $item) {
+  echo "&lt;li&gt;&lt;a href=\"" . $item['link'] . "\"&gt;" . $item['title'] . 
+"&lt;/a&gt;&lt;/li&gt;&lt;br&gt;";
+  <strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; font-family: Arial, sans-serif;">echo $item['description'] . "&lt;br&gt;&lt;br&gt;\n";</strong> }</pre>
+</div>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">Вы просто добавляете в неорганизованный список строку прерывания и строку описания. Ниже вы увидите пример вывода showfeed.php.</p>
+<h5 id="fig2" style="margin: 5px 0px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.166em !important; vertical-align: baseline;">Рисунок 2. Вывод showfeed.php</h5>
+<img style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline;" src="http://www.ibm.com/developerworks/ru/library/x-phprss/fig02.jpg" alt="showfeed.php output" width="400" />
+<div class="ibm-alternate-rule" style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: inherit; vertical-align: baseline; background-color: #cccccc; height: 1px; clear: both;">&nbsp;</div>
+<p class="ibm-ind-link ibm-back-to-top" style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; clear: both; text-align: right; height: 22px; line-height: 1.5em; font-size: 1.166em !important;"><a class="ibm-anchor-up-link" style="margin: 0px; padding: 0px 0px 0px 16px; border-width: 0px; border-bottom-style: none; outline: 0px; font-size: inherit; vertical-align: baseline; color: #745285; opacity: 0.8; display: inline; text-decoration: none; line-height: 1.065em; font-weight: bold; background-image: url('http://1.www.s81c.com/i/v17/icons/ibm_sprite_arrow_blue_ON.png') !important; background-position: 0px -401px; background-repeat: no-repeat no-repeat;" href="http://www.ibm.com/developerworks/ru/library/x-phprss/#ibm-pcon">В начало</a></p>
+<h2 id="N10197" style="margin: 5px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 1.6em !important; vertical-align: baseline; font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial;">В заключение</h2>
+<p style="padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important; margin: 5px !important 0px 0px 0px;">Интернет - это система, которая только начинает развиваться и содержит в себе огромный потенциал. Увеличение доступности, обеспечиваемое RSS, упрощает уведомление пользователей об обновлениях - им попросту не нужно тратить время на самостоятельную проверку.</p>
+<p style="margin: 0px; padding: 6px 0px; border: 0px; outline: 0px; vertical-align: baseline; color: #222222; line-height: 1.5em; font-size: 1.166em !important;">В этой статье мы исследовали стандарт формата RSS, создание лент, перевод их в удобную для просмотра форму HTML. Вы можете использовать полученные знания при разработке более крупных приложений.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>";s:4:"tags";s:3:"rss";s:6:"status";s:1:"1";s:8:"avtor_id";s:3:"kot";s:7:"created";s:19:"2014-05-02 02:04:12";s:6:"update";s:19:"0000-00-00 00:00:00";}i:3;a:8:{s:2:"id";s:1:"6";s:5:"title";s:7:"hosting";s:7:"content";s:17829:"<table style="font-family: 'Times New Roman';" border="0" width="811">
+<tbody>
+<tr>
+<td colspan="2" bgcolor="#93BEE2" width="805" height="16">
+<p style="margin-top: 3px; margin-bottom: 3px;"><span style="font-family: Verdana; font-size: small;"><strong>Welcome to FreeWebHostingArea.com!</strong></span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="805" height="58">
+<p style="margin-top: 5px; margin-bottom: 0px; margin-left: 5px;"><span style="font-size: 12px; font-family: Verdana;">Dear user, your account&nbsp;<strong>sila-ra.orgfree.com</strong>&nbsp;was successfully activated on&nbsp;<strong>orgfree.com server</strong>.</span></p>
+<p style="margin-top: 0px; margin-bottom: 0px; margin-left: 5px;"><span style="font-size: 12px; font-family: Verdana;">Your address is&nbsp;<strong><a href="http://sila-ra.orgfree.com/" target="_blank">http://sila-ra.orgfree.com</a></strong>&nbsp;and you can visit/update your site right now.</span></p>
+<p style="margin-top: 5px; margin-bottom: 0px; margin-left: 5px;"><span style="font-size: 12px; font-family: Verdana;">Add an index page (examples: index.html or index.php) and put your files directly on root. No public_html folder required.</span></p>
+<p style="margin-top: 10px; margin-bottom: 10px; margin-left: 5px;"><strong><span style="font-size: 8pt; color: #0000cc; font-family: Verdana;">Be sure that your account has minimum 1hit per month. Inactive accounts are deleted at the end of month.</span></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#DBEAF5" width="805" height="16">
+<p style="margin-left: 5px; margin-top: 1px; margin-bottom: 1px;"><strong><span style="font-family: Verdana; font-size: small;">Account Manager:</span></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" nowrap="nowrap" width="801" height="16">
+<p style="margin: 7px 2px 0px 10px;"><span style="font-size: 12px; font-family: Tahoma;">You're hosted on orgfree.com server. Account Manager&nbsp;</span><span style="font-size: 12px; font-family: Tahoma;">is located at&nbsp;<a href="http://orgfree.freewebhostingarea.com/" target="_blank">http://orgfree.freewebhostingarea.com/</a>.</span></p>
+<p style="margin: 7px 2px 0px 10px;"><strong><span style="font-size: 12px; font-family: Tahoma;">Username:&nbsp;</span></strong><span style="font-size: 12px; font-family: Tahoma;">sila-ra.orgfree.com</span></p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: Tahoma; font-size: small;">Password:&nbsp;</span></strong><span style="font-family: Verdana; font-size: small;">jokers12</span></p>
+<p style="margin: 7px 2px 0px 10px;"><span style="font-family: Tahoma; font-size: small;">If you have accounts created on more than one server, see&nbsp;<a href="http://www.freewebhostingarea.com/members/" target="_blank">http://www.freewebhostingarea.com/members/</a>.</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-size: 11pt;">&nbsp;</span></p>
+<p style="margin: 0px 2px 7px 10px;"><span style="font-size: small;"><span style="font-family: Verdana;">Some scripts require&nbsp;<strong>server path</strong>. Yours is&nbsp;</span><span style="font-family: Verdana; font-size: small;"><strong>/home/vhosts/sila-ra.orgfree.com</strong>.</span></span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#DBEAF5" width="805" height="16">
+<p style="margin-left: 5px; margin-top: 1px; margin-bottom: 1px;"><strong><span style="font-family: Verdana; font-size: small;">Your Personal FTP Information:</span></strong></p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="391" height="16">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">FTP Server/Host:</span></p>
+</td>
+<td nowrap="nowrap" width="410" height="16">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">orgfree.com</span></p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="391" height="19">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">FTP Login/Username:</span></p>
+</td>
+<td nowrap="nowrap" width="410" height="19">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">sila-ra.orgfree.com</span></p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="391" height="19">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">FTP PassWord:</span></p>
+</td>
+<td nowrap="nowrap" width="410" height="19">
+<p style="margin-left: 10px; margin-right: 2px;"><span style="font-family: Verdana; font-size: small;">jokers12</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" nowrap="nowrap" width="805">
+<p style="margin: 7px 2px 10px 10px;"><span style="font-family: Verdana; font-size: small;">To upload your files go to our&nbsp;<strong>Web based FTP client</strong>&nbsp;(recommended), located at<a href="http://orgfree.freewebhostingarea.com/ftp/" target="_blank">http://orgfree.freewebhostingarea.com/ftp/</a>.</span></p>
+<p style="margin: 3px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;">Once logged in, you will be able to create a&nbsp;<strong>new dir</strong>,&nbsp;<strong>new file</strong>, to&nbsp;<strong>upload a zip archive</strong>&nbsp;and have it&nbsp;<strong>unzipped</strong>automatically, to&nbsp;<strong>edit</strong>&nbsp;your files, to select files and download them as .zip, to&nbsp;<strong>copy</strong>,&nbsp;<strong>move</strong>,&nbsp;<strong>delete</strong>,&nbsp;<strong>rename</strong>,&nbsp;<strong>chmod</strong>(change permissions),&nbsp;<strong>search</strong>&nbsp;anything under your account, ability to see and edit dot files like&nbsp;<strong>.htaccess</strong>. With a normal ftp program you will not be able to do this.</span></p>
+<p style="margin: 0px 2px 7px 10px;"><span style="font-family: Verdana; font-size: small;">For a complete list of features see&nbsp;<a href="http://orgfree.freewebhostingarea.com/ftp/help.html" target="_blank">http://orgfree.freewebhostingarea.com/ftp/help.html</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#DBEAF5" width="805" height="16">
+<p style="margin-left: 5px; margin-top: 1px; margin-bottom: 1px;"><strong><span style="font-family: Verdana; font-size: small;">MySQL database Information:</span></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" nowrap="nowrap" width="801" height="19">
+<p style="margin: 10px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;">You will get a limited number of free databases per account. But you can create other accounts and get as many free databases as you want.</span></p>
+<p style="margin: 10px 2px 0px 10px;"><span style="font-size: 11pt; font-family: Verdana;"><strong><span style="font-size: small;">ATTENTION!!!&nbsp;</span></strong><span style="color: #ff0000; font-size: small;">MySQL databases must be activated @&nbsp;<strong>Account Manager</strong>&nbsp;</span><span style="color: #0000ff; font-size: small;">&gt;&gt;</span><span style="color: #ff0000; font-size: small;">&nbsp;Hit&nbsp;</span><strong><span style="font-size: small;">Create DB</span><span style="color: #ff0000; font-size: small;">&nbsp;</span></strong><span style="color: #ff0000; font-size: small;">button.</span></span></p>
+<p style="margin: 5px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;">MySQL HostName is&nbsp;<strong>localhost</strong>&nbsp;only. We don't allow external connections.</span></p>
+<p style="margin: 10px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;"><strong>phpMyAdmin</strong>&nbsp;is located at&nbsp;<a href="http://orgfree.freewebhostingarea.com/pma/">http://orgfree.freewebhostingarea.com/pma/</a>. Log in using&nbsp;<strong>MySQL username</strong>.</span></p>
+<p style="margin: 7px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;"><strong>PhpMyAdmin (PMA)</strong>&nbsp;is a tool that will help you to administer your database. You don't have privileges to create a database with PMA because, as said before, databases must be created&nbsp;</span><span style="font-size: 11pt; font-family: Verdana;"><span style="color: #ff0000; font-size: small;">@&nbsp;<strong>Account Manager</strong></span><span style="font-size: small;">&nbsp;using&nbsp;<strong><span style="color: #ff0000;">Create DB</span></strong></span><span style="font-size: small;">button.</span></span></p>
+<p style="margin: 2px 2px 12px 10px;"><span style="text-decoration: underline;">Database details</span>&nbsp;(db name, username)&nbsp;<span style="text-decoration: underline;">will be provided</span>&nbsp;at&nbsp;<span style="color: #ff0000; font-size: small;"><strong>Account Manager</strong></span>&nbsp;<span style="text-decoration: underline;">once you create the database.</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#DBEAF5" width="805" height="16">
+<p style="margin-left: 5px; margin-top: 1px; margin-bottom: 1px;"><strong><span style="font-family: Verdana; font-size: small;">Other features at Account Manager</span></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="805" height="38">
+<p style="margin: 7px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;"><strong>One click Autoinstaller&nbsp;</strong>for&nbsp;<strong>PhpBB3</strong>,<strong>&nbsp;SMF</strong>,<strong>&nbsp;WordPress</strong>,<strong>&nbsp;Joomla</strong>,<strong>&nbsp;Drupal&nbsp;</strong>(with Clean URLs preenabled),&nbsp;<strong>Moodle</strong>.</span></p>
+<p style="margin: 7px 2px 0px 10px;"><span style="font-weight: bold; font-family: Verdana; font-size: small;">One click database backup&nbsp;</span><span style="font-family: Verdana; font-size: small;">&amp;</span><span style="font-weight: bold; font-family: Verdana; font-size: small;">&nbsp;One click database import</span></p>
+<p style="margin: 2px 2px 0px 10px;"><span style="font-size: 8pt; font-weight: bold; font-family: Verdana;">Manage DB&nbsp;</span><span style="font-size: 8pt; font-family: Verdana;">button (available after you create a database) &gt;&gt; then choose&nbsp;<strong>Backup DB</strong>&nbsp;or<strong>&nbsp;Import DB</strong>&nbsp;buttons</span></p>
+<p style="margin: 7px 2px 0px 10px;"><strong><span style="font-family: Verdana; font-size: small;">Configure PHP</span></strong></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-size: 8pt; font-family: Verdana;">you can turn on/off&nbsp;<strong>Register Globals</strong>,&nbsp;<strong>Magic Quotes gpc</strong>,&nbsp;<strong>Allow_url_include</strong>&nbsp;variables.</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-size: 8pt; font-family: Verdana;"><strong>safe_mode</strong>&nbsp;is automatically turned&nbsp;<strong>off&nbsp;</strong>few hours after account creation.</span></p>
+<p style="margin: 7px 2px 0px 10px;"><span style="font-weight: bold; font-family: Verdana; font-size: small;">Reset Account</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-size: 8pt; font-family: Verdana;">useful if you want to delete all files/databases under your account.</span></p>
+<p style="margin: 7px 2px 0px 10px;"><span style="font-weight: bold; font-family: Verdana; font-size: small;">Fix Ownership</span></p>
+<p style="margin: 0px 2px 10px 10px;"><span style="font-size: 8pt; font-family: Verdana;">some files are created with apache permissions (e.g. unpack an archive, php scripts) and you're not able to edit/delete them. This feature will fix permissions and you will be able to manipulate all files under your account.</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#DBEAF5" width="805" height="16">
+<p style="margin-left: 5px; margin-top: 1px; margin-bottom: 1px;"><strong><span style="font-family: Verdana; font-size: small;">Free hit tracker (web counter)</span></strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="805" height="38">
+<p style="margin: 0px 2px 0px 10px;"><span style="font-family: Verdana; font-size: small;">Sign up @&nbsp;<strong><a href="http://www.1freecounter.com/" target="_blank"><span style="color: #000000;">http://www.1FreeCounter.com</span></a>&nbsp;</strong>then just insert the code into your pages.</span></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="805" height="38"><hr size="1" />
+<p style="margin: 0px 2px 0px 10px;"><span style="font-size: 11pt; font-family: 'Courier New';">We have full support for mod_rewrite or dot files (.htaccess, .htpasswd).</span></p>
+<p style="margin: 3px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;"><strong>Attention!!&nbsp;</strong>A wrong&nbsp;<strong>.htaccess</strong>&nbsp;file can block your site and instead you will see a</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">500 internal server error.</span></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">With .htaccess you're able to set custom error pages.</span></strong></p>
+<p style="margin: 3px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">ErrorDocument 404 /404.html<br />ErrorDocument 403 /403.html</span></em></p>
+<p style="margin: 5px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">404.html - not found errors</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">403.html - forbidden errors</span></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">enable indexes using:</span></strong></p>
+<p style="margin: 0px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">Options +Indexes<br />IndexOptions FancyIndexing</span></em></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">turn on/off php variables:</span></strong></p>
+<p style="margin: 0px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">php_flag display_errors On</span></em></p>
+<p style="margin: 0px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">php_flag register_globals On</span></em></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">block sites using:</span></strong></p>
+<p style="margin: 3px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">RewriteEngine on<br />RewriteCond %{HTTP_REFERER} ^http://.*badsite\.com [NC,OR]<br />RewriteCond %{HTTP_REFERER} ^http://.*otherbadsite\.com [NC]<br />RewriteRule .* - [F]</span></em></p>
+<p style="margin: 3px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">note the&nbsp;<em>OR</em>&nbsp;if you want to add block more than one domain.</span></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">block IPs using:</span></strong></p>
+<p style="margin: 3px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">order allow,deny<br />deny from 192.168.0.101<br />deny from 10.0.0.<br />allow from all</span></em></p>
+<p style="margin: 3px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">first example 192.168.0.101, you block that particular ip</span></p>
+<p style="margin: 0px 2px 0px 10px;"><span style="font-family: 'Courier New'; font-size: small;">second example 10.0.0., you block all ips starting with 10.0.0.</span></p>
+<p style="margin: 0px 2px 0px 10px;">&nbsp;</p>
+<p style="margin: 0px 2px 0px 10px;"><strong><span style="font-family: 'Courier New'; font-size: small;">block an ISP or a particular user coming from an ISP:</span></strong></p>
+<p style="margin: 0px 2px 0px 10px;"><em><span style="font-family: 'Courier New'; font-size: small;">order allow,deny<br />deny from bad-isp.com<br />deny from user.other-bad-isp.com<br />allow from all</span></em></p>
+<hr align="left" size="1" width="75%" />
+<p style="margin: 5px 2px 10px 10px;" align="left"><span style="font-family: 'Courier New'; font-size: small;"><strong>Attention!!&nbsp;</strong>Use a very hard to guess password to prevent your account being hacked. Also, install only new and optimized scripts. Take care with full permissions 777!!! For security reasons, set permissions for script configuration file to 644.</span></p>
+<p style="margin: 5px 2px 10px 10px;" align="left"><span style="font-family: 'Courier New'; font-size: small;">You will find a lot of useful information if you check our&nbsp;<strong><a href="http://www.freewebhostingarea.com/faq.html">FAQ Section</a></strong>.</span></p>
+<p style="margin: 5px 2px 10px 10px;" align="left"><span style="font-family: 'Courier New'; font-size: small;">For latest news follow us at&nbsp;<strong><a href="http://twitter.com/freewha">TWITTER</a></strong>.</span></p>
+<p style="margin: 5px 2px 0px 10px;" align="left"><span style="font-family: 'Courier New'; font-size: small;">Our service is ad free for small sites. To support us so we can offer a quality service, upgrade your account at&nbsp;<a href="http://www.freewebhostingarea.com/removeads.html" target="_blank"><span style="color: #000000;">http://www.freewebhostingarea.com/removeads.html</span></a>.</span></p>
+<p style="margin-top: 0px; margin-bottom: 4px;" align="left">&nbsp;</p>
+<p style="margin-top: 0px; margin-bottom: 0px;" align="center"><span style="font-family: 'Courier New';">Thank you for using our services,</span></p>
+</td>
+</tr>
+</tbody>
+</table>";s:4:"tags";s:7:"hosting";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-13 19:53:38";s:6:"update";s:19:"0000-00-00 00:00:00";}i:4;a:8:{s:2:"id";s:1:"7";s:5:"title";s:113:"Чистая установка веб-сервера Apache с PHP и базой данных MySQL на Windows";s:7:"content";s:44074:"<p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Сегодня мы вместе с вами шаг за шагом установим на Windows 7 (отличия установки на другие версии тоже обсудим) настоящий веб-сервер Apache.</p>
 <p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Под словом &laquo;настоящий&raquo; я подразумеваю отсутствие в использовании готовых дистрибутивов типа Денвера. Сегодня мы с чистого листа установим веб-сервер на Виндовс так, как он был бы установлен на настоящем хостинге.</p>
 <h2 style="margin: 40px 0px 0px; padding: 0px; text-align: center; text-shadow: #bbbbbb 2px 2px 1px; font-size: 1.6666em; line-height: 32px; font-family: 'Times New Roman';">Часть 1. Скачать и установить Apache</h2>
 <h4 style="margin: 40px 0px 0px; padding: 0px; text-shadow: none; font-size: 1.1111em; font-family: 'Times New Roman';">1.1 Скачиваем установочный пакет</h4>
@@ -146,7 +811,7 @@ mysql_connect();
 <h4 style="margin: 40px 0px 0px; padding: 0px; text-shadow: none; font-size: 1.1111em; font-family: 'Times New Roman';">1.2 Настройки и основные моменты работы с MySQL</h4>
 <p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Если вам понадобится изменить какие-либо настройки MySQL, в том числе те, которые вы выбирали при установке, то можете это сделать в файле my.ini в папке с MySQL.</p>
 <p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Физически, все ваши базы данных будут храниться в папке под названием data.</p>
-<p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Поздравляю вас с самостоятельной установкой связки: Apache + PHP + MySQL и прощаюсь до новой статьи, удачи!</p>";s:4:"tags";s:6:"apache";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:54:43";s:6:"update";s:19:"0000-00-00 00:00:00";}i:2;a:8:{s:2:"id";s:2:"42";s:5:"title";s:46:"Работа с базой данных в Yii";s:7:"content";s:81554:"<div class="row" style="margin-left: -20px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+<p style="margin: 15px 0px; padding: 0px; text-indent: 8px; font-family: 'Times New Roman'; font-size: 18px;">Поздравляю вас с самостоятельной установкой связки: Apache + PHP + MySQL и прощаюсь до новой статьи, удачи!</p>";s:4:"tags";s:6:"apache";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:54:43";s:6:"update";s:19:"0000-00-00 00:00:00";}i:5;a:8:{s:2:"id";s:1:"8";s:5:"title";s:46:"Работа с базой данных в Yii";s:7:"content";s:81554:"<div class="row" style="margin-left: -20px; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px;">
 <div class="span10" style="float: left; min-height: 1px; margin-left: 20px; width: 780px;">
 <p style="margin: 0px 0px 10px;">Данная статься рассказывает о работа с базой данных в Yii через&nbsp;Active Record. Писал я ее скорее для себя, для того, чтобы систематизировать материал из мануала, где-то упросить, где-то дополнить, так, чтобы этим было удобно для меня пользоваться как шпаргалкой. Надеюсь сей труд будет полезен кому-то еще.</p>
 </div>
@@ -426,7 +1091,7 @@ mysql_connect();
 <li class="L0" style="padding-left: 12px; color: #bebec5; text-shadow: #ffffff 0px 1px 0px;"><span class="pln" style="color: #48484c;">$posts</span><span class="pun" style="color: #93a1a1;">=</span><span class="typ" style="color: teal;">Post</span><span class="pun" style="color: #93a1a1;">::</span><span class="pln" style="color: #48484c;">model</span><span class="pun" style="color: #93a1a1;">()-&gt;</span><span class="kwd" style="color: #1e347b;">with</span><span class="pun" style="color: #93a1a1;">(</span><span class="str" style="color: #dd1144;">'comments'</span><span class="pun" style="color: #93a1a1;">)-&gt;</span><span class="pln" style="color: #48484c;">findAll</span><span class="pun" style="color: #93a1a1;">(</span><span class="pln" style="color: #48484c;">array</span><span class="pun" style="color: #93a1a1;">(</span></li>
 <li class="L1" style="padding-left: 12px; color: #bebec5; text-shadow: #ffffff 0px 1px 0px;"><span class="str" style="color: #dd1144;">'order'</span><span class="pun" style="color: #93a1a1;">=&gt;</span><span class="str" style="color: #dd1144;">'t.create_time, comments.create_time'</span></li>
 <li class="L2" style="padding-left: 12px; color: #bebec5; text-shadow: #ffffff 0px 1px 0px;"><span class="pun" style="color: #93a1a1;">));</span></li>
-</ol>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:55:57";s:6:"update";s:19:"0000-00-00 00:00:00";}i:3;a:8:{s:2:"id";s:2:"43";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:187146:"<div class="news-title content-header" style="vertical-align: top; border-bottom-width: 2px; border-bottom-style: solid; border-color: #d6d6d6; padding: 8px; color: #333333; font-size: 17px; margin: -12px -12px 8px; background-color: #f0f0f0; font-family: Verdana, Arial;">
+</ol>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:55:57";s:6:"update";s:19:"0000-00-00 00:00:00";}i:6;a:8:{s:2:"id";s:1:"9";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:187146:"<div class="news-title content-header" style="vertical-align: top; border-bottom-width: 2px; border-bottom-style: solid; border-color: #d6d6d6; padding: 8px; color: #333333; font-size: 17px; margin: -12px -12px 8px; background-color: #f0f0f0; font-family: Verdana, Arial;">
 <h1 style="padding: 0px; margin: 0px; font-size: 20px; color: #658dd4; text-shadow: rgba(0, 0, 0, 0.2) 1px -1px 2px; display: inline-block;">Методы моделей для поиска данных find в Yii</h1>
 <div class="title-date" style="vertical-align: top; display: inline-block; float: right; color: #969696; font-size: 14px; margin-top: 5px;">30.08.2013</div>
 </div>
@@ -666,38 +1331,38 @@ mysql_connect();
 </div>
 </div>
 <p style="color: #333333; font-family: Verdana, Arial; font-size: 14px;">&nbsp;</p>
-<p style="color: #333333; font-family: Verdana, Arial; font-size: 14px;">Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:57:22";s:6:"update";s:19:"0000-00-00 00:00:00";}i:4;a:8:{s:2:"id";s:2:"44";s:5:"title";s:21:"Мысли вслух";s:7:"content";s:8563:"<table style="font-family: arial; background-color: #14285f;" border="0" width="590" cellspacing="0" cellpadding="2">
+<p style="color: #333333; font-family: Verdana, Arial; font-size: 14px;">Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 12:57:22";s:6:"update";s:19:"0000-00-00 00:00:00";}i:7;a:8:{s:2:"id";s:2:"10";s:5:"title";s:21:"Мысли вслух";s:7:"content";s:9308:"<table style="font-family: arial; width: 961px;" border="0" width="961" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
-<td class="subHeader" style="font-weight: bold; font-size: 16px; line-height: 16px; font-family: georgia; color: #cc3300; letter-spacing: 0.1em;" width="586">Мысли вслух</td>
+<td class="subHeader" style="font-weight: bold; font-size: 18px; font-family: georgia; color: #cc3300; letter-spacing: 0.1em;" width="586"><span style="color: #000000;">Мысли вслух</span></td>
 </tr>
 <tr>
-<td class="bodyText style2" style="font-size: 14px; line-height: 20px; font-family: arial; color: #99ccff; letter-spacing: 0.1em; margin-top: 0px;">
+<td class="bodyText style2" style="font-size: 16px; line-height: 20px; font-family: arial; color: #99ccff; letter-spacing: 0.1em; margin-top: 0px;">
 <blockquote>
-<p align="justify">&nbsp;</p>
-<p align="justify">У женщин когда то, да как и у мужчин было сильнейшее классовое расслоение, можно было разделить всех женщин на 3 класса.</p>
-<p align="justify">Первый самый многочисленный это крестьянки. И им и правда не позавидуешь. Работать начинали с самого детства, то на покосе, то со скотиной, то с молотилкой, это полдня раком стоять, не дай бог каждому. А тут еще и парню понравится надо и родители лишний рот гонят. а потом еще детей этак 8-10 нарожать, все равно половину помрут, а как рожать не может, так внуки пойдут и работа с утра до вечера. И ничто не могло ее жизнь измень к лучшему, ну разве что парень попадется умный и пойдет искать в город счастья, да там и сгинуть легко.</p>
-<p align="justify">Следующий клас от мастеровых до купцов. Тут уже раздолье подольше, однако и тут жизнь не всегда сладка. Тут и детей все равно много и работать по дому приходится, однако есть все же шанс на миллион, что появится Дартаньян на белом коне и увезет в сказку. Такие обычно заканчивали жизнь старухами процентницами и ждали своего топора.</p>
-<p align="justify">И наконец самый малочисленный класс, это графини, княгине, генеральские дочки и иже с ними. О да, эти могли и капризничать и из женихов повыбирать и ничего не делать, акромя детей родить, все равно служанки и прочие кормилицы есть. И развиваться всю жизнь, духовно совершенствоваться, покупая наряды ценой в несколько деревень с крепостными и ничего по жизни не делать. Знакомо правда.</p>
-<p align="justify">Так вот, после всех пертрубаций прошлого века женщины вышли с устойчивым мнением, что все они графини, княгини и герцогини. А мужики как были крепостными, так и остались. Но даже у герцогинь, да графинь давали значительное приданное, а сейчас и этого нет. Но вынь да полож ей сытую жизнь, а не можешь, значит ты "не мужык", хотя имеется как раз наоборот, ты как раз и мужик и есть, грязный да оборванный, а не принц. И если раньше все же смотрели не только на состояние, а еще и на душу человека, то теперь похоже душа совсем не в цене у нынешних принцесс, а только деньги.</p>
-<p align="center">***</p>
-<p align="justify">Наблюдая за дамами и их поведением, я все больше убеждаюсь в ДЕСТРУКТИВНО-ОРИЕНТИРОВАННОЙ психологической сущности женщин. Казалось бы, парадокс - женщина, самой Природой созданная для продолжения рода человеческого, находится, тем не менее, в глубоком противоречии сама с собой, со своими желаниями и здравым смыслом.</p>
-<p align="justify">.........деструкция в виде бессознательного принижения своего мужчины среди подруг - лишь вершина айсберга. "Средняя" его часть - многочисленные истории, когда дамы методично "давили" своих мужей, а раздавив, сами становились глубоко несчастными с этими тряпкам. А чего стоят неразрешимые с точки зрения противоречия быть "независимой" &ndash; но, в то же время, "опереться на крепкое мужское плечо", "жить, как за каменной стеной". Желание иметь семью, а заимев - тут же начать методическую работу по ее "подтачиванию".</p>
-<p align="justify">Да что там - даже в классической литературе описывается женская деструкция. Почитайте Толстого, Куприна, Горького; у Льва Николаевича есть прямое указание - "глухая вражда в семье, как обычно, началась с баб..."</p>
-<p align="center">***</p>
-<p align="justify">Стремление к богатству и потреблению в основном идет из-за женщин. Если бы не женщины - потребление было бы в разы меньше.</p>
-<p align="justify">Но вопрос то в том, что мужчина тут попадает в вилку.</p>
-<p align="justify">- Если он богат - женщина изменит ему, бросит его, забрав у него деньги, при этом ему скажет, что ты мол полный урод и кроме денег у тебя ничего нет.&nbsp;<br />- если беден - его обвинят в том, что он неудачник.</p>
-<p align="justify">Женщина просто ни за что не желает отвечать. Она во всем руководствуется хотелкой. "чего хочет женщина, того хочет Бог".</p>
-<p align="justify">Так стоит ли удивляться, что мужчины к женщинам стали относиться потребительски?</p>
-<p align="center">***</p>
-<p align="justify">Наступили, нахамили в метро, наорал шеф, послал нах любовник, не подмигнул коллега, Дуська купила лексус, а её Ванька брабус, порвалась колготка, поломался ноготь, прищемила палец, наступили на ногу, сдох любимый попугайчег, Обаму выбрали в президенты - что будет ?! Муж заныкал калым, ей кажетя что она - толстеет, пытается не жрать постоянно голодная и злющая, не хочет смотреть биатлон, не хочет видеть меня с бутылкой пива, хочет собаку, а я нет, просто плохое настроение....не успела купить понравившуюся тряпку....я могу написать ещё миллион причин, почему у бабы может пропасть настроение!</p>
-<p align="justify">И мужчина тут НЕ ПРИЧЕМ!!</p>
+<p align="justify"><span style="color: #000000;">&nbsp;</span></p>
+<p align="justify"><span style="color: #000000;">У женщин когда то, да как и у мужчин было сильнейшее классовое расслоение, можно было разделить всех женщин на 3 класса.</span></p>
+<p align="justify"><span style="color: #000000;">Первый самый многочисленный это крестьянки. И им и правда не позавидуешь. Работать начинали с самого детства, то на покосе, то со скотиной, то с молотилкой, это полдня раком стоять, не дай бог каждому. А тут еще и парню понравится надо и родители лишний рот гонят. а потом еще детей этак 8-10 нарожать, все равно половину помрут, а как рожать не может, так внуки пойдут и работа с утра до вечера. И ничто не могло ее жизнь измень к лучшему, ну разве что парень попадется умный и пойдет искать в город счастья, да там и сгинуть легко.</span></p>
+<p align="justify"><span style="color: #000000;">Следующий клас от мастеровых до купцов. Тут уже раздолье подольше, однако и тут жизнь не всегда сладка. Тут и детей все равно много и работать по дому приходится, однако есть все же шанс на миллион, что появится Дартаньян на белом коне и увезет в сказку. Такие обычно заканчивали жизнь старухами процентницами и ждали своего топора.</span></p>
+<p align="justify"><span style="color: #000000;">И наконец самый малочисленный класс, это графини, княгине, генеральские дочки и иже с ними. О да, эти могли и капризничать и из женихов повыбирать и ничего не делать, акромя детей родить, все равно служанки и прочие кормилицы есть. И развиваться всю жизнь, духовно совершенствоваться, покупая наряды ценой в несколько деревень с крепостными и ничего по жизни не делать. Знакомо правда.</span></p>
+<p align="justify"><span style="color: #000000;">Так вот, после всех пертрубаций прошлого века женщины вышли с устойчивым мнением, что все они графини, княгини и герцогини. А мужики как были крепостными, так и остались. Но даже у герцогинь, да графинь давали значительное приданное, а сейчас и этого нет. Но вынь да полож ей сытую жизнь, а не можешь, значит ты "не мужык", хотя имеется как раз наоборот, ты как раз и мужик и есть, грязный да оборванный, а не принц. И если раньше все же смотрели не только на состояние, а еще и на душу человека, то теперь похоже душа совсем не в цене у нынешних принцесс, а только деньги.</span></p>
+<p align="center"><span style="color: #000000;">***</span></p>
+<p align="justify"><span style="color: #000000;">Наблюдая за дамами и их поведением, я все больше убеждаюсь в ДЕСТРУКТИВНО-ОРИЕНТИРОВАННОЙ психологической сущности женщин. Казалось бы, парадокс - женщина, самой Природой созданная для продолжения рода человеческого, находится, тем не менее, в глубоком противоречии сама с собой, со своими желаниями и здравым смыслом.</span></p>
+<p align="justify"><span style="color: #000000;">.........деструкция в виде бессознательного принижения своего мужчины среди подруг - лишь вершина айсберга. "Средняя" его часть - многочисленные истории, когда дамы методично "давили" своих мужей, а раздавив, сами становились глубоко несчастными с этими тряпкам. А чего стоят неразрешимые с точки зрения противоречия быть "независимой" &ndash; но, в то же время, "опереться на крепкое мужское плечо", "жить, как за каменной стеной". Желание иметь семью, а заимев - тут же начать методическую работу по ее "подтачиванию".</span></p>
+<p align="justify"><span style="color: #000000;">Да что там - даже в классической литературе описывается женская деструкция. Почитайте Толстого, Куприна, Горького; у Льва Николаевича есть прямое указание - "глухая вражда в семье, как обычно, началась с баб..."</span></p>
+<p align="center"><span style="color: #000000;">***</span></p>
+<p align="justify"><span style="color: #000000;">Стремление к богатству и потреблению в основном идет из-за женщин. Если бы не женщины - потребление было бы в разы меньше.</span></p>
+<p align="justify"><span style="color: #000000;">Но вопрос то в том, что мужчина тут попадает в вилку.</span></p>
+<p align="justify"><span style="color: #000000;">- Если он богат - женщина изменит ему, бросит его, забрав у него деньги, при этом ему скажет, что ты мол полный урод и кроме денег у тебя ничего нет.&nbsp;</span><br /><span style="color: #000000;">- если беден - его обвинят в том, что он неудачник.</span></p>
+<p align="justify"><span style="color: #000000;">Женщина просто ни за что не желает отвечать. Она во всем руководствуется хотелкой. "чего хочет женщина, того хочет Бог".</span></p>
+<p align="justify"><span style="color: #000000;">Так стоит ли удивляться, что мужчины к женщинам стали относиться потребительски?</span></p>
+<p align="center"><span style="color: #000000;">***</span></p>
+<p align="justify"><span style="color: #000000;">Наступили, нахамили в метро, наорал шеф, послал нах любовник, не подмигнул коллега, Дуська купила лексус, а её Ванька брабус, порвалась колготка, поломался ноготь, прищемила палец, наступили на ногу, сдох любимый попугайчег, Обаму выбрали в президенты - что будет ?! Муж заныкал калым, ей кажетя что она - толстеет, пытается не жрать постоянно голодная и злющая, не хочет смотреть биатлон, не хочет видеть меня с бутылкой пива, хочет собаку, а я нет, просто плохое настроение....не успела купить понравившуюся тряпку....я могу написать ещё миллион причин, почему у бабы может пропасть настроение!</span></p>
+<p align="justify"><span style="color: #000000;">И мужчина тут НЕ ПРИЧЕМ!!</span></p>
 </blockquote>
 </td>
 </tr>
 </tbody>
-</table>";s:4:"tags";s:21:"Мысли вслух";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 16:14:22";s:6:"update";s:19:"0000-00-00 00:00:00";}i:5;a:8:{s:2:"id";s:2:"45";s:5:"title";s:31:"Мужчина - Терпила";s:7:"content";s:14277:"<table style="font-family: arial; background-color: #14285f;" border="0" width="590" cellspacing="0" cellpadding="2">
+</table>";s:4:"tags";s:21:"Мысли вслух";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 16:14:22";s:6:"update";s:19:"2014-05-17 15:21:17";}i:8;a:8:{s:2:"id";s:2:"11";s:5:"title";s:31:"Мужчина - Терпила";s:7:"content";s:14277:"<table style="font-family: arial; background-color: #14285f;" border="0" width="590" cellspacing="0" cellpadding="2">
 <tbody>
 <tr>
 <td class="subHeader" style="font-weight: bold; font-size: 16px; line-height: 16px; font-family: georgia; color: #cc3300; letter-spacing: 0.1em;" width="586">Мужчина - Терпила</td>
@@ -738,7 +1403,7 @@ mysql_connect();
 </td>
 </tr>
 </tbody>
-</table>";s:4:"tags";s:31:"Мужчина - Терпила";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 16:24:14";s:6:"update";s:19:"0000-00-00 00:00:00";}i:6;a:8:{s:2:"id";s:2:"46";s:5:"title";s:61:"Как сделать дамп базы данных на php";s:7:"content";s:495049:"<div class="itemHeader" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+</table>";s:4:"tags";s:31:"Мужчина - Терпила";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 16:24:14";s:6:"update";s:19:"0000-00-00 00:00:00";}i:9;a:8:{s:2:"id";s:2:"12";s:5:"title";s:61:"Как сделать дамп базы данных на php";s:7:"content";s:495049:"<div class="itemHeader" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 12px; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
 <h1 class="itemTitle" style="margin: 15px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 30px; background-color: transparent; line-height: 1.1em; color: inherit; visibility: visible; background-position: initial initial; background-repeat: initial initial;"><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; background-color: transparent;">Как</span>&nbsp;сделать дамп базы данных на php</h1>
 <span class="itemAuthor" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; background-color: transparent; display: block;">Написал&nbsp;&nbsp;<a style="margin: 0px; padding: 0px; border: 0px; outline: none; background-color: transparent; text-decoration: none; color: #7b3b3b;" href="http://webinby.ru/blog/vitaut-h.html">Vitaut H</a></span></div>
 <div class="itemRatingBlock" style="margin: 0px; padding: 8px 0px; border: 0px; outline: 0px; font-size: 12px; background-color: transparent; background-position: initial initial; background-repeat: initial initial;"><span style="margin: 0px; padding: 0px 4px 0px 0px; border: 0px; outline: 0px; background-color: transparent; display: block; float: left; color: #999999;">Оценить</span>
