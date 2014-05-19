@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Blog</h1>
+<h1>Статьи</h1>
 
 <?php if(!empty($_GET['tag'])): ?>
 <h1>Записи с тегом <i><?php echo CHtml::encode($_GET['tag']); ?></i></h1>
@@ -22,4 +22,5 @@ $this->menu=array(
     'dataProvider'=>$dataProvider,
     'itemView'=>'_view',
     'template'=>"{items}\n{pager}",
+     'enablePagination'=>true,
 )); ?>

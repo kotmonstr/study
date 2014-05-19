@@ -281,4 +281,7 @@ width: 51px!important;
     text-shadow: 6px 4px 7px black;
     color:white;
 }
+.list-view .pager {
 
+text-align: center!important;
+}

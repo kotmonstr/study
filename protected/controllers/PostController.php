@@ -117,11 +117,16 @@ class PostController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Post');
+        $dataProvider = new CActiveDataProvider('Post',array('pagination'=>array('pageSize'=>6)));
         if (Yii::app()->user->name && Yii::app()->user->name != 'Guest') {
             $this->render('index', array(
                 'dataProvider' => $dataProvider,
+               
             ));
+            
+            
+            
+            
         } else {
             Yii::app()->user->setFlash('error', "Not logined yet!");
             $this->redirect('index.php?r=site/login');

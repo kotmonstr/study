@@ -56,10 +56,7 @@ return array(
 			),
 		),
 		*/
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
-		// uncomment the following to use a MySQL database
+		
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
@@ -94,6 +91,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'kotmonstr@ukr.net',
 	),
 );
