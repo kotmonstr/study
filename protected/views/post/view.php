@@ -22,15 +22,26 @@ $this->menu = array(
 $this->widget('zii.widgets.CDetailView', array(
     'data' => $model,
     'attributes' => array(
-        'title',
-        'content:html',
-        'tags',
-        'status',
-        'avtor_id',
-        'created',
-        'update',
+           array(
+            'label'=>'',
+            'type'=>'raw',
+            'value'=>$model->title,
+        ),
+          array(
+            'label'=>'',
+            'type'=>'html',
+            'value'=>$model->content,
+        ),
+       
+      
+          array(
+            'label'=>'',
+            'type'=>'raw',
+            'value'=>$model->avtor_id,
+        ),
+     
     ),
-    'htmlOptions' => array('style' => '{background-color:#FFFFCC;}'),
+    'htmlOptions' => array('class'=>'dis'),
 ));
 ?>
 <div style="width:100%">
