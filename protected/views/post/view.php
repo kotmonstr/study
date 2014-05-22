@@ -41,7 +41,7 @@ $this->widget('zii.widgets.CDetailView', array(
         ),
      
     ),
-    'htmlOptions' => array('class'=>'dis'),
+    'htmlOptions' => array('style' => '{background-color:#FFFFCC;}'),
 ));
 ?>
 <div style="width:100%">

@@ -97,6 +97,10 @@ class SiteController extends Controller {
     }
 
     public function actionReg() {
+         if(isset($_GET['l_name'])){
+             $name=$_GET['l_name'];
+                     VarDumper::dump($name);die;
+         }
        if(isset($_POST['User'])) {
             $model = new User;
             $model->attributes = $_POST['User'];

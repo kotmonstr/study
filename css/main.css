@@ -254,6 +254,15 @@ width: 51px!important;
     text-shadow: 6px 4px 7px black;
     color:white;
 }
+.text-user{
+    float: right;
+    margin-right: 10px;
+    font-family: 'Kaushan Script', 'cursive';
+    font-size: 16px;
+    text-shadow: 6px 4px 7px black;
+    color:white;
+    
+}
 .header-logo{
     width:450px;
     height:40px;
@@ -284,4 +293,15 @@ width: 51px!important;
 .list-view .pager {
 
 text-align: center!important;
+}
+.small-textfield{
+    width:150px;
+     background:transparent;
+}
+.small-button{
+    width: 90px!important;
+    margin-top: -10px!important;
+}
+.light{
+    color:#FBC2C4;
 }
