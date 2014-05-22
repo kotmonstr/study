@@ -12,6 +12,10 @@ class VideoController extends Controller {
 
         $this->render('index');
     }
+    public function actionSlider() {
+     $this->layout='application.views.layouts.slider';
+        $this->render('slider');
+    }
     public function actionChannel5() {
 
         $this->render('channel5');

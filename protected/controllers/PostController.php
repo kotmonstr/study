@@ -154,14 +154,7 @@ class PostController extends Controller {
         }
     }
 
-    public function actionFormset() {
-        echo"form set";
-        die;
-        $id = Yii::app()->request->getParam('id');
-        $content = $_POST['Comment_content'];
-        VarDumper::dump($id);
-        VarDumper::dump($content);
-    }
+
 
     public function showallcomments($post_id) {
         $criteria = new CDbCriteria();

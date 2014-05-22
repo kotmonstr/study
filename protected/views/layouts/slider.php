@@ -14,6 +14,25 @@
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
                 <![endif]-->
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+                
+                <link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />
+               
+                <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+             
+                <script type="text/javascript" src="js/jquery.skitter.min.js"></script>
+
+<script type="text/javascript" language="javascript">
+	$(document).ready(function() {
+		
+                $('.box_skitter_large').skitter({ width_label: '600px',
+                                               
+                                                });
+             });
+              
+	
+</script>
+                
+                
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/js/bootstrap.js"></script>
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/up.js"></script>
 
@@ -24,9 +43,7 @@
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/up.css" />
                 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
                 <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-                    <link rel="alternate" type="application/rss+xml" title="RSS" href="www.sila-ra.com/rss.php" />
-                    <link rel="alternate" type="application/rss+xml" title="RSS" href="www.sila-ra.com/rss-new.php" />
-
+             
 
                     </head>
 
@@ -68,7 +85,7 @@
                                        <?php echo CHtml::endForm(); ?>
                                 </div>
 <?php }else{
-    echo '  <div style="width:410px;position:absolute;right:5px;top:10px"><b class="text-user">Вы вошли как <span class="light">'.'&nbsp;'.strtoupper(Yii::app()->user->name).'</span></b></div>';
+    echo '<div style="width:410px;position:absolute;right:5px;top:10px"><b class="text-user">Вы вошли как <span class="light">'.'&nbsp;'.strtoupper(Yii::app()->user->name).'</span></b></div>';
 } ?>
                                 <div id="mainmenu" style="margin-top:80px">
                                     <?php
