@@ -18041,3 +18041,200 @@ in C:\server\www\study\index.php (13)
 2014/05/23 01:49:13 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
 in C:\server\www\study\protected\controllers\UploadController.php (12)
 in C:\server\www\study\index.php (13)
+2014/05/23 08:53:54 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 08:55:08 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 08:57:31 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 08:58:23 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:00:13 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:00:13 [error] [php] imagecreatefromjpeg(1) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (9)
+in C:\server\www\study\protected\controllers\UploadController.php (32)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:00:26 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:00:26 [error] [php] imagecreatefromjpeg(1) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (9)
+in C:\server\www\study\protected\controllers\UploadController.php (32)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:01:27 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:01:27 [error] [php] imagecreatefromjpeg(andr foto 005.JPG) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (9)
+in C:\server\www\study\protected\controllers\UploadController.php (32)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:01:41 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:01:41 [error] [php] imagecreatefromjpeg(andr foto 008.JPG) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (9)
+in C:\server\www\study\protected\controllers\UploadController.php (32)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:09:39 [error] [php] strtolower() expects parameter 1 to be string, array given (C:\server\www\study\protected\controllers\UploadController.php:25)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:14:46 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:17:10 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:19:01 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:20:51 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:22:28 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (25)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:22:28 [error] [php] imagecreatefromjpeg(C:\server\www\study\protected\uploads/andr foto 015.jpg) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (9)
+in C:\server\www\study\protected\controllers\UploadController.php (32)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:27:00 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:29:43 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:35:29 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:43:49 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:43:49 [error] [php] imagejpeg() [<a href='function.imagejpeg'>function.imagejpeg</a>]: Unable to open 'C:\server\www\study\protected\uploads_thumb/andr foto 002.JPG' for writing: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:13)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (13)
+in C:\server\www\study\protected\controllers\UploadController.php (33)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:47:49 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:50:29 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 09:57:03 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:02:18 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:03:54 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:04:35 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:07:24 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:17:48 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:17:49 [error] [php] imagejpeg() [<a href='function.imagejpeg'>function.imagejpeg</a>]: Unable to open 'C:\server\www\study\protected\thumb/andr foto 002.jpg' for writing: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:13)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (13)
+in C:\server\www\study\protected\controllers\UploadController.php (33)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:18:54 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:19:09 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:21:04 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (27)
+in C:\server\www\study\index.php (13)
+2014/05/23 10:25:11 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (27)
+in C:\server\www\study\index.php (13)

@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <?php if (Yii::app()->user->hasFlash('success')): ?>
     <div class="info">
         <?php echo Yii::app()->user->getFlash('success'); ?>
@@ -30,7 +38,7 @@ foreach ($entries as $entry) {
 //VarDumper::dump($filelist);
 foreach ($filelist as $file) {
     $myfile = Yii::app()->file->set('protected/uploads/' . $file, true);
-    if ($myfile->extension == 'jpg') {
+    if ($myfile->extension == 'jpg' || $myfile->extension == 'JPG' || $myfile->extension == 'png') {
         echo '<a href="index.php?r=upload/delete&id='.$file.'">'.CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/' . $myfile->basename, 'img', array('width'=>'300')).'</a>';
         //echo $myfile->basename;
         

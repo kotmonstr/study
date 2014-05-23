@@ -1,12 +1,12 @@
 <?php
-echo "slider";
 
 
-$dir = Yii::getPathOfAlias('application.uploads');
+
+$dir = Yii::getPathOfAlias('application.uploads.thumb-slider');
 $files = scandir($dir);
 $arrFiles = array();
 foreach ($files as $file) {
-    if (pathinfo($file, PATHINFO_EXTENSION) == 'jpg' || pathinfo($file, PATHINFO_EXTENSION) == 'png') {
+    if (pathinfo($file, PATHINFO_EXTENSION) == 'jpg' || pathinfo($file, PATHINFO_EXTENSION) == 'JPG') {
         $arrFiles[] = $file;
     }
 }
@@ -18,8 +18,8 @@ foreach ($files as $file) {
         <?php
         foreach ($arrFiles as $file) {
             ?>    <li>
-                <a href="#cut"><img src="<?php echo '/protected/uploads/'. $file ?>" class="cut" /></a>
-                <div class="label_text"><p>cut</p></div>
+                <a href="#cut"><img src="<?php echo '/protected/uploads/thumb-slider/'. $file ?>" class="cut" /></a>
+                <div class="label_text"><p><?php echo $file ?></p></div>
             </li>
 
     <?php
