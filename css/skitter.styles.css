@@ -3,7 +3,7 @@
 .box_skitter {
 	position: relative;
 	width: 1200px;
-	height: 500px;
+	height: 700px;
 	background: #000;
 }
 
@@ -385,7 +385,7 @@
 -------------------------------------------------------------- */
 .box_skitter_large {
 	width: 1200px;
-	height: 500px;
+	height: 700px;
 }
 
 .box_skitter_small {

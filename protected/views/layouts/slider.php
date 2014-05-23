@@ -13,48 +13,40 @@
                 <!--[if lt IE 8]>
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
                 <![endif]-->
-                <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
-                
-                <link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />
-               
-                <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-             
+                <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>             
+                <link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />            
+                <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>           
                 <script type="text/javascript" src="js/jquery.skitter.min.js"></script>
 
 <script type="text/javascript" language="javascript">
-	$(document).ready(function() {
-		
-                $('.box_skitter_large').skitter({ width_label: '600px',
-                                               
+	$(document).ready(function() {		
+                $('.box_skitter_large').skitter({                                         
+                                                 dots: true, 
+                                                 preview: true,
+                                                 numbers_align: 'right',                                           
+                                                 velocity: 0.8,
+                                                 with_animations: ['cubeSizehorizontal','cubeHide','cubeStop','block','cubeRandom','cube','paralell', 'glassCube', 'swapBars'] 
                                                 });
              });
-              
-	
+ // cubecubeRandomblockcubeStopcubeHidecubeSizehorizontalshowBarsshowBarsRandomtubefadefadeFourparalellblindblindHeightblindWidthdirectionTopdirectionBottomdirectionRightdirectionLeftcubeStopRandomcubeSpreadcubeJellyglassCubeglassBlockcirclescirclesInsidecirclesRotatecubeShowupBarsdownBarshideBarsswapBarsswapBarsBackswapBlockscutrandomrandomSmart	
 </script>
                 
                 
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/js/bootstrap.js"></script>
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/up.js"></script>
-
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/frontend.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/up.css" />
                 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-                <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-             
-
+                <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>            
                     </head>
-
                     <body>
                         <?php Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap'); ?>
                         <div class="container" id="page">
-
                             <div id="header" style="position:relative">
-
                                 <div class="header-logo" onclick="window.location.href='/index.php?r=site/index'"><b class="str-header">Sila-Ra.orgfree.com</b></div>
-
 <?php if(Yii::app()->user->isGuest){
     $model= new LoginForm;;
     ?>

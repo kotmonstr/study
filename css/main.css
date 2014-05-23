@@ -305,3 +305,10 @@ text-align: center!important;
 .light{
     color:#FBC2C4;
 }
+a.todelete > img{
+   padding:1px; 
+}
+a.todelete > img:hover{
+   border:2px solid red;
+   
+}

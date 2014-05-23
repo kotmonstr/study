@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 <?php if (Yii::app()->user->hasFlash('success')): ?>
     <div class="info">
         <?php echo Yii::app()->user->getFlash('success'); ?>
@@ -27,9 +20,9 @@
 
 
 <?php
-$myfile = Yii::app()->file->set('protected/uploads/test.jpg', true);
+$myfile = Yii::app()->file->set('protected/uploads/thumbuploader/test.jpg', true);
 
-$entries = scandir("protected/uploads/");
+$entries = scandir("protected/uploads/thumbuploader/");
 $filelist = array();
 
 foreach ($entries as $entry) {
@@ -37,9 +30,9 @@ foreach ($entries as $entry) {
 }
 //VarDumper::dump($filelist);
 foreach ($filelist as $file) {
-    $myfile = Yii::app()->file->set('protected/uploads/' . $file, true);
+    $myfile = Yii::app()->file->set('protected/uploads/thumbuploader/' . $file, true);
     if ($myfile->extension == 'jpg' || $myfile->extension == 'JPG' || $myfile->extension == 'png') {
-        echo '<a href="index.php?r=upload/delete&id='.$file.'">'.CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/' . $myfile->basename, 'img', array('width'=>'300')).'</a>';
+        echo '<a class="todelete" title="Delete '.$myfile->basename.'" href="index.php?r=upload/delete&id='.$file.'">'.CHtml::image(Yii::app()->request->baseUrl . '/protected/uploads/thumbuploader/' . $myfile->basename, 'img', array('width'=>'100')).'</a>';
         //echo $myfile->basename;
         
     }
