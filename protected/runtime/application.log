@@ -18647,3 +18647,45 @@ REQUEST_URI=/index.php?r=video/youtube
 in C:\server\www\study\protected\views\video\youtube.php (3)
 in C:\server\www\study\protected\views\video\youtube.php (3)
 in C:\server\www\study\protected\controllers\VideoController.php (17)
+2014/05/24 14:36:28 [error] [php] simplexml_load_file(http://www.sila-ra.com/rss-new.php) [<a href='function.simplexml-load-file'>function.simplexml-load-file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ (C:\server\www\study\protected\views\test\slider.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\CBaseController.php(95): TestController->renderInternal()
+#1 C:\server\www\study\framework\web\CController.php(869): TestController->renderFile()
+#2 C:\server\www\study\framework\web\CController.php(782): TestController->renderPartial()
+#3 C:\server\www\study\protected\controllers\TestController.php(16): TestController->render()
+#4 C:\server\www\study\framework\web\actions\CInlineAction.php(49): TestController->actionSlider()
+#5 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\server\www\study\framework\web\CController.php(286): TestController->runAction()
+#7 C:\server\www\study\framework\web\CController.php(265): TestController->runActionWithFilters()
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): TestController->run()
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=test/slider
+in C:\server\www\study\protected\views\test\slider.php (9)
+in C:\server\www\study\protected\controllers\TestController.php (16)
+in C:\server\www\study\index.php (13)
+2014/05/24 15:08:28 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (21)
+in C:\server\www\study\index.php (13)
+2014/05/24 15:08:28 [error] [php] imagecreatefromjpeg(C:\server\www\study\protected\uploads/andr foto 005.JPG) [<a href='function.imagecreatefromjpeg'>function.imagecreatefromjpeg</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\controllers\UploadController.php:6)
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): UploadController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\server\www\study\framework\web\CController.php(286): UploadController->runAction()
+#3 C:\server\www\study\framework\web\CController.php(265): UploadController->runActionWithFilters()
+#4 C:\server\www\study\framework\web\CWebApplication.php(282): UploadController->run()
+#5 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=upload/index
+in C:\server\www\study\protected\controllers\UploadController.php (6)
+in C:\server\www\study\protected\controllers\UploadController.php (26)
+in C:\server\www\study\index.php (13)
+2014/05/24 15:12:26 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (21)
+in C:\server\www\study\index.php (13)
+2014/05/24 15:15:25 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (21)
+in C:\server\www\study\index.php (13)

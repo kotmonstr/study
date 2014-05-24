@@ -29,6 +29,7 @@ class UploadController extends CController {
             } else {
                 Yii::app()->user->setFlash('error', "Data not saved!");
             }
+            unlink($dir . '/' . $new_name);
         }
         $this->render('index', array('model' => $model,
             'uploaded' => $uploaded,
