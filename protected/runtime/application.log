@@ -18689,3 +18689,602 @@ in C:\server\www\study\index.php (13)
 2014/05/24 15:15:25 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
 in C:\server\www\study\protected\controllers\UploadController.php (21)
 in C:\server\www\study\index.php (13)
+2014/05/24 16:25:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gee".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('gee')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gee
+---
+2014/05/24 16:34:44 [error] [php] Undefined variable: model (C:\server\www\study\protected\views\youtube\form.php:13)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeController.php(11): YoutubeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeController->actionForm()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): YoutubeController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtube/form
+in C:\server\www\study\protected\views\youtube\form.php (13)
+in C:\server\www\study\protected\controllers\YoutubeController.php (11)
+in C:\server\www\study\index.php (13)
+2014/05/24 16:37:24 [error] [php] Undefined variable: model (C:\server\www\study\protected\views\youtube\form.php:15)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeController.php(11): YoutubeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeController->actionForm()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): YoutubeController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtube/form
+in C:\server\www\study\protected\views\youtube\form.php (15)
+in C:\server\www\study\protected\controllers\YoutubeController.php (11)
+in C:\server\www\study\index.php (13)
+2014/05/24 16:38:00 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCode.content" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(145): CComponent->__get('content')
+#1 C:\server\www\study\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('content')
+#2 C:\server\www\study\framework\web\helpers\CHtml.php(1654): CHtml::resolveValue(Object(YoutubeCode), 'content')
+#3 C:\server\www\study\framework\web\widgets\CActiveForm.php(786): CHtml::activeTextArea(Object(YoutubeCode), 'content', Array)
+#4 C:\server\www\study\protected\views\youtube\form.php(23): CActiveForm->textArea(Object(YoutubeCode), 'content', Array)
+#5 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#6 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', NULL, true)
+#7 C:\server\www\study\framework\web\CController.php(869): CBaseController->renderFile('C:\server\www\s...', NULL, true)
+#8 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('form', NULL, true)
+#9 C:\server\www\study\protected\controllers\YoutubeController.php(11): CController->render('form')
+#10 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeController->actionForm()
+#11 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('form')
+#15 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtube/form')
+#16 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\server\www\study\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=youtube/form
+---
+2014/05/24 17:42:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "form".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('form')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('form')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/for...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=films/admin/form
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/24 17:43:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "form".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('form')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('form')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/for...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=films/admin/form
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/24 19:01:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=4
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 19:01:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=4
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 19:01:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=4
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 19:01:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=4
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 19:07:31 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCode.2014-05-24 19:07:31" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(145): CComponent->__get('2014-05-24 19:0...')
+#1 C:\server\www\study\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('2014-05-24 19:0...')
+#2 C:\server\www\study\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(YoutubeCode), '2014-05-24 19:0...')
+#3 C:\server\www\study\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(YoutubeCode), '2014-05-24 19:0...', Array)
+#4 C:\server\www\study\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(YoutubeCode), '2014-05-24 19:0...', Array)
+#5 C:\server\www\study\protected\modules\films\views\Admin\form.php(73): CActiveForm->textField(Object(YoutubeCode), '2014-05-24 19:0...', Array)
+#6 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#7 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', NULL, true)
+#8 C:\server\www\study\framework\web\CController.php(869): CBaseController->renderFile('C:\server\www\s...', NULL, true)
+#9 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('form', NULL, true)
+#10 C:\server\www\study\protected\modules\films\controllers\AdminController.php(17): CController->render('form')
+#11 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionForm()
+#12 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('form')
+#16 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/for...')
+#17 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\server\www\study\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=films/admin/form
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 19:09:33 [error] [php] Use of undefined constant value - assumed 'value' (C:\server\www\study\protected\modules\films\views\Admin\form.php:73)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): AdminController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): AdminController->renderPartial()
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(17): AdminController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionForm()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/form
+in C:\server\www\study\protected\modules\films\views\Admin\form.php (73)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (17)
+in C:\server\www\study\index.php (13)
+2014/05/24 19:19:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:20:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:20:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/index.php?r=youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/index.php...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/index.php?r=youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:20:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/index.php?r=youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/index.php...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/index.php?r=youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:21:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/index.php?r=youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/index.php...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/index.php?r=youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:21:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:24:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:24:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:26:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/YoutubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/YoutubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/YoutubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:29:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/YoutubeCode/create".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/YoutubeCo...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/YoutubeCode/create
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:33:47 [error] [php] Undefined index: youtube-form (C:\server\www\study\protected\modules\films\controllers\AdminController.php:78)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (78)
+in C:\server\www\study\index.php (13)
+2014/05/24 19:34:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'watched' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code` (`date`, `code`, `title`, `categoria`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (79)
+in C:\server\www\study\index.php (13)
+2014/05/24 19:34:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'watched' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code` (`date`, `code`, `title`, `categoria`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\server\www\study\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\server\www\study\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\server\www\study\protected\modules\films\controllers\AdminController.php(79): CActiveRecord->save()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('createyoutube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cre...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 19:35:47 [error] [exception.CException] exception 'CException' with message 'AdminController cannot find the requested view "index.php?r=films/admin/form".' in C:\server\www\study\framework\web\CController.php:878
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(782): CController->renderPartial('index.php?r=fil...', NULL, true)
+#1 C:\server\www\study\protected\modules\films\controllers\AdminController.php(86): CController->render('index.php?r=fil...')
+#2 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#3 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('createyoutube')
+#7 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cre...')
+#8 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\server\www\study\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 20:08:51 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(78): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (78)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:13:01 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(78): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (78)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:13:05 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(78): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (78)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:13:09 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(78): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (78)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:14:12 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(80): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (80)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:14:18 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(80): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (80)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:14:47 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(80): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (80)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:23:48 [error] [php] Undefined index: [YoutubeCode][code] (C:\server\www\study\protected\modules\films\controllers\AdminController.php:82)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (82)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:24:05 [error] [php] Undefined index: YoutubeCode[code] (C:\server\www\study\protected\modules\films\controllers\AdminController.php:82)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (82)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:26:24 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "request".' in C:\server\www\study\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(82): CComponent->__call('request', Array)
+#1 C:\server\www\study\protected\modules\films\controllers\AdminController.php(82): CWebApplication->request()
+#2 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#3 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('createyoutube')
+#7 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/admin/cre...')
+#8 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\server\www\study\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/24 20:28:31 [error] [php] Undefined index: code (C:\server\www\study\protected\modules\films\controllers\AdminController.php:83)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#1 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#2 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#3 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (83)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:29:43 [error] [php] include(VarDamper.php): failed to open stream: No such file or directory (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\server\www\study\protected\modules\films\controllers\AdminController.php(83): spl_autoload_call()
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): AdminController->actionCreateyoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#4 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (83)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:56:14 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:56:25 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:58:09 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:58:13 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 20:58:32 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 21:01:13 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 21:01:18 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)
+2014/05/24 21:01:29 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
+in C:\server\www\study\index.php (13)

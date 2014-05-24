@@ -100,7 +100,7 @@ PRIMARY KEY(`id`))";
 `title`      TEXT NOT NULL,
 `categoria`  VARCHAR(25) NOT NULL,
 `date`       DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
-`watched`    INT(11) NOT NULL,   
+`watched`    INT(11) NOT NULL DEFAULT '0',   
 PRIMARY KEY(`id`))";
     mysql_query($sql, $link);
     echo "Создание таблицы <strong>youtube_code</strong> завершено." . '<br>';

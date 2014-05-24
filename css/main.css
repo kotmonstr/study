@@ -312,3 +312,9 @@ a.todelete > img:hover{
    border:2px solid red;
    
 }
+.hidden{
+    display:none;
+}
+#YoutubeCode_code , #YoutubeCode_title{
+    width:400px;
+}
