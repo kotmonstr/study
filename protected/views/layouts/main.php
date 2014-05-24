@@ -79,6 +79,7 @@
                                             array('label' => 'Contact', 'url' => array('/site/contact')),
                                             array('label' => 'Россия 24', 'url' => array('/video/index')),
                                             array('label' => '5 Канал', 'url' => array('/video/channel5')),
+                                            array('label' => 'Ролики', 'url' => array('/youtubecode/index')),
                                             array('label' => 'Video from archiv', 'url' => array('/video/showvideo')),
                                             array('label' => 'Upload', 'url' => array('/upload/index')),
                                             array('label' => 'Slide last video', 'url' => array('/video/slider')),

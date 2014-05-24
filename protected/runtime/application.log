@@ -19288,3 +19288,1110 @@ REQUEST_URI=/index.php?r=films/admin/createyoutube
 in C:\server\www\study\protected\components\kot_functions.php (7)
 in C:\server\www\study\protected\modules\films\controllers\AdminController.php (81)
 in C:\server\www\study\index.php (13)
+2014/05/24 21:22:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=1
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 21:23:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('delete')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('/user/delete')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=/user/delete&id=5
+HTTP_REFERER=http://study/index.php?r=films/admin/users
+---
+2014/05/24 21:56:33 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 21:57:41 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 21:58:11 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 21:58:46 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 21:59:08 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 21:59:33 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 22:04:16 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 22:06:04 [error] [exception.CException] exception 'CException' with message 'Property "VideoController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\VideoController.php(22): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionYoutube()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#6 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/youtube')
+#7 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\server\www\study\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=video/youtube
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 22:06:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/vie...')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=youtubeCode/view
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 22:06:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/vie...')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=youtubecode/view
+HTTP_REFERER=http://study/index.php?r=site/index
+---
+2014/05/24 22:07:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/vie...')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=youtubeCode/view
+---
+2014/05/24 22:07:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "_view".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('_view')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('_view')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/_vi...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=youtubeCode/_view
+---
+2014/05/24 22:07:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "_view".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('_view')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('_view')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/_vi...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=youtubecode/_view
+---
+2014/05/24 22:07:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/vie...')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=youtubecode/view
+---
+2014/05/24 22:12:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\server\www\study\framework\web\CController.php:336
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/vie...')
+#10 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\server\www\study\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=youtubecode/view
+---
+2014/05/24 22:12:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/view
+---
+2014/05/24 22:13:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php
+---
+2014/05/24 22:14:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php
+---
+2014/05/24 22:14:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:14:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:14:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:22:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:23:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:23:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:23:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubecode/youtube
+---
+2014/05/24 22:24:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:24:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:24:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/youtube
+HTTP_REFERER=http://study/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:24:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/you...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "youtube".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('youtube')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/you...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/show
+HTTP_REFERER=http://study/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "youtube".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('youtube')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('youtube')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/you...')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=youtubeCode/youtube
+---
+2014/05/24 22:28:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=youtubecode/show
+---
+2014/05/24 22:28:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/show
+---
+2014/05/24 22:29:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/show
+---
+2014/05/24 22:29:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=youtubeCode/show
+---
+2014/05/24 22:29:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/show
+---
+2014/05/24 22:29:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubeCode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubeCode/show
+---
+2014/05/24 22:29:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+---
+2014/05/24 22:30:49 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/24 22:31:18 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCodeController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\YoutubeCodeController.php(180): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/24 22:32:04 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCodeController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\YoutubeCodeController.php(180): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/24 22:32:21 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCodeController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/24 22:33:02 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCodeController.controller" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): CComponent->__get('controller')
+#1 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#2 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('show')
+#11 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/sho...')
+#12 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\server\www\study\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=youtubecode/show
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/24 22:34:47 [error] [php] Undefined variable: youtube (C:\server\www\study\protected\views\youtubeCode\show.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (3)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 22:35:31 [error] [php] Undefined variable: youtube (C:\server\www\study\protected\views\youtubeCode\show.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (3)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 22:53:50 [error] [php] Use of undefined constant youtube - assumed 'youtube' (C:\server\www\study\protected\views\youtubeCode\show.php:3)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (3)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 22:58:49 [error] [php] Undefined variable: model (C:\server\www\study\protected\controllers\YoutubeCodeController.php:178)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 22:58:54 [error] [php] Undefined variable: model (C:\server\www\study\protected\controllers\YoutubeCodeController.php:178)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:00:03 [error] [php] Undefined variable: model (C:\server\www\study\protected\controllers\YoutubeCodeController.php:178)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:00:50 [error] [php] Undefined variable: model (C:\server\www\study\protected\views\youtubeCode\show.php:4)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (4)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:01:03 [error] [php] Trying to get property of non-object (C:\server\www\study\protected\views\youtubeCode\show.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (9)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:01:47 [error] [php] Undefined variable: model (C:\server\www\study\protected\views\youtubeCode\show.php:4)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (4)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:03:08 [error] [php] Trying to get property of non-object (C:\server\www\study\protected\views\youtubeCode\show.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (9)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:03:26 [error] [php] Use of undefined constant code - assumed 'code' (C:\server\www\study\protected\views\youtubeCode\show.php:9)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (9)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:03:52 [error] [php] Trying to get property of non-object (C:\server\www\study\protected\views\youtubeCode\show.php:10)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(178): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionShow()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/show
+in C:\server\www\study\protected\views\youtubeCode\show.php (10)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (178)
+in C:\server\www\study\index.php (13)
+2014/05/24 23:50:41 [error] [php] Undefined index: host (C:\server\www\study\protected\components\kot_functions.php:7)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\server\www\study\framework\web\CController.php(286): AdminController->runAction()
+#2 C:\server\www\study\framework\web\CController.php(265): AdminController->runActionWithFilters()
+#3 C:\server\www\study\framework\web\CWebApplication.php(282): AdminController->run()
+#4 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=films/admin/createyoutube
+in C:\server\www\study\protected\components\kot_functions.php (7)
+in C:\server\www\study\protected\modules\films\controllers\AdminController.php (84)
+in C:\server\www\study\index.php (13)
+2014/05/25 00:00:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('index')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/ind...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/index
+HTTP_REFERER=http://study/index.php
+---
+2014/05/25 00:04:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\server\www\study\protected\controllers\YoutubeCodeController.php:123
+Stack trace:
+#0 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionIndex()
+#1 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('index')
+#10 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/ind...')
+#11 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\server\www\study\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=youtubecode/index
+HTTP_REFERER=http://study/index.php?r=video/showvideo
+---
+2014/05/25 00:04:58 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/adm...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/admin
+HTTP_REFERER=http://study/index.php?r=youtubecode/index
+---
+2014/05/25 00:08:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/adm...')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/admin
+HTTP_REFERER=http://study/index.php?r=youtubecode/index
+---

@@ -12,10 +12,7 @@ class VideoController extends Controller {
 
         $this->render('index');
     }
-    public function actionYoutube() {
-
-        $this->render('youtube');
-    }
+  
 
     public function actionSlider() {
         $this->layout = 'application.views.layouts.slider';
