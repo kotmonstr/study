@@ -6,6 +6,12 @@
 	height: 700px;
 	background: #000;
 }
+.box_skitter2 {
+	position: relative;
+	width: 800px;
+	height: 500px;
+	background: #000;
+}
 
 .box_skitter img {
 	max-width: none;
@@ -386,6 +392,10 @@
 .box_skitter_large {
 	width: 1200px;
 	height: 700px;
+}
+.box_skitter_large2 {
+	width: 800px;
+	height: 500px;
 }
 
 .box_skitter_small {

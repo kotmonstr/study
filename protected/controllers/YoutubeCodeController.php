@@ -22,7 +22,7 @@ class YoutubeCodeController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'last'),
+                'actions' => array('index', 'view', 'last','lastslider'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -159,10 +159,22 @@ class YoutubeCodeController extends Controller {
     }
 
     public function actionLast() {
+        $this->layout = 'application.views.layouts.slider'; 
        $criteria = new CDbCriteria;
        $criteria->order = 'date DESC';
+       $criteria->limit = 5;
         $model = YoutubeCode::model()->findAll($criteria);
         $this->render('last', array(
+            'model' => $model,
+        ));
+    }
+    public function actionLastslider() {
+        $this->layout = 'application.views.layouts.slider'; 
+       $criteria = new CDbCriteria;
+       $criteria->order = 'date DESC';
+       $criteria->limit = 5;
+        $model = YoutubeCode::model()->findAll($criteria);
+        $this->render('lastslider', array(
             'model' => $model,
         ));
     }
