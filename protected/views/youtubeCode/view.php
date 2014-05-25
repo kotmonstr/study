@@ -19,6 +19,8 @@ $this->menu = array(
 <h1>View YoutubeCode #<?php echo $model->id; ?></h1>
 
 <?php
+
+
 $this->widget('zii.widgets.CDetailView', array(
     'data' => $model,
     'attributes' => array(
@@ -28,7 +30,12 @@ $this->widget('zii.widgets.CDetailView', array(
         'categoria',
         'date',
         'watched',
-      
+         array(
+        'code'=>$model->code,
+        'type'=>'raw',
+        'value'=>'<iframe width="640" height="390" src="//www.youtube.com/embed/'.$model->code.'" frameborder="0" allowfullscreen></iframe>',
+         'htmlOptions' => array('style' => 'text-align:center;width:215px'),
+          ),
     ),
 ));
 ?>
