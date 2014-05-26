@@ -20866,3 +20866,6 @@ HTTP_REFERER=http://study/index.php?r=test/lessons
 2014/05/25 19:21:28 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
 in C:\server\www\study\protected\controllers\UploadController.php (21)
 in C:\server\www\study\index.php (13)
+2014/05/26 01:14:29 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (23)
+in C:\server\www\study\index.php (13)

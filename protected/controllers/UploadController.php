@@ -1,7 +1,9 @@
 <?php
 
 class UploadController extends CController {
-    public $layout = '//layouts/column1';
+    public $layout = 'application.modules.films.views.layouts.admin';
+    //$this->layout = 'application.views.layouts.slider'; 
+    //C:\server\www\study\protected\modules\films\views\layouts\admin.php
     public function imageresize($outfile, $infile, $neww, $newh, $quality) {
         $im = imagecreatefromjpeg($infile);
         $im1 = imagecreatetruecolor($neww, $newh);

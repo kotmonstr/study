@@ -29,7 +29,8 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Users', 'url'=>array('/films/admin/users')),
-				array('label'=>'Youtube', 'url'=>array('/films/admin/form')),				
+				array('label'=>'Youtube', 'url'=>array('/films/admin/form')),
+                                array('label' => 'Upload', 'url' => array('/upload/index')),
 				array('label'=>'Calculator', 'url'=>array('/films/admin/calculator')),				
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('class' => 'logout')),
