@@ -20869,3 +20869,107 @@ in C:\server\www\study\index.php (13)
 2014/05/26 01:14:29 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
 in C:\server\www\study\protected\controllers\UploadController.php (23)
 in C:\server\www\study\index.php (13)
+2014/05/26 09:52:41 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "menu/menu".' in C:\server\www\study\framework\web\CController.php:878
+Stack trace:
+#0 C:\server\www\study\protected\views\layouts\main.php(142): CController->renderPartial('menu/menu')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 C:\server\www\study\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 C:\server\www\study\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 C:\server\www\study\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 C:\server\www\study\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#9 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#10 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#11 C:\server\www\study\framework\web\CController.php(784): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#12 C:\server\www\study\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\server\www\study\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\server\www\study\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/
+---
+2014/05/26 09:54:44 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "menu/menu".' in C:\server\www\study\framework\web\CController.php:878
+Stack trace:
+#0 C:\server\www\study\protected\views\layouts\main.php(143): CController->renderPartial('menu/menu', NULL, true)
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 C:\server\www\study\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 C:\server\www\study\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 C:\server\www\study\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 C:\server\www\study\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#9 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#10 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#11 C:\server\www\study\framework\web\CController.php(784): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#12 C:\server\www\study\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\server\www\study\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\server\www\study\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/
+---
+2014/05/26 09:55:36 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "menu/menu".' in C:\server\www\study\framework\web\CController.php:878
+Stack trace:
+#0 C:\server\www\study\protected\views\layouts\main.php(142): CController->renderPartial('menu/menu')
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 C:\server\www\study\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 C:\server\www\study\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 C:\server\www\study\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 C:\server\www\study\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#9 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#10 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#11 C:\server\www\study\framework\web\CController.php(784): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#12 C:\server\www\study\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\server\www\study\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\server\www\study\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/
+---
+2014/05/26 09:55:47 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "menu/menu".' in C:\server\www\study\framework\web\CController.php:878
+Stack trace:
+#0 C:\server\www\study\protected\views\layouts\main.php(143): CController->renderPartial('menu/menu', NULL, true)
+#1 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#2 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#3 C:\server\www\study\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#4 C:\server\www\study\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 C:\server\www\study\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 C:\server\www\study\framework\web\CBaseController.php(206): COutputProcessor->run()
+#7 C:\server\www\study\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#8 C:\server\www\study\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#9 C:\server\www\study\framework\web\CBaseController.php(126): require('C:\server\www\s...')
+#10 C:\server\www\study\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\server\www\s...', Array, true)
+#11 C:\server\www\study\framework\web\CController.php(784): CBaseController->renderFile('C:\server\www\s...', Array, true)
+#12 C:\server\www\study\protected\controllers\SiteController.php(30): CController->render('index')
+#13 C:\server\www\study\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#14 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\server\www\study\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#16 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('')
+#18 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#19 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\server\www\study\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/
+---
