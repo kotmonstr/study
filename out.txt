@@ -1,4 +1,4 @@
-a:10:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
+a:12:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
 <div class="region region-content" style="color: #3b3b3b; font-family: Arial, sans-serif; font-size: 12px;">
 <div id="node-5" class="node node-articles node-promoted node-full clearfix" style="background-image: none; border: none; padding: 0px; background-position: initial initial; background-repeat: initial initial;">
 <div class="meta submitted" style="font-size: 0.857em; color: #68696b; margin-bottom: -5px;">
@@ -1771,4 +1771,1185 @@ mysql_connect();
 </div>";s:4:"tags";s:3:"php";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-16 17:31:47";s:6:"update";s:19:"0000-00-00 00:00:00";}i:10;a:8:{s:2:"id";s:2:"13";s:5:"title";s:8:"criteria";s:7:"content";s:5310:"<div class="entry">Сегодня хочу описать пример использования такого мощного класса, как&nbsp;<a href="http://www.yiiframework.com/doc/api/1.1/CDbCriteria">CDbCriteria</a>, который предназначен для построения критериев запроса.<br />Постараюсь описать все атрибуты и методы этого класса. Критерий буду составлять к некой таблице user. И так начнем...<br />
 <pre><code class="php" data-result="[object Object]"><span class="comment">// создаем экземпляр  класса CDbCriteria</span><br /><span class="variable">$criteria</span> = <span class="keyword">new</span> CDbCriteria;<br /><span class="comment">// указываем алиас таблицы</span><br /><span class="variable">$criteria</span>-&gt;alias = <span class="string">'user'</span>;<br /><span class="comment">// условие то, что относится к WHERE</span><br /><span class="comment">// можно использовать плейсхолдеры</span><br /><span class="variable">$criteria</span>-&gt;condition = <span class="string">'id = :userId AND date_create &lt; NOW()'</span>;<br /><span class="comment">// если мы хотим отфильтровать дубликаты, </span><br /><span class="comment">// то distinct устанавливаем в значение true</span><br /><span class="comment">// по умолчанию значение false;</span><br /><span class="variable">$criteria</span>-&gt;distinct = true;<br /><span class="comment">// указываем поля по которым делать группировку, GROUP BY</span><br /><span class="variable">$criteria</span>-&gt;group = <span class="string">'date_update'</span>;<br /><span class="comment">// значения HAVING</span><br /><span class="variable">$criteria</span>-&gt;having = <span class="string">'MAX(salary) &gt; 10000'</span>;<br /><span class="comment">// указываем индекс результирующего массива, полезная фишка, появилась с версии 1.1.5</span><br /><span class="comment">// по умолчанию значение NULL и будут численный индекс начиная с 0</span><br /><span class="variable">$criteria</span>-&gt;index = <span class="string">'full_name'</span>;<br /><span class="comment">// указываем как приджойнить другую(ие) таблицу(ы)</span><br /><span class="comment">// джойним некую таблицу </span><br /><span class="variable">$criteria</span>-&gt;join = <span class="string">'LEFT JOIN `profile` ON `user`.`id` = `profile`.`user_id`'</span>;<br /><span class="comment">// максимальное количество записей которое может вернуть запрос</span><br /><span class="comment">// если меньше 0, вернет все записи</span><br /><span class="variable">$criteria</span>-&gt;limit = <span class="string">'20'</span>;<br /><span class="comment">// смещение</span><br /><span class="variable">$criteria</span>-&gt;offset = <span class="string">'3'</span>;<br /><span class="comment">// сортировка</span><br /><span class="variable">$criteria</span>-&gt;order = <span class="string">'date_create DESC, first_name ASC'</span>;<br /><span class="comment">// параметры для плейсхолдеров</span><br /><span class="variable">$criteria</span>-&gt;params = <span class="keyword">array</span>(<span class="string">':userId'</span>=&gt;<span class="variable">$userId</span>);<br /><span class="comment">// поля для выборки, по умолчанию *</span><br /><span class="variable">$criteria</span>-&gt;select = <span class="string">'id, first_name, last_name, last_visit'</span>;<br /><span class="comment">// или</span><br /><span class="variable">$criteria</span>-&gt;select = <span class="keyword">array</span>(<span class="string">'id'</span>, <span class="string">'first_name'</span>, <span class="string">'last_name'</span>, <span class="string">'last_visit'</span>);<br /><span class="comment">// если значение true то данные из внешних(связанных) таблицы будут </span><br /><span class="comment">// выбраны одним запросом через JOIN. Работает только с отношениями в ActiveRecord</span><br /><span class="variable">$criteria</span>-&gt;together = true;<br /><span class="comment">// отношения, работает только в ActiveRecord</span><br /><span class="variable">$criteria</span>-&gt;with = <span class="keyword">array</span>(<span class="string">'profile'</span>, <span class="string">'comments'</span>, <span class="string">'posts'</span>);<br /><span class="variable">$users</span> = User::model()-&gt;findAll(<span class="variable">$criteria</span>);<br /></code></pre>
 Вот и все атрибуты данного класса. В следующей заметке постараюсь описать все методы.</div>
-<div class="meta">&nbsp;</div>";s:4:"tags";s:8:"criteria";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-17 19:57:08";s:6:"update";s:19:"0000-00-00 00:00:00";}}
+<div class="meta">&nbsp;</div>";s:4:"tags";s:8:"criteria";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-17 19:57:08";s:6:"update";s:19:"0000-00-00 00:00:00";}i:11;a:8:{s:2:"id";s:2:"14";s:5:"title";s:4:"test";s:7:"content";s:151:"<p>123<img src="http://4.bp.blogspot.com/-RDLJQzuB9JE/URDO8LGUyCI/AAAAAAAAAEU/YUxLKtcxKsI/s1600/girl%2B4.jpeg" alt="" width="1600" height="1000" /></p>";s:4:"tags";s:3:"321";s:6:"status";s:1:"1";s:8:"avtor_id";s:4:"pots";s:7:"created";s:19:"2014-05-19 22:10:49";s:6:"update";s:19:"2014-05-19 22:11:21";}i:12;a:8:{s:2:"id";s:2:"15";s:5:"title";s:43:"10+ вставок кода для htaccess";s:7:"content";s:37272:"<h1>10+ вставок кода для htaccess</h1>
+<p>Файл&nbsp;<code>.htaccess</code>&nbsp;&mdash; один из тех файлов, которые должен быть известен и понятен каждому администратору веб сайта. На базовом уровне он управляет доступом к папкам сайта. Но есть еще много задач, которые htaccess может решить для вас.</p>
+<h2>1. Управление доступом к файлам и каталогам</h2>
+<p>Защита паролем - это один аспект вопроса, но иногда нужно полностью блокировать пользователю возможность доступа к определённым файлам или каталогам. Такие задачи обычно возникают для системных папок, например,&nbsp;<code>includes</code>. Приложение должно иметь доступ к ним, а пользователь лишается всех привилегий.</p>
+<p>Для решения задачи добавьте следующий код в файл&nbsp;<code>.htaccess</code>&nbsp;и сохраните его в нужном каталоге:</p>
+<div class="code_sample">
+<div id="highlighter_950936" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">deny from all</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Но такой ход блокирует доступ для всех, включая вас. Чтобы обеспечить себе доступ нужно указать IP свой адрес. Вот код:</p>
+<div class="code_sample">
+<div id="highlighter_376043" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">order deny,allow</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">deny from all</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">allow from xxx.xxx.xxx.xxx</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p><code>xxx.xxx.xxx.xxx</code>&nbsp;- ваш IP адрес. Если заменить последние три цифры на&nbsp;<code>0/12</code>, например, то будет указан диапазон IP адресов в одной сети. Но такой подход может привести к проблемам, поэтому лучше указывать список IP адресов раздельно.</p>
+<p>Если нужно блокировать определенный файл, включая сам&nbsp;<code>.htaccess</code>, используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_600161" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">&lt;Files .htaccess&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">order allow,deny</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">deny from all</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>6</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>7</code></td>
+<td class="content"><code class="plain">&lt;/Files&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Аналогично, если вам требуется открыть доступ с определенных IP адресов, перечислите их с помощью&nbsp;<code>allow from</code>.</p>
+<p>Если нужно блокировать доступ к определённым типам файлов, используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_804626" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">&lt;FilesMatch&nbsp;</code><code class="string">".(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$"</code><code class="plain">&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">Order Allow,Deny</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">Deny from all</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>6</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>7</code></td>
+<td class="content"><code class="plain">&lt;/FilesMatch&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>2. Запрещаем просмотр директории</h2>
+<p>Для запрещения просмотра содержимого директории используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_827910" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">Options All -Indexes</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Но если вам нужно по каким-то причинам разрешить просмотр директории, используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_370116" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">Options All +Indexes</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>3. Ускоряем загрузку с помощью сжатия файлов</h2>
+<p>Вы можете сжимать любые файлы, а не только изображения. Например, для сжатия HTML файлов используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_103383" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">AddOutputFilterByType DEFLATE text/html</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>А для сжатия текстовых:</p>
+<div class="code_sample">
+<div id="highlighter_134807" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">AddOutputFilterByType DEFLATE text/plain</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Можно также сжимать JavaScript файлы или определять несколько типов файлов для архивации:</p>
+<div class="code_sample">
+<div id="highlighter_158741" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">AddOutputFilterByType DEFLATE application/javascript</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">AddOutputFilterByType DEFLATE application/rss+xml</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>В качестве альтернативы можно сжимать все HTML, JavaScript, CSS и прочие файлы с помощью GZIP:</p>
+<div class="code_sample">
+<div id="highlighter_642130" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>01</code></td>
+<td class="content"><code class="plain">&lt;IfModule mod_gzip.c&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>02</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>03</code></td>
+<td class="content"><code class="plain">mod_gzip_on Yes</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>04</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>05</code></td>
+<td class="content"><code class="plain">mod_gzip_dechunk Yes</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>06</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>07</code></td>
+<td class="content"><code class="plain">mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>08</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>09</code></td>
+<td class="content"><code class="plain">mod_gzip_item_include handler ^cgi-script$</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>10</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>11</code></td>
+<td class="content"><code class="plain">mod_gzip_item_include mime ^text\.*</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>12</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>13</code></td>
+<td class="content"><code class="plain">mod_gzip_item_include mime ^application/x-javascript.*</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>14</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>15</code></td>
+<td class="content"><code class="plain">mod_gzip_item_exclude mime ^image\.*</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>16</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>17</code></td>
+<td class="content"><code class="plain">mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>18</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>19</code></td>
+<td class="content"><code class="plain">&lt;/IfModule&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>4. Защищаем сайт от&nbsp;<a href="http://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%82%D0%BB%D0%B8%D0%BD%D0%BA" target="_blank">хотлинкинга</a></h2>
+<p>Если вы хотите предотвратить хотлинкинг изображений с вашего сайта, добавьте следующие строки в файл&nbsp;<code>.htaccess</code>:</p>
+<div class="code_sample">
+<div id="highlighter_509613" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">RewriteEngine on</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">RewriteCond %{HTTP_REFERER} !^$</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">RewriteCond %{HTTP_REFERER} !^http(s)?:</code><code class="comments">//(www\.)?вашдомен.ru [NC]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>6</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>7</code></td>
+<td class="content"><code class="plain">RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Просто замените&nbsp;<code>вашдомен.ru&nbsp;</code>на название своего домена.</p>
+<p>&nbsp;</p>
+<h2>5. Блокирование пользователей перенаправленных с определенного домена</h2>
+<p>Если вы не приветствуете пользователей определенного домена, то можно забанить на своем сайте. Например, если ваш сайт попал в список там, откуда не желателен трафик (например, порнографические сайты, неонацисткие ресурсы и прочее), то вы можете перекрыть его с помощью страницы 403 (запрет доступа). Нужно, чтобы был включен&nbsp;<code>mod_rewrite</code>&nbsp;(обычно он включен). Добавляем код:</p>
+<div class="code_sample">
+<div id="highlighter_338063" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>01</code></td>
+<td class="content"><code class="plain">&lt;IfModule mod_rewrite.c&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>02</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>03</code></td>
+<td class="content"><code class="plain">RewriteEngine on</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>04</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>05</code></td>
+<td class="content"><code class="plain">RewriteCond %{HTTP_REFERER} bannedurl1.com [NC,OR]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>06</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>07</code></td>
+<td class="content"><code class="plain">RewriteCond %{HTTP_REFERER} bannedurl2.com [NC,OR]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>08</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>09</code></td>
+<td class="content"><code class="plain">RewriteRule .* - [F]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>10</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>11</code></td>
+<td class="content"><code class="plain">&lt;/ifModule&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Нужно заменить&nbsp;<code>bannedurl1.com</code>&nbsp;и&nbsp;<code>bannedurl2.com</code>&nbsp;на имена доменов из вашего черного списка. Флаг&nbsp;<code>[NC]</code>&nbsp;указывает на отсутствие чувствительности к регистру в имени домена, а флаг&nbsp;<code>[F]</code>&nbsp;определяет действие - в нашем примере вывод страницы 403. Если нужно забанить несколько сайтов, используйте флаг&nbsp;<code>[NC,OR]</code>&nbsp;для каждого домена, включая последний. Для запрета только одного домена можно использовать только флаг&nbsp;<code>[NC]</code>.</p>
+<p>&nbsp;</p>
+<h2>6. Блокирование запросов от определенных агентов</h2>
+<p>Если в вашем журнале имеются записи о действиях определенных агентов пользователей (роботов или пауков), которые вам не нравятся, то можно добавить несколько строк в файл&nbsp;<code>.htaccess</code>&nbsp;и запретить таким агентам доступ к вашему сайту:</p>
+<div class="code_sample">
+<div id="highlighter_484548" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">RewriteEngine On&nbsp;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="plain">RewriteBase /&nbsp;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">SetEnvIfNoCase Referer&nbsp;</code><code class="string">"^$"</code>&nbsp;<code class="plain">bad_user</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="plain">SetEnvIfNoCase User-Agent&nbsp;</code><code class="string">"^badbot1"</code>&nbsp;<code class="plain">bad_user</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">SetEnvIfNoCase User-Agent&nbsp;</code><code class="string">"^badbot2"</code>&nbsp;<code class="plain">bad_user</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>6</code></td>
+<td class="content"><code class="plain">SetEnvIfNoCase User-Agent&nbsp;</code><code class="string">"^badbot3"</code>&nbsp;<code class="plain">bad_user</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>7</code></td>
+<td class="content"><code class="plain">Deny from env=bad_user</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Замените&nbsp;<code>badbot1</code>,&nbsp;<code>badbot1</code>&nbsp;и так далее именами агентов из вашего журнала. Такое действие будет держать данные программы подальше от вашего сайта.</p>
+<p>&nbsp;</p>
+<h2>7. Кеширование файлов</h2>
+<p>Другой метод ускорения загрузки вашего сайта - кеширование файлов. вот что нужно добавить в файл&nbsp;<code>.htaccess&nbsp;</code>для включения кеширования:</p>
+<div class="code_sample">
+<div id="highlighter_145692" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">&lt;FilesMatch&nbsp;</code><code class="string">".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf)$"</code><code class="plain">&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">Header set Cache-Control&nbsp;</code><code class="string">"max-age=2592000"</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">&lt;/FilesMatch&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Вы можете добавить типы файлов (или удалить некоторые из них) к списку в примере. Также можно использовать&nbsp;<code>max-age</code>&nbsp;для указания времени в секундах, для хранения ваших файлов в кеше.</p>
+<p>&nbsp;</p>
+<h2>8. Отключение кеширования для определенных типов файлов</h2>
+<p>Если вам не нужно кешировать определенные типы файлов, то можно просто не включать их в список. Однако, иногда файлы могут кешироваться даже если вы не объявили их в списке. В таких случаях можно отключить кеширование только для таких типов файлов. В большинстве случаев требуется отключать кеширование&nbsp; для динамических файлов, таких как скрипты. Вот код:</p>
+<div class="code_sample">
+<div id="highlighter_345247" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">&lt;FilesMatch&nbsp;</code><code class="string">".(pl|php|cgi|spl|scgi|fcgi)$"</code><code class="plain">&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">Header unset Cache-Control</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">&lt;/FilesMatch&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Просто добавьте типы фалов, которые не нужно кешировать в список.</p>
+<p>&nbsp;</p>
+<h2>9. Пропускаем диалог загрузки</h2>
+<p>По умолчанию, когда вы загружаете файл с веб сервера, то появляется диалог, в котором запрашивается действие с файлом (сохранить или открыть). Данный диалог очень раздражает при загрузке больших медиа файлов или документов PDF. Если файлы загружены на ваш сервер для того, чтобы пользователь их скачал, то можно сразу начать процесс. Нужно поместить в файл&nbsp;<code>.htaccess</code>&nbsp;следующие строки:</p>
+<div class="code_sample">
+<div id="highlighter_709110" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">AddType application/octet-stream .pdf</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">AddType application/octet-stream .zip</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>4</code></td>
+<td class="content"><code class="spaces">&nbsp;</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>5</code></td>
+<td class="content"><code class="plain">AddType application/octet-stream .mp3</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>10. Переименование файла&nbsp;<code>.htaccess</code></h2>
+<p>По некоторым причинам, обычно связанным с безопасностью, может потребоваться переименование файла&nbsp;<code>.htaccess</code>. Что очень просто сделать. Теоретически, переименование файла&nbsp;<code>.htaccess</code>&nbsp;не должно вызывать проблем с выполнением приложений на вашем сервере, но если они вдруг появятся, нужно просто восстановить оригинальное имя.</p>
+<div class="code_sample">
+<div id="highlighter_598340" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">AccessFileName htac.cess</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Также нужно обновить всех вхождения в самом файле и там, где упоминается&nbsp;<code>.htaccess</code>, иначе возникнет масса ошибок.</p>
+<p>&nbsp;</p>
+<h2>11. Изменение индексной страницы по умолчанию</h2>
+<p>Если вам требуется, чтобы индексная страница отличалась от значения по умолчанию,&nbsp;<code>index.html</code>,&nbsp;<code>index.php</code>,&nbsp;<code>index.htm</code>&nbsp;и так далее, то данная задача решается легко. Вот что нужно добавить в файл&nbsp;<code>.htaccess</code>:</p>
+<div class="code_sample">
+<div id="highlighter_438620" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">DirectoryIndex mypage.html</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Замените&nbsp;<code>mypage.html</code>&nbsp;на адрес URL нужной страницы.</p>
+<p>&nbsp;</p>
+<h2>12. Перенаправление на безопасное соединение https</h2>
+<p>Если вы используете https и хотите, чтобы все пользователи перенаправлялись на него, то вам поможет следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_958467" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">RewriteEngine On</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="plain">RewriteCond %{HTTPS} !on</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>3</code></td>
+<td class="content"><code class="plain">RewriteRule (.*) https:</code><code class="comments">//%{HTTP_HOST}%{REQUEST_URI}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>13. Ограничение размера файла загрузки в PHP, максимального размера запроса и максимального времени выполнения скрипта</h2>
+<p><code>.htaccess</code>&nbsp;позволяет устанавливать некоторые значения, которые влияют на приложения PHP. Например, если вам требуется ограничить загрузку в PHP по причине экономии пространства на хостинге, используйте следующий код:</p>
+<div class="code_sample">
+<div id="highlighter_163767" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">php_value upload_max_filesize 15M</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Конечно, вы можете установить значение, которое требуется, в нашем примере 15M (MB) не является фиксированным. Также можно ограничить максимальны размер запроса для загрузки в PHP:</p>
+<div class="code_sample">
+<div id="highlighter_604838" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">php_value post_max_size 10M</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>Измените&nbsp;<code>10M</code>&nbsp;на то значение, которое вам требуется.</p>
+<p>Если вы не хотите, чтобы скрипт выполнялся вечно, то можно ограничить время его работы:</p>
+<div class="code_sample">
+<div id="highlighter_65523" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">php_value max_execution_time 240</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p><code>240</code>&nbsp;- количество секунд до прерывания работы скрипта.</p>
+<p>Если требуется ограничить время для скрипта на разбор введенных данных, используйте следующую строку:</p>
+<div class="code_sample">
+<div id="highlighter_438267" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">php_value max_input_time 180</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>14. Маскировка типов файлов</h2>
+<p>Иногда нужно скрыть от пользователя типы файлов на сервере. Один из способов решить задачу - замаскировать их. Например, вы можете сделать так. что все файлы будут выглядеть как HTML или PHP:</p>
+<div class="code_sample">
+<div id="highlighter_396972" class="syntaxhighlighter  ">
+<div class="lines">
+<div class="line alt1">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>1</code></td>
+<td class="content"><code class="plain">ForceType application/x-httpd-php</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line alt2">
+<table>
+<tbody>
+<tr>
+<td class="number"><code>2</code></td>
+<td class="content"><code class="plain">ForceType application/x-httpd-php</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>Заключение</h2>
+<p>Существует еще множество задач, которые может решить&nbsp;<code>.htaccess</code>. Например, можно установить автоматический перевод страниц сайта, или временную зону, или удалить www из адреса URL, и многое другое. Но прежде чем&nbsp; начать эксперименты с&nbsp;<code>.htaccess</code>&nbsp;всегда нужно сделать резервную копию оригинала, чтобы была возможность вернуться к исходному коду.</p>";s:4:"tags";s:8:"htaccess";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-26 17:13:58";s:6:"update";s:19:"0000-00-00 00:00:00";}}

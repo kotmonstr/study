@@ -14,7 +14,7 @@
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
                 <![endif]-->
                 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>             
-                <link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />            
+                <link type="text/css" href="css/skitter.styles-min.css" media="all" rel="stylesheet" />            
                 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>           
                 <script type="text/javascript" src="js/jquery.skitter.min.js"></script>
 
