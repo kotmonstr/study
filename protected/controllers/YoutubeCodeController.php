@@ -178,11 +178,15 @@ class YoutubeCodeController extends Controller {
                 $filter = $_POST['filter'];
                 $last = $_POST['last'];
                 $my = $_POST['my'];
+                $artefact = $_POST['artefact'];
+                $all = $_POST['all'];
+                
                     if ($last == 1) {
                     $limit = 10;
                     } else {
                         $limit = 5;
                     }
+                 
                     $this->layout = 'application.views.layouts.slider-min';
                     $criteria = new CDbCriteria;
                     $criteria->order = 'date DESC';
@@ -191,6 +195,13 @@ class YoutubeCodeController extends Controller {
                     if ($my == 1) {
                         $criteria->condition = ('categoria = :categoria');
                         $criteria->params[':categoria'] = 'my';
+                    }
+                    if ($artefact == 1) {
+                        $criteria->condition = ('categoria = :categoria');
+                        $criteria->params[':categoria'] = 'artefact';
+                    }
+                    if ($all == 1) {
+                   $criteria='';
                     }
                     //выбрать что заменить
                     $model = YoutubeCode::model()->findAll($criteria);

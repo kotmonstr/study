@@ -36,7 +36,9 @@ $arrCategorias = array('alcogol' => 'alcogol',
     'zadornov' => 'zadornov',
     'zagadki_istorii' => 'zagadki_istorii',
     'zapret_tem_istorii' => 'zapret_tem_istorii',
-    'zionizm' => 'zionizm');
+    'zionizm' => 'zionizm',
+    'artefact' => 'artefact',
+    'my' => 'my');
 ?>
 
 <center>

@@ -1,6 +1,10 @@
 
 <center>
     <div id="filter-ajax" style="width:1200px;height:60px;margin-top:20px">
+        <div class="ziro-filter-group" style="display:inline">
+            <input id="all" type="radio" value="all" style="display:inline">
+            <label style="display:inline">Все</label>
+        </div>
         <div class="first-filter-group" style="display:inline">
             <input id="last" type="radio" value="10 video" style="display:inline">
             <label style="display:inline">Последние  10 видео</label>
@@ -8,6 +12,10 @@
         <div class="second-filter-group" style="display:inline;margin-left:20px">
             <input id="my" type="radio" value="my" style="display:inline">
             <label style="display:inline">Семья</label>
+        </div>
+        <div class="therd-filter-group" style="display:inline;margin-left:20px">
+            <input id="artefact" type="radio" value="artefact" style="display:inline">
+            <label style="display:inline">Артефакты</label>
         </div>
         <a class="btn btn-default" onclick="Get.filter()" style="display:inline;margin-left:20px">Применить фильтр</a>
     </div>
@@ -59,6 +67,9 @@
             filter: function() {
                 var last = 0;
                 var my = 0;
+                var artefact = 0;
+                var all= 0;
+                
                 console.log('Get.filter');
 
                 if ($('#last').is(':checked')) {
@@ -71,6 +82,16 @@
                 } else {
                     my = 0;
                 }
+                if ($('#artefact').is(':checked')) {
+                    artefact = 1;
+                } else {
+                    artefact = 0;
+                }
+                if ($('#all').is(':checked')) {
+                    all = 1;
+                } else {
+                    all = 0;
+                }
 
                 $.post(
                         "index.php?r=/youtubeCode/lastslider",
@@ -78,6 +99,8 @@
                               last: last,
                                 my: my,
                             filter: 1,
+                            artefact: artefact,
+                            all: all,
                         },
                 onAjaxSuccess
                         );
