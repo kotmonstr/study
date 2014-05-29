@@ -22,7 +22,7 @@ class YoutubeCodeController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'last', 'lastslider', 'ajax'),
+                'actions' => array('index', 'view', 'last', 'lastslider', 'filter'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -170,20 +170,44 @@ class YoutubeCodeController extends Controller {
     }
 
     public function actionLastslider() {
+            
+            
+            
+            if(isset($_POST['filter']) && $_POST['filter'] == 1){
+                //VarDumper::dump($_POST['filter']);
+                $filter = $_POST['filter'];
+                $last = $_POST['last'];
+                $my = $_POST['my'];
+                    if ($last == 1) {
+                    $limit = 10;
+                    } else {
+                        $limit = 5;
+                    }
+                    $this->layout = 'application.views.layouts.slider-min';
+                    $criteria = new CDbCriteria;
+                    $criteria->order = 'date DESC';
+                    $criteria->limit = $limit;
 
+                    if ($my == 1) {
+                        $criteria->condition = ('categoria = :categoria');
+                        $criteria->params[':categoria'] = 'my';
+                    }
+                    //выбрать что заменить
+                    $model = YoutubeCode::model()->findAll($criteria);
+                    echo $this->render('lastslider', array(
+                        'model' => $model,
+                    ));
+            }else{
+            
+            
+            
         if (Yii::app()->request->isAjaxRequest) {
             $code = $_POST['code'];
-
-            $rolic='<iframe width="640" height="390" src="//www.youtube.com/embed/'.$code.'?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>';
-
-            
-
+            $rolic = '<iframe width="640" height="390" src="//www.youtube.com/embed/' . $code . '?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>';
             echo $rolic;
             // Завершаем приложение
             Yii::app()->end();
         } else {
-
-
             $this->layout = 'application.views.layouts.slider-min';
             $criteria = new CDbCriteria;
             $criteria->order = 'date DESC';
@@ -193,18 +217,8 @@ class YoutubeCodeController extends Controller {
                 'model' => $model,
             ));
         }
-    }
+    }}
 
-    protected function renderJSON($data) {
-        header('Content-type: application/json');
-        echo CJSON::encode($data);
 
-        foreach (Yii::app()->log->routes as $route) {
-            if ($route instanceof CWebLogRoute) {
-                $route->enabled = false; // disable any weblogroutes
-            }
-        }
-        Yii::app()->end();
-    }
 
 }
