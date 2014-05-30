@@ -9,10 +9,14 @@
                     array('label' => 'Россия 24', 'url' => array('/video/index')),
                     array('label' => '5 Канал', 'url' => array('/video/channel5')))),
        
-            array('label' => 'Последние Ролики', 'url' => array('/youtubecode/last')),
-            array('label' => 'Slider Ролики', 'url' => array('/youtubecode/lastslider')),
-            array('label' => 'Video from archiv', 'url' => array('/video/showvideo')),
+         
+            
+            
             array('label' => 'Фотки', 'url' => array('/video/slider')),
+            array('label' => 'Ролики', 'url' => array('/youtubecode/lastslider'), 'items' => array(
+                    array('label' => 'Ролики', 'url' => array('/youtubecode/lastslider')),
+                    array('label' => 'Последние Ролики', 'url' => array('/youtubecode/last')),
+                    array('label' => 'Из архива', 'url' => array('/video/showvideo')))),
             array('label' => 'Blog', 'url' => array('/post'), 'items' => array(
                     array('label' => 'Blog', 'url' => array('/post')),
                     array('label' => 'Записать на диск', 'url' => array('/post/get')),
