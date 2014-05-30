@@ -109,7 +109,8 @@ class YoutubeCodeController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('YoutubeCode', array('pagination' => array('pageSize' => 6)));
+        $this->layout = 'application.views.layouts.admin_black';
+        $dataProvider = new CActiveDataProvider('YoutubeCode', array('pagination' => array('pageSize' => 5)));
         if (Yii::app()->user->name && Yii::app()->user->name != 'Guest') {
             $this->render('index', array(
                 'dataProvider' => $dataProvider,
@@ -180,6 +181,7 @@ class YoutubeCodeController extends Controller {
                 $my = $_POST['my'];
                 $artefact = $_POST['artefact'];
                 $all = $_POST['all'];
+                $categoria_name= $_POST['categoria_name'];
                 
                     if ($last == 1) {
                     $limit = 10;
@@ -199,6 +201,10 @@ class YoutubeCodeController extends Controller {
                     if ($artefact == 1) {
                         $criteria->condition = ('categoria = :categoria');
                         $criteria->params[':categoria'] = 'artefact';
+                    }
+                    if (isset($categoria_name) && $categoria_name != '') {
+                        $criteria->condition = ('categoria = :categoria');
+                        $criteria->params[':categoria'] = $categoria_name;
                     }
                     if ($all == 1) {
                    $criteria='';

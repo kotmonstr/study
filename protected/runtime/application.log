@@ -21711,3 +21711,132 @@ Stack trace:
 REQUEST_URI=/index.php?r=/youtubeCode/lastslider
 in C:\server\www\study\protected\controllers\YoutubeCodeController.php (204)
 in C:\server\www\study\index.php (13)
+2014/05/30 11:21:09 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (23)
+in C:\server\www\study\index.php (13)
+2014/05/30 11:21:30 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (23)
+in C:\server\www\study\index.php (13)
+2014/05/30 11:21:39 [warning] [application] Failed to set unsafe attribute "file" of "Upload".
+in C:\server\www\study\protected\controllers\UploadController.php (23)
+in C:\server\www\study\index.php (13)
+2014/05/30 21:36:46 [error] [php] Undefined variable: select (C:\server\www\study\protected\views\youtubeCode\lastslider.php:45)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(229): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionLastslider()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/lastslider
+in C:\server\www\study\protected\views\youtubeCode\lastslider.php (45)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (229)
+in C:\server\www\study\index.php (13)
+2014/05/30 22:11:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/30 22:12:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin/form
+---
+2014/05/30 22:15:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/30 22:19:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/30 22:19:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/30 22:20:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "films/youtubecode/index".' in C:\server\www\study\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('films/youtubeco...')
+#1 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\server\www\study\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=films/youtubecode/index
+HTTP_REFERER=http://study/index.php?r=films/admin
+---
+2014/05/30 22:53:33 [error] [php] Undefined variable: count (C:\server\www\study\protected\views\youtubeCode\index.php:21)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(117): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionIndex()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/index
+in C:\server\www\study\protected\views\youtubeCode\index.php (21)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (117)
+in C:\server\www\study\index.php (13)
+2014/05/30 23:00:15 [error] [php] Undefined variable: count (C:\server\www\study\protected\views\youtubeCode\index.php:21)
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(869): YoutubeCodeController->renderFile()
+#1 C:\server\www\study\framework\web\CController.php(782): YoutubeCodeController->renderPartial()
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(117): YoutubeCodeController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionIndex()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/index&YoutubeCode_page=2
+in C:\server\www\study\protected\views\youtubeCode\index.php (21)
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (117)
+in C:\server\www\study\index.php (13)

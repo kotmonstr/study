@@ -1,6 +1,56 @@
+<?php
+$arrCategorias = array(
+    '' => 'SelectOne',
+    'alcogol' => 'alcogol',
+    'atakin' => 'atakin',
+    'boris' => 'boris',
+    'chudinov' => 'chudinov',
+    'energy' => 'energy',
+    'fomenko' => 'fomenko',
+    'genochid' => 'genochid',
+    'inostr' => 'inostr',
+    'karli' => 'karli',
+    'klimov' => 'klimov',
+    'kolovrat' => 'kolovrat',
+    'lessons' => 'lessons',
+    'levashov' => 'levashov',
+    'levashov_big' => 'levashov_big',
+    'look' => 'look',
+    'music' => 'music',
+    'narkotiki' => 'narkotiki',
+    'nevzorov' => 'nevzorov',
+    'nlo' => 'nlo',
+    'pops' => 'pops',
+    'poznovat_tv' => 'poznovat_tv',
+    'privivki' => 'privivki',
+    'sharshin' => 'sharshin',
+    'shirinovskiy' => 'shirinovskiy',
+    'sicret_materials' => 'sicret_materials',
+    'sidorov' => 'sidorov',
+    'sreda_obitaniya' => 'sreda_obitaniya',
+    'sundukov' => 'sundukov',
+    'teoria_zagovora' => 'teoria_zagovora',
+    'territoria_zabluchdeniya' => 'territoria_zabluchdeniya',
+    'umor' => 'umor',
+    'video' => 'video',
+    'youtube' => 'youtube',
+    'zadornov' => 'zadornov',
+    'zagadki_istorii' => 'zagadki_istorii',
+    'zapret_tem_istorii' => 'zapret_tem_istorii',
+    'zionizm' => 'zionizm',
+    'artefact' => 'artefact',
+    'my' => 'my');
 
+
+?>
 <center>
-    <div id="filter-ajax" style="width:1200px;height:60px;margin-top:20px">
+   
+    <div id="filter-ajax" class="well" style="">
+         <h3>Фильтр</h3>
+        <div class="drop-filter-group" style="display:inline">
+            <?php echo CHtml::dropDownList('categoria_name','', $arrCategorias); ?>
+         
+        </div>
         <div class="ziro-filter-group" style="display:inline">
             <input id="all" type="radio" value="all" style="display:inline">
             <label style="display:inline">Все</label>
@@ -69,6 +119,7 @@
                 var my = 0;
                 var artefact = 0;
                 var all= 0;
+                var categoria_name = $('#categoria_name').val();
                 
                 console.log('Get.filter');
 
@@ -92,15 +143,16 @@
                 } else {
                     all = 0;
                 }
-
+              
                 $.post(
                         "index.php?r=/youtubeCode/lastslider",
                         {
-                              last: last,
-                                my: my,
-                            filter: 1,
-                            artefact: artefact,
-                            all: all,
+                              last : last,
+                                my : my,
+                            filter : 1,
+                          artefact : artefact,
+                               all : all,
+                    categoria_name : categoria_name
                         },
                 onAjaxSuccess
                         );

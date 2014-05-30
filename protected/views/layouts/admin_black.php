@@ -32,7 +32,7 @@
                             
                       
                                     array('label' => 'Youtube Add', 'url' => array('/films/admin/form')),
-                                    array('label' => 'Youtube List', 'url' => array('/youtubecode/index')),
+                                    array('label' => 'Youtube List', 'url' => array('youtubecode/index')),
                             
                             
                             
@@ -68,3 +68,9 @@
 	</div><!-- footer -->
 </body>
 </html>
+<style>
+    body{
+       color:#000!important; 
+    }
+    
+</style>

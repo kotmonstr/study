@@ -8,7 +8,7 @@
             array('label' => 'TV', 'url' => array('/video/index'), 'items' => array(
                     array('label' => 'Россия 24', 'url' => array('/video/index')),
                     array('label' => '5 Канал', 'url' => array('/video/channel5')))),
-            array('label' => 'Ролики', 'url' => array('/youtubecode/index')),
+       
             array('label' => 'Последние Ролики', 'url' => array('/youtubecode/last')),
             array('label' => 'Slider Ролики', 'url' => array('/youtubecode/lastslider')),
             array('label' => 'Video from archiv', 'url' => array('/video/showvideo')),

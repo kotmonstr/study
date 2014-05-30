@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs = array(
-    'Youtube Codes',
+    'Youtube list',
 );
 
 $this->menu = array(
@@ -18,6 +18,7 @@ $this->menu = array(
 $this->widget('zii.widgets.CListView', array(
     'dataProvider' => $dataProvider,
     'itemView' => '_view',
+    
     'template' => "{items}\n{pager}",
     'enablePagination' => true,
 ));
@@ -32,3 +33,16 @@ $this->widget('zii.widgets.CListView', array(
     });
     
 </script>
+<style>
+    
+
+.list-view .pager {
+margin: 23px 0 76px 0;
+text-align: center;
+/* display: block; */
+/* z-index: 9999; */
+/* padding: 20px; */
+}   
+    
+    
+</style>
