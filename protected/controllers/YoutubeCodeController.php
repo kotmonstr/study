@@ -263,6 +263,7 @@ class YoutubeCodeController extends Controller {
                     $i++;
                     //$allPosts[$i]['id'] = $objPost->id;
                     $allPosts[$i]['code'] = $objPost->code;
+                    $allPosts[$i]['categoria'] = $objPost->categoria;
                     $allPosts[$i]['title'] = $objPost->title;
                     $allPosts[$i]['date'] = $objPost->date;
                     $allPosts[$i]['watched'] = $objPost->watched;
@@ -288,10 +289,10 @@ class YoutubeCodeController extends Controller {
                 Yii::app()->user->setFlash('error', "No data!");
             }
             $i = 0;
-                    $post = new YoutubeCode;
+                    $post = new YoutubeCodeTemp;
             if (file_exists('out-code.txt')) {
                 $homepage = file_get_contents('out-code.txt');
-                $homepage = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $homepage);
+                //$homepage = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $homepage);
                 $result = unserialize($homepage);
             } else {
                 Yii::app()->user->setFlash('error', "No data!");
@@ -311,12 +312,12 @@ class YoutubeCodeController extends Controller {
                 if ($check != 'double') {
                     $Iterator_of_save++;
 
-                    $post->save();
+                    $post->save(false);
                 }
-                        $post = new YoutubeCode;
+                        $post = new YoutubeCodeTemp;
             }
             if ($Iterator_of_save != 0) {
-                Yii::app()->user->setFlash('success', "Каталог был обновлен на " . $Iterator_of_save . " поста");
+                Yii::app()->user->setFlash('success', "Каталог был обновлен на " . $Iterator_of_save . " роликов");
             } else {
                 Yii::app()->user->setFlash('error', "Нет новых роликов");
             }
@@ -328,7 +329,7 @@ class YoutubeCodeController extends Controller {
     }
         public function check_date_create_for_uniq($value) {
         $original_code = $value;
-                $model = YoutubeCode::model()->find('code=:code', array(':code' => $original_code));
+                $model = YoutubeCodeTemp::model()->find('code=:code', array(':code' => $original_code));
         if (isset($model->code) && $model->code == $value) {
             return 'double';
         } else {

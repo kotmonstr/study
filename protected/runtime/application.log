@@ -23928,3 +23928,55 @@ Stack trace:
 REQUEST_URI=/index.php?r=youtubecode/set&go=1
 in C:\server\www\study\protected\controllers\YoutubeCodeController.php (310)
 in C:\server\www\study\index.php (13)
+2014/06/01 01:18:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testdrive.youtube_code_temp' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `youtube_code_temp`.
+in C:\server\www\study\index.php (13)
+2014/06/01 01:26:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'categoria' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code_temp` (`date`, `watched`, `code`, `title`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (314)
+in C:\server\www\study\index.php (13)
+2014/06/01 01:26:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'categoria' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code_temp` (`date`, `watched`, `code`, `title`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\server\www\study\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\server\www\study\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(314): CActiveRecord->save(false)
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionSet()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('set')
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/set')
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=youtubecode/set&go=1
+HTTP_REFERER=http://study/index.php?r=youtubecode/set
+---
+2014/06/01 01:26:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'categoria' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code_temp` (`date`, `watched`, `code`, `title`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (314)
+in C:\server\www\study\index.php (13)
+2014/06/01 01:26:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'categoria' doesn't have a default value. The SQL statement executed was: INSERT INTO `youtube_code_temp` (`date`, `watched`, `code`, `title`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\server\www\study\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\server\www\study\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\server\www\study\protected\controllers\YoutubeCodeController.php(314): CActiveRecord->save(false)
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionSet()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('set')
+#13 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/set')
+#14 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\server\www\study\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=youtubecode/set&go=1
+HTTP_REFERER=http://study/index.php?r=youtubecode/set
+---

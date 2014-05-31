@@ -1,4 +1,4 @@
-a:13:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
+a:16:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
 <div class="region region-content" style="color: #3b3b3b; font-family: Arial, sans-serif; font-size: 12px;">
 <div id="node-5" class="node node-articles node-promoted node-full clearfix" style="background-image: none; border: none; padding: 0px; background-position: initial initial; background-repeat: initial initial;">
 <div class="meta submitted" style="font-size: 0.857em; color: #68696b; margin-bottom: -5px;">
@@ -2960,4 +2960,712 @@ mysql_connect();
 <br />Интересно, что должны мы сделать, чтобы наконец-то все, &laquo;униженные&raquo; нами, нас простили?<br /><br />Может, хватит нам писать о своей истории в извиняющемся и самоуничижительном тоне? Лично я устал извиняться! Пора научиться гордиться тем, кто ты есть! Я русский, и хочу, чтобы мои дети гордились той страной, в которой они родились!</div>
 </div>
 <div class="navigations" style="text-align: left;" align="center">&nbsp;</div>
-<div style="text-align: left;"><em>Автор Казаков Алексей</em></div>";s:4:"tags";s:10:"Я Рус!";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 01:21:31";s:6:"update";s:19:"0000-00-00 00:00:00";}}
+<div style="text-align: left;"><em>Автор Казаков Алексей</em></div>";s:4:"tags";s:10:"Я Рус!";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 01:21:31";s:6:"update";s:19:"0000-00-00 00:00:00";}i:14;a:8:{s:2:"id";s:2:"17";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:13285:"<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAllBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12 ORDER BY firstname'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:05:46";s:6:"update";s:19:"0000-00-00 00:00:00";}i:15;a:8:{s:2:"id";s:2:"18";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:13285:"<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAllBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12 ORDER BY firstname'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:06:25";s:6:"update";s:19:"0000-00-00 00:00:00";}i:16;a:8:{s:2:"id";s:2:"19";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:13285:"<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAllBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12 ORDER BY firstname'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:07:24";s:6:"update";s:19:"0000-00-00 00:00:00";}}

@@ -1,6 +1,6 @@
 
 <center>
-    <h3>Пополнить записи каталога видеороликов</h3>
+    <h3>Записать видеоролики в файл</h3>
     <?php echo CHtml::button('Пополнить', array('submit' => array('youtubecode/get&go=1'))); ?>
 <br>
 

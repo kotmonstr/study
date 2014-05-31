@@ -104,4 +104,14 @@ PRIMARY KEY(`id`))";
 PRIMARY KEY(`id`))";
     mysql_query($sql, $link);
     echo "Создание таблицы <strong>youtube_code</strong> завершено." . '<br>';
+    $sql = "CREATE TABLE IF NOT EXISTS `youtube_code_temp`(
+`id`         INT(11) NOT NULL AUTO_INCREMENT,
+`code`       VARCHAR(11) NOT NULL,
+`title`      TEXT NOT NULL,
+`categoria`  VARCHAR(25) NOT NULL,
+`date`       DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+`watched`    INT(11) NOT NULL DEFAULT '0',   
+PRIMARY KEY(`id`))";
+    mysql_query($sql, $link);
+    echo "Создание таблицы <strong>youtube_code_temp</strong> завершено." . '<br>';
 }
