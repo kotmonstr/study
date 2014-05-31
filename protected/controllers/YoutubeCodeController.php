@@ -186,7 +186,7 @@ class YoutubeCodeController extends Controller {
                     if ($last == 1) {
                     $limit = 10;
                     } else {
-                        $limit = 5;
+                        $limit = '20';
                     }
                  
                     $this->layout = 'application.views.layouts.slider-min';
@@ -228,7 +228,7 @@ class YoutubeCodeController extends Controller {
             $this->layout = 'application.views.layouts.slider-min';
             $criteria = new CDbCriteria;
             $criteria->order = 'date DESC';
-            $criteria->limit = 5;
+            $criteria->limit = 20;
             $model = YoutubeCode::model()->findAll($criteria);
             $this->render('lastslider', array(
                 'model' => $model,
