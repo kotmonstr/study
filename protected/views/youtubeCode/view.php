@@ -3,7 +3,7 @@
 /* @var $model YoutubeCode */
 
 $this->breadcrumbs = array(
-    'Youtube Codes' => array('index'),
+    'Youtube ролики' => array('index'),
     $model->title,
 );
 
@@ -11,12 +11,12 @@ $this->menu = array(
     array('label' => 'List YoutubeCode', 'url' => array('index')),
     array('label' => 'Create YoutubeCode', 'url' => array('create')),
     array('label' => 'Update YoutubeCode', 'url' => array('update', 'id' => $model->id)),
-    array('label' => 'Delete YoutubeCode', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
+    array('label' => 'Delete YoutubeCode', 'url' => 'index.php?r=youtubecode/index', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
     array('label' => 'Manage YoutubeCode', 'url' => array('admin')),
 );
 ?>
 
-<h1>View YoutubeCode #<?php echo $model->id; ?></h1>
+<h1>Youtube ролик #<?php echo $model->id; ?></h1>
 
 <?php
 

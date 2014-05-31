@@ -67,7 +67,7 @@ $arrCategorias = array(
             <input id="artefact" type="radio" value="artefact" style="display:inline">
             <label style="display:inline">Артефакты</label>
         </div>
-        <a class="btn btn-default" onclick="Get.filter()" style="display:inline;margin-left:20px">Применить фильтр</a>
+        <a class="btn btn-primary" onclick="Get.filter()" style="display:inline;margin-left:20px">Применить фильтр</a>
     </div>
     <div class="box_skitter box_skitter_large">
         <ul>
@@ -88,7 +88,7 @@ $arrCategorias = array(
     </div>
     <br>
     <br>
-    <a class="btn btn-large" onclick="Get.rolick()">Просмотреть ролик</a>
+    <a class="btn btn-large btn-primary" onclick="Get.rolick()">Просмотреть ролик</a>
     <div id="result"></div>
 
     <script >

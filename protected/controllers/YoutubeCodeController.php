@@ -110,7 +110,7 @@ class YoutubeCodeController extends Controller {
      */
     public function actionIndex() {
         $this->layout = 'application.views.layouts.admin_black';
-        $dataProvider = new CActiveDataProvider('YoutubeCode', array('pagination' => array('pageSize' => 5)));
+        $dataProvider = new CActiveDataProvider('YoutubeCode', array('pagination' => array('pageSize' => 50)));
         if (Yii::app()->user->name && Yii::app()->user->name != 'Guest') {
             $this->render('index', array(
                 'dataProvider' => $dataProvider,
@@ -124,6 +124,7 @@ class YoutubeCodeController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
+      
         $model = new YoutubeCode('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['YoutubeCode']))
@@ -131,6 +132,7 @@ class YoutubeCodeController extends Controller {
 
         $this->render('admin', array(
             'model' => $model,
+       
         ));
     }
 
@@ -220,6 +222,7 @@ class YoutubeCodeController extends Controller {
             
         if (Yii::app()->request->isAjaxRequest) {
             $code = $_POST['code'];
+            $this->adwatch($code);
             $rolic = '<iframe width="640" height="390" src="//www.youtube.com/embed/' . $code . '?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>';
             echo $rolic;
             // Завершаем приложение
@@ -235,6 +238,16 @@ class YoutubeCodeController extends Controller {
             ));
         }
     }}
+    public function adwatch($code){
+ 
+                $model = YoutubeCode::model()->findByAttributes(array('code' => $code));           
+                $quantity = $model->watched;         
+                $model->watched = $quantity + 1;
+                $model->save();
+                
+                
+                
+    }
 
 
 

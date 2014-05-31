@@ -12,7 +12,7 @@ $this->menu = array(
 );
 ?>
 
-<h1>Youtube Codes</h1>
+<h1>Youtube ролики</h1>
 
 <?php
 $this->widget('zii.widgets.CListView', array(
@@ -42,7 +42,13 @@ text-align: center;
 /* display: block; */
 /* z-index: 9999; */
 /* padding: 20px; */
-}   
+} 
+.view{
+    width:200px;
+    height:300px;
+    float:left;
+    padding:18px!important;
+}
     
     
 </style>

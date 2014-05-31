@@ -32,6 +32,13 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'code'); ?>
+		<?php echo $form->textField($model,'code'); ?>
+	</div>
+    
+    
+    
+	<div class="row">
 		<?php echo $form->label($model,'date'); ?>
 		<?php echo $form->textField($model,'date'); ?>
 	</div>
