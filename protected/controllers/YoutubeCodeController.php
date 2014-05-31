@@ -291,6 +291,7 @@ class YoutubeCodeController extends Controller {
                     $post = new YoutubeCode;
             if (file_exists('out-code.txt')) {
                 $homepage = file_get_contents('out-code.txt');
+                $homepage = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $homepage);
                 $result = unserialize($homepage);
             } else {
                 Yii::app()->user->setFlash('error', "No data!");
