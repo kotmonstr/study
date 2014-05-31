@@ -261,7 +261,7 @@ class YoutubeCodeController extends Controller {
                 $quantity = count($result);
                 foreach ($result as $objPost) {
                     $i++;
-                    $allPosts[$i]['id'] = $objPost->id;
+                    //$allPosts[$i]['id'] = $objPost->id;
                     $allPosts[$i]['code'] = $objPost->code;
                     $allPosts[$i]['title'] = $objPost->title;
                     $allPosts[$i]['date'] = $objPost->date;
@@ -299,7 +299,7 @@ class YoutubeCodeController extends Controller {
             }
             foreach ($result as $objectPost) {
                 foreach ($objectPost as $key => $value) {
-                    //echo $key.' '. $value;
+                    echo $key.' '. $value;
                     if ($key != 'id') {
                         //провести проверку по дате создания - уникальность даты
                         if ($key == 'code') {
@@ -311,7 +311,7 @@ class YoutubeCodeController extends Controller {
                 if ($check != 'double') {
                     $Iterator_of_save++;
 
-                    $post->save();
+                    //$post->save();
                 }
                         $post = new YoutubeCode;
             }
