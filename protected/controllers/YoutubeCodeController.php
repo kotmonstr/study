@@ -30,7 +30,7 @@ class YoutubeCodeController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin', 'delete','get','set'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -247,6 +247,92 @@ class YoutubeCodeController extends Controller {
                 
                 
                 
+    }
+    public function actionGet() {
+ $this->layout='application.views.layouts.main';
+        $a = Yii::app()->request->getParam('go');
+
+        if ($a == 1) {
+         
+                $allPosts = array();
+                $i = 0;
+                        $model = new YoutubeCode;
+                $result = $model::model()->findAll();
+                $quantity = count($result);
+                foreach ($result as $objPost) {
+                    $i++;
+                    $allPosts[$i]['id'] = $objPost->id;
+                    $allPosts[$i]['code'] = $objPost->code;
+                    $allPosts[$i]['title'] = $objPost->title;
+                    $allPosts[$i]['date'] = $objPost->date;
+                    $allPosts[$i]['watched'] = $objPost->watched;
+                   
+                }
+                //VarDumper::dump($allPosts);
+                $All = serialize($allPosts);
+                $open = fopen("out-code.txt", "w");
+                fwrite($open, $All);
+                fclose($open);
+                Yii::app()->user->setFlash('success', $i." Роликов были успешно сохранены на диск");
+                //VarDumper::dump($allPosts2);
+            }
+             $this->render('get');
+        } 
+    public function actionSet() {
+         $this->layout='application.views.layouts.main';
+        $Iterator_of_save = 0;
+        $a = Yii::app()->request->getParam('go');
+        $array = array();
+        if ($a == 1) {
+            if (!file_exists("out-code.txt")) {
+                Yii::app()->user->setFlash('error', "No data!");
+            }
+            $i = 0;
+                    $post = new YoutubeCode;
+            if (file_exists('out.txt')) {
+                $homepage = file_get_contents('out-code.txt');
+                $result = unserialize($homepage);
+            } else {
+                Yii::app()->user->setFlash('error', "No data!");
+                $this->redirect('index.php?r=youtubeCode/get');
+            }
+            foreach ($result as $objectPost) {
+                foreach ($objectPost as $key => $value) {
+                    //echo $key.' '. $value;
+                    if ($key != 'id') {
+                        //провести проверку по дате создания - уникальность даты
+                        if ($key == 'code') {
+                            $check = $this->check_date_create_for_uniq($value);
+                        }
+                        $post->$key = $value;
+                    }
+                }
+                if ($check != 'double') {
+                    $Iterator_of_save++;
+
+                    $post->save();
+                }
+                        $post = new YoutubeCode;
+            }
+            if ($Iterator_of_save != 0) {
+                Yii::app()->user->setFlash('success', "Каталог был обновлен на " . $Iterator_of_save . " поста");
+            } else {
+                Yii::app()->user->setFlash('error', "Нет новых роликов");
+            }
+            $this->render('set');
+        } else {
+           
+            $this->render('set');
+        }
+    }
+        public function check_date_create_for_uniq($value) {
+        $original_code = $value;
+                $model = YoutubeCode::model()->find('code=:code', array(':code' => $original_code));
+        if (isset($model->code) && $model->code == $value) {
+            return 'double';
+        } else {
+            return 'default';
+        }
     }
 
 

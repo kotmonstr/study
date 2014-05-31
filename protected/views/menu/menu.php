@@ -12,6 +12,8 @@
             array('label' => 'Ролики', 'url' => array('/youtubecode/lastslider'), 'items' => array(
                     array('label' => 'Ролики', 'url' => array('/youtubecode/lastslider')),
                     array('label' => 'Последние Ролики', 'url' => array('/youtubecode/last')),
+                         array('label' => 'Записать на диск', 'url' => array('/youtubecode/get')),
+                         array('label' => 'Обновить с диска', 'url' => array('/youtubecode/set')),
                     array('label' => 'Из архива', 'url' => array('/video/showvideo')))),
             array('label' => 'Blog', 'url' => array('/post'), 'items' => array(
                     array('label' => 'Blog', 'url' => array('/post')),

@@ -23071,3 +23071,860 @@ Stack trace:
 REQUEST_URI=/index.php?r=/youtubeCode/lastslider
 HTTP_REFERER=http://study/index.php?r=youtubecode/lastslider
 ---
+2014/05/31 18:06:08 [error] [php] include(<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa.php): failed to open stream: Invalid argument (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\server\www\study\framework\zii\widgets\CDetailView.php(212): is_callable()
+#2 C:\server\www\study\framework\web\CBaseController.php(173): CDetailView->run()
+#3 C:\server\www\study\protected\views\post\view.php(45): PostController->widget()
+#4 C:\server\www\study\framework\web\CBaseController.php(126): require()
+#5 C:\server\www\study\framework\web\CBaseController.php(95): PostController->renderInternal()
+#6 C:\server\www\study\framework\web\CController.php(869): PostController->renderFile()
+#7 C:\server\www\study\framework\web\CController.php(782): PostController->renderPartial()
+#8 C:\server\www\study\protected\controllers\PostController.php(56): PostController->render()
+#9 unknown(0): PostController->actionView()
+#10 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\server\www\study\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#14 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#17 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\server\www\study\framework\web\CController.php(265): PostController->runActionWithFilters()
+#20 C:\server\www\study\framework\web\CWebApplication.php(282): PostController->run()
+#21 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=post/view&id=17
+in C:\server\www\study\protected\views\post\view.php (45)
+in C:\server\www\study\protected\controllers\PostController.php (56)
+in C:\server\www\study\index.php (13)
+2014/05/31 18:06:35 [error] [php] include(<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa.php): failed to open stream: Invalid argument (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\server\www\study\framework\zii\widgets\CDetailView.php(212): is_callable()
+#2 C:\server\www\study\framework\web\CBaseController.php(173): CDetailView->run()
+#3 C:\server\www\study\protected\views\post\view.php(45): PostController->widget()
+#4 C:\server\www\study\framework\web\CBaseController.php(126): require()
+#5 C:\server\www\study\framework\web\CBaseController.php(95): PostController->renderInternal()
+#6 C:\server\www\study\framework\web\CController.php(869): PostController->renderFile()
+#7 C:\server\www\study\framework\web\CController.php(782): PostController->renderPartial()
+#8 C:\server\www\study\protected\controllers\PostController.php(56): PostController->render()
+#9 unknown(0): PostController->actionView()
+#10 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\server\www\study\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#14 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#17 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\server\www\study\framework\web\CController.php(265): PostController->runActionWithFilters()
+#20 C:\server\www\study\framework\web\CWebApplication.php(282): PostController->run()
+#21 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=post/view&id=18
+in C:\server\www\study\protected\views\post\view.php (45)
+in C:\server\www\study\protected\controllers\PostController.php (56)
+in C:\server\www\study\index.php (13)
+2014/05/31 18:08:31 [error] [php] include(<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
+<h3>Поиск одной записи (find)</h3>
+<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>&nbsp;</p>
+<div>
+<div id="highlighter_840981" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
+<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
+<div>
+<div id="highlighter_319108" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
+<p>&nbsp;</p>
+<h3>Поиск нескольких записей (findAll)</h3>
+<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
+<div>
+<div id="highlighter_277725" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
+<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Собственно и перебирать их можно как обычный массив:</p>
+<div>
+<div id="highlighter_683104" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>find, подробности</h3>
+<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
+<p>Самый простой способ мы рассматривали выше:</p>
+<div>
+<div id="highlighter_184845" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указав критерии в массиве:</p>
+<div>
+<div id="highlighter_583795" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С помощью класса $criteria</p>
+<div>
+<div id="highlighter_573303" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
+<div>
+<div id="highlighter_132563" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>С использованием CDbCriteria</p>
+<div>
+<div id="highlighter_302664" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
+<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
+<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
+<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Указываем сортировку в самом запросе</p>
+<div>
+<div id="highlighter_508087" class="syntaxhighlighter  php">
+<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="php plain">Anketa.php): failed to open stream: Invalid argument (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\server\www\study\framework\zii\widgets\CDetailView.php(212): is_callable()
+#2 C:\server\www\study\framework\web\CBaseController.php(173): CDetailView->run()
+#3 C:\server\www\study\protected\views\post\view.php(45): PostController->widget()
+#4 C:\server\www\study\framework\web\CBaseController.php(126): require()
+#5 C:\server\www\study\framework\web\CBaseController.php(95): PostController->renderInternal()
+#6 C:\server\www\study\framework\web\CController.php(869): PostController->renderFile()
+#7 C:\server\www\study\framework\web\CController.php(782): PostController->renderPartial()
+#8 C:\server\www\study\protected\controllers\PostController.php(56): PostController->render()
+#9 unknown(0): PostController->actionView()
+#10 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\server\www\study\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#14 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#17 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\server\www\study\framework\web\CController.php(265): PostController->runActionWithFilters()
+#20 C:\server\www\study\framework\web\CWebApplication.php(282): PostController->run()
+#21 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=post/view&id=19
+in C:\server\www\study\protected\views\post\view.php (45)
+in C:\server\www\study\protected\controllers\PostController.php (56)
+in C:\server\www\study\index.php (13)
+2014/05/31 20:51:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\server\www\study\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\server\www\study\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\server\www\study\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('get')
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/get')
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=youtubecode/get
+HTTP_REFERER=http://study/index.php?r=youtubecode/lastslider
+---
+2014/05/31 20:52:18 [error] [exception.CException] exception 'CException' with message 'Property "YoutubeCode.content" is not defined.' in C:\server\www\study\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\server\www\study\framework\db\ar\CActiveRecord.php(145): CComponent->__get('content')
+#1 C:\server\www\study\protected\controllers\YoutubeCodeController.php(266): CActiveRecord->__get('content')
+#2 C:\server\www\study\framework\web\actions\CInlineAction.php(49): YoutubeCodeController->actionGet()
+#3 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\server\www\study\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('get')
+#12 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('youtubecode/get')
+#13 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\server\www\study\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=youtubecode/get&go=1
+HTTP_REFERER=http://study/index.php?r=youtubecode/get
+---
+2014/05/31 20:57:56 [error] [php] Undefined variable: check (C:\server\www\study\protected\controllers\YoutubeCodeController.php:310)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/set&go=1
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (310)
+in C:\server\www\study\index.php (13)
+2014/05/31 21:08:03 [error] [php] Undefined variable: check (C:\server\www\study\protected\controllers\YoutubeCodeController.php:310)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/set&go=1
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (310)
+in C:\server\www\study\index.php (13)
+2014/05/31 21:08:11 [error] [php] Undefined variable: check (C:\server\www\study\protected\controllers\YoutubeCodeController.php:310)
+Stack trace:
+#0 C:\server\www\study\framework\web\filters\CFilterChain.php(133): YoutubeCodeController->runAction()
+#1 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): YoutubeCodeController->filterAccessControl()
+#4 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\server\www\study\framework\web\CController.php(265): YoutubeCodeController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): YoutubeCodeController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=youtubecode/set&go=1
+in C:\server\www\study\protected\controllers\YoutubeCodeController.php (310)
+in C:\server\www\study\index.php (13)
