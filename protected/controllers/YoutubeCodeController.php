@@ -289,7 +289,7 @@ class YoutubeCodeController extends Controller {
             }
             $i = 0;
                     $post = new YoutubeCode;
-            if (file_exists('out.txt')) {
+            if (file_exists('out-code.txt')) {
                 $homepage = file_get_contents('out-code.txt');
                 $result = unserialize($homepage);
             } else {
