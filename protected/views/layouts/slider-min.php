@@ -20,7 +20,21 @@
 
 <script type="text/javascript" language="javascript">
 	$(document).ready(function() {		
-                $('.box_skitter_large').skitter({                                         
+                $('.box_skitter_large').skitter({
+                                               
+                                                controls_position: "leftTop", 
+                                            
+                                                label: true, 
+                                                controls: true, 
+                                            
+                                                progressbar: true, 
+                                                enable_navigation_keys: true, 
+                                              
+                                                controls: true,
+                    
+                    
+                    
+                                                 theme: 'minimalist',
                                                  dots: true, 
                                                  preview: true,
                                                  numbers_align: 'right',                                           
