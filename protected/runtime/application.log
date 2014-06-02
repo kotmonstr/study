@@ -24201,3 +24201,111 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/reg
 HTTP_REFERER=http://study/index.php?r=video/slider
 ---
+2014/06/02 17:41:13 [error] [php] include(<h1>Yii - Шпаргалка по методам класса CHtml</h1>
+<div class="well clearfix">
+<p>Ниже в статье показаны примеры использования основных методов класса CHtml, а именно:</p>
+<ul>
+<li>CHtml::link()</li>
+<li>CHtml::button()</li>
+<li>CHtml::textField()</li>
+<li>CHtml::listData()</li>
+<li>CHtml::dropDownList()</li>
+</ul>
+</div>
+<p><em>оригинал статьи -&nbsp;<a href="http://www.yiiframework.com/wiki/48/by-example-chtml/" target="_blank">http://www.yiiframework.com/wiki/48/by-example-chtml/</a></em></p>
+<h2>Метод CHtml::link()</h2>
+<p>public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))<br />Генерирует тег &lt;a&gt;&lt;/a&gt;</p>
+<h3>Пример 1: Ссылка на определённых экшен контроллера:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&gt;</p>
+<p>На выходи, получаем HTML:</p>
+<p>&lt;a href="index.php?r=controller/action"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 2: Ссылка на экшен с передачей дополнительных параметров:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1')); ?&gt;</p>
+<p>Код HTML:</p>
+<p>&lt;a href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 3: Аналогичен предыдущему, но передаем несколько параметров:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param2'=&gt;'value2',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param3'=&gt;'value3')); ?&gt;</p>
+<p>Код:</p>
+<p>&lt;a href="index.php?r=controller/action&amp;param1=value1&amp;param2=value2&amp;param3=value3"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 4: Ссылка, открывающая страницу в новой вкладке:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1'), array('target'=&gt;'_blank'); ?&gt;</p>
+<p>Код:</p>
+<p>&lt;a target="_blank" href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 5: Ссылка, на экшен, внутри одного контроллера:</h3>
+<p>(предположим что нужно добавить ссылку из PostController/view на PostController/create)</p>
+<p>&lt;?php echo CHtml::link('Link Text',array('action')); ?&gt;</p>
+<h3>Пример 6: Ссылка из корневя сайта:</h3>
+<p>(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)</p>
+<p>&lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&gt;</p>
+<h3>Пример 7: Ссылка на экшен модуля:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&gt;</p>
+<h3>Пример 8: Ссылка на экшен внутри модуля:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('/{$this-&gt;module-&gt;id}/controller/action')); ?&gt;</p>
+<h2>Метод CHtml::button()</h2>
+<p>public static string button(string $label='button', array $htmlOptions=array ( ))<br />Генерирует кнопку.</p>
+<h3>Пример 1: Подключение кнопки к какому-либо экшену контроллера:</h3>
+<p>&lt;?php echo CHtml::button('Button Text', array('submit' =&gt; array('controller/action'))); ?&gt;<br />Код:<br />&lt;input id="yt0" type="button" value="Button Text" name="yt0"/&gt;<br />&lt;script type="text/javascript"&gt;<br />/*&lt;![CDATA[*/<br />jQuery(document).ready(function() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery('#yt0').click(function( {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery.yii.submitForm(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'controller/action',{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );return false;});<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<br />/*]]&gt;*/<br />&lt;/script&gt;</p>
+<h2>Метод CHtml::textField()</h2>
+<p>public static function textField($name,$value='',$htmlOptions=array())</p>
+<p>Генерирует текстовое поле.</p>
+<h3>Пример 1: Генерация пустого поля, с именем</h3>
+<p>&lt;?php echo CHtml::textField('Text'); ?&gt;</p>
+<h3>Пример 2: Генерация поля с именем и значением:</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value'); ?&gt;</p>
+<h3>Пример 3: Генерация поля с дополнительными HTML параметрами</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value',<br />array('id'=&gt;'idTextField',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'width'=&gt;100,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'maxlength'=&gt;100); ?&gt;</p>
+<h3>Пример 4: Генерация выключенного поля</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value',<br />&nbsp;&nbsp;&nbsp; array('disabled'=&gt;'disabled'); ?&gt;</p>
+<h2>Метод CHtml::listData()</h2>
+<p>public static function listData($models,$valueField,$textField,$groupField='')</p>
+<p>Генерирует данные для dropDownList и listBox в формате $key=&gt;$value</p>
+<h3>Пример 1: Генерация категорий:</h3>
+<p>&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp; /*you can use here any find method you think<br />&nbsp;&nbsp;&nbsp;&nbsp; proper to return your data from db*/<br />&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; // format models resulting using listData&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);</p>
+<p>Вывод HTML:</p>
+<p>array("1" =&gt; "Arts", "2" =&gt; "Science", "3" =&gt; "Culture");</p>
+<h3>Пример 2: Генерация сортированных списков с использованием findAll()</h3>
+<p>&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);</p>
+<h2>Метод CHtml::dropDownList()</h2>
+<p>public static function dropDownList($name,$select,$data,$htmlOptions=array())<br />Генерирует выпадающий список</p>
+<h3>Пример 1: Генерация простого выпадающего списка для выбора пола</h3>
+<p>&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'))</p>
+<h3>Пример 2: Генерация выпадающего списка с пустым элементом</h3>
+<p>&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender)'));</p>
+<h3>Пример 3: Генерация списка с использованием данных из модели:</h3>
+<p>В модели:<br />public function getGenderOptions(){<br />&nbsp;&nbsp;&nbsp; return array('M' =&gt; 'Male', 'F' =&gt; 'Female');<br />}<br />В представлении:<br />&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $model-&gt;genderOptions,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender'));</p>
+<h3>Пример 4: Использовании данных из базы</h3>
+<p>// retrieve the models from db<br />$models = categories::model()-&gt;findAll(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));</p>
+<p>// format models as $key=&gt;$value with listData<br />$list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');<br />&lt;?php echo CHtml.php): failed to open stream: Invalid argument (C:\server\www\study\framework\YiiBase.php:427)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 C:\server\www\study\framework\zii\widgets\CDetailView.php(212): is_callable()
+#2 C:\server\www\study\framework\web\CBaseController.php(173): CDetailView->run()
+#3 C:\server\www\study\protected\views\post\view.php(45): PostController->widget()
+#4 C:\server\www\study\framework\web\CBaseController.php(126): require()
+#5 C:\server\www\study\framework\web\CBaseController.php(95): PostController->renderInternal()
+#6 C:\server\www\study\framework\web\CController.php(869): PostController->renderFile()
+#7 C:\server\www\study\framework\web\CController.php(782): PostController->renderPartial()
+#8 C:\server\www\study\protected\controllers\PostController.php(56): PostController->render()
+#9 unknown(0): PostController->actionView()
+#10 C:\server\www\study\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#11 C:\server\www\study\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#12 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\server\www\study\framework\web\filters\CFilterChain.php(133): PostController->runAction()
+#14 C:\server\www\study\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\server\www\study\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\server\www\study\framework\web\filters\CInlineFilter.php(58): PostController->filterAccessControl()
+#17 C:\server\www\study\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\server\www\study\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\server\www\study\framework\web\CController.php(265): PostController->runActionWithFilters()
+#20 C:\server\www\study\framework\web\CWebApplication.php(282): PostController->run()
+#21 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=post/view&id=20
+in C:\server\www\study\protected\views\post\view.php (45)
+in C:\server\www\study\protected\controllers\PostController.php (56)
+in C:\server\www\study\index.php (13)
