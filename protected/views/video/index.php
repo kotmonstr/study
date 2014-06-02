@@ -1,6 +1,6 @@
 <?php ?>
 
-<h1>Video</h1>
+<h1>TV RUSSIA 24</h1>
 
 
     <div style="width:480px; height: 480px; margin: 0px auto;">

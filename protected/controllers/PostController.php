@@ -2,7 +2,7 @@
 
 class PostController extends Controller {
 
-    public $layout = '//layouts/column2';
+    public $layout = '//layouts/black';
     public $result;
     public $q;
 

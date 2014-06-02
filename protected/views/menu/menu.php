@@ -21,6 +21,7 @@
                     array('label' => 'Обновить с диска', 'url' => array('/post/set')),
                     array('label' => 'Создание дампа бд', 'url' => array('/test/backup')))),
             array('label' => 'Lessons', 'url' => array('/test/lessons')),
+            array('label' => 'TEST', 'url' => array('/ajax/test')),
             array('label' => 'All video', 'url' => array('/test/all')),
             array('label' => 'RSS', 'url' => array('/test'), 'items' => array(
                     array('label' => 'RSS', 'url' => array('/test')),

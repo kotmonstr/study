@@ -2,7 +2,7 @@
 
 class YoutubeCodeController extends Controller {
 
-    public $layout = '//layouts/column2';
+    public $layout = '//layouts/black';
 
     /**
      * @return array action filters

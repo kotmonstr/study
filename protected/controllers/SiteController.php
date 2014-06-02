@@ -1,7 +1,7 @@
 <?php
 
 class SiteController extends Controller {
-
+ public $layout = '//layouts/black';
     /**
      * Declares class-based actions.
      */

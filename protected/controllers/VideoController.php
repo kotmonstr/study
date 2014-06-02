@@ -6,7 +6,7 @@
 class VideoController extends Controller {
 
     //работа
-    public $layout = '//layouts/column2';
+    public $layout = '//layouts/black';
 
     public function actionIndex() {
 

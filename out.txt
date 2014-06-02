@@ -1,4 +1,4 @@
-a:16:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
+a:20:{i:1;a:8:{s:2:"id";s:1:"2";s:5:"title";s:29:"RSS 2.0 лента на PHP 5";s:7:"content";s:37394:"<h1 id="page-title" class="title" style="margin: 0px 0px 15px; font-weight: inherit; font-size: 32px; font-family: Scada, Helvetica, sans-serif; line-height: 35px;">RSS 2.0 лента на PHP 5</h1>
 <div class="region region-content" style="color: #3b3b3b; font-family: Arial, sans-serif; font-size: 12px;">
 <div id="node-5" class="node node-articles node-promoted node-full clearfix" style="background-image: none; border: none; padding: 0px; background-position: initial initial; background-repeat: initial initial;">
 <div class="meta submitted" style="font-size: 0.857em; color: #68696b; margin-bottom: -5px;">
@@ -3196,476 +3196,418 @@ mysql_connect();
 </div>
 </div>
 <p>&nbsp;</p>
-<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:05:46";s:6:"update";s:19:"0000-00-00 00:00:00";}i:15;a:8:{s:2:"id";s:2:"18";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:13285:"<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
-<h3>Поиск одной записи (find)</h3>
-<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
+<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:05:46";s:6:"update";s:19:"0000-00-00 00:00:00";}i:15;a:8:{s:2:"id";s:2:"23";s:5:"title";s:3:"ggg";s:7:"content";s:15433:"&lt;h1&gt;Yii - Шпаргалка по методам класса CHtml&lt;/h1&gt;
+&lt;div class=&quot;well clearfix&quot;&gt;
+&lt;p&gt;Ниже в статье показаны примеры использования основных методов класса CHtml, а именно:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CHtml::link()&lt;/li&gt;
+&lt;li&gt;CHtml::button()&lt;/li&gt;
+&lt;li&gt;CHtml::textField()&lt;/li&gt;
+&lt;li&gt;CHtml::listData()&lt;/li&gt;
+&lt;li&gt;CHtml::dropDownList()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;оригинал статьи -&amp;nbsp;&lt;a href=&quot;http://www.yiiframework.com/wiki/48/by-example-chtml/&quot; target=&quot;_blank&quot;&gt;http://www.yiiframework.com/wiki/48/by-example-chtml/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Метод CHtml::link()&lt;/h2&gt;
+&lt;p&gt;public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))&lt;br /&gt;Генерирует тег &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 1: Ссылка на определённых экшен контроллера:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&amp;gt;&lt;/p&gt;
+&lt;p&gt;На выходи, получаем HTML:&lt;/p&gt;
+&lt;p&gt;&amp;lt;a href=&quot;index.php?r=controller/action&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 2: Ссылка на экшен с передачей дополнительных параметров:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1')); ?&amp;gt;&lt;/p&gt;
+&lt;p&gt;Код HTML:&lt;/p&gt;
+&lt;p&gt;&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 3: Аналогичен предыдущему, но передаем несколько параметров:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param2'=&amp;gt;'value2',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param3'=&amp;gt;'value3')); ?&amp;gt;&lt;/p&gt;
+&lt;p&gt;Код:&lt;/p&gt;
+&lt;p&gt;&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&amp;amp;param2=value2&amp;amp;param3=value3&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 4: Ссылка, открывающая страницу в новой вкладке:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1'), array('target'=&amp;gt;'_blank'); ?&amp;gt;&lt;/p&gt;
+&lt;p&gt;Код:&lt;/p&gt;
+&lt;p&gt;&amp;lt;a target=&quot;_blank&quot; href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 5: Ссылка, на экшен, внутри одного контроллера:&lt;/h3&gt;
+&lt;p&gt;(предположим что нужно добавить ссылку из PostController/view на PostController/create)&lt;/p&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('action')); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 6: Ссылка из корневя сайта:&lt;/h3&gt;
+&lt;p&gt;(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)&lt;/p&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 7: Ссылка на экшен модуля:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 8: Ссылка на экшен внутри модуля:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::link('Link Text',array('/{$this-&amp;gt;module-&amp;gt;id}/controller/action')); ?&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Метод CHtml::button()&lt;/h2&gt;
+&lt;p&gt;public static string button(string $label='button', array $htmlOptions=array ( ))&lt;br /&gt;Генерирует кнопку.&lt;/p&gt;
+&lt;h3&gt;Пример 1: Подключение кнопки к какому-либо экшену контроллера:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::button('Button Text', array('submit' =&amp;gt; array('controller/action'))); ?&amp;gt;&lt;br /&gt;Код:&lt;br /&gt;&amp;lt;input id=&quot;yt0&quot; type=&quot;button&quot; value=&quot;Button Text&quot; name=&quot;yt0&quot;/&amp;gt;&lt;br /&gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;br /&gt;/*&amp;lt;![CDATA[*/&lt;br /&gt;jQuery(document).ready(function() {&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery('#yt0').click(function( {&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery.yii.submitForm(&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; this,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'controller/action',{}&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; );return false;});&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; });&lt;br /&gt;/*]]&amp;gt;*/&lt;br /&gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Метод CHtml::textField()&lt;/h2&gt;
+&lt;p&gt;public static function textField($name,$value='',$htmlOptions=array())&lt;/p&gt;
+&lt;p&gt;Генерирует текстовое поле.&lt;/p&gt;
+&lt;h3&gt;Пример 1: Генерация пустого поля, с именем&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::textField('Text'); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 2: Генерация поля с именем и значением:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::textField('Text', 'some value'); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 3: Генерация поля с дополнительными HTML параметрами&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::textField('Text', 'some value',&lt;br /&gt;array('id'=&amp;gt;'idTextField',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'width'=&amp;gt;100,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'maxlength'=&amp;gt;100); ?&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Пример 4: Генерация выключенного поля&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::textField('Text', 'some value',&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('disabled'=&amp;gt;'disabled'); ?&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Метод CHtml::listData()&lt;/h2&gt;
+&lt;p&gt;public static function listData($models,$valueField,$textField,$groupField='')&lt;/p&gt;
+&lt;p&gt;Генерирует данные для dropDownList и listBox в формате $key=&amp;gt;$value&lt;/p&gt;
+&lt;h3&gt;Пример 1: Генерация категорий:&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /*you can use here any find method you think&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; proper to return your data from db*/&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll();&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // format models resulting using listData&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);&lt;/p&gt;
+&lt;p&gt;Вывод HTML:&lt;/p&gt;
+&lt;p&gt;array(&quot;1&quot; =&amp;gt; &quot;Arts&quot;, &quot;2&quot; =&amp;gt; &quot;Science&quot;, &quot;3&quot; =&amp;gt; &quot;Culture&quot;);&lt;/p&gt;
+&lt;h3&gt;Пример 2: Генерация сортированных списков с использованием findAll()&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll(&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);&lt;/p&gt;
+&lt;h2&gt;Метод CHtml::dropDownList()&lt;/h2&gt;
+&lt;p&gt;public static function dropDownList($name,$select,$data,$htmlOptions=array())&lt;br /&gt;Генерирует выпадающий список&lt;/p&gt;
+&lt;h3&gt;Пример 1: Генерация простого выпадающего списка для выбора пола&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::dropDownList('listname', $select,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'))&lt;/p&gt;
+&lt;h3&gt;Пример 2: Генерация выпадающего списка с пустым элементом&lt;/h3&gt;
+&lt;p&gt;&amp;lt;?php echo CHtml::dropDownList('listname', $select,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'),&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender)'));&lt;/p&gt;
+&lt;h3&gt;Пример 3: Генерация списка с использованием данных из модели:&lt;/h3&gt;
+&lt;p&gt;В модели:&lt;br /&gt;public function getGenderOptions(){&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; return array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female');&lt;br /&gt;}&lt;br /&gt;В представлении:&lt;br /&gt;&amp;lt;?php echo CHtml::dropDownList('listname', $select,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $model-&amp;gt;genderOptions,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender'));&lt;/p&gt;
+&lt;h3&gt;Пример 4: Использовании данных из базы&lt;/h3&gt;
+&lt;p&gt;// retrieve the models from db&lt;br /&gt;$models = categories::model()-&amp;gt;findAll(&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));&lt;/p&gt;
+&lt;p&gt;// format models as $key=&amp;gt;$value with listData&lt;br /&gt;$list = CHtml::listData($models,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&lt;br /&gt;&amp;lt;?php echo CHtml::dropDownList('categories', $category,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list,&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a category'));&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;";s:4:"tags";s:3:"ggg";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:19:31";s:6:"update";s:19:"0000-00-00 00:00:00";}i:16;a:8:{s:2:"id";s:2:"24";s:5:"title";s:2:"gg";s:7:"content";s:10176:"Yii - Шпаргалка по методам класса CHtml
+
+Ниже в статье показаны примеры использования основных методов класса CHtml, а именно:
+
+CHtml::link()
+CHtml::button()
+CHtml::textField()
+CHtml::listData()
+CHtml::dropDownList()
+
+
+оригинал статьи -&nbsp;http://www.yiiframework.com/wiki/48/by-example-chtml/
+Метод CHtml::link()
+public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))Генерирует тег &lt;a&gt;&lt;/a&gt;
+Пример 1: Ссылка на определённых экшен контроллера:
+&lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&gt;
+На выходи, получаем HTML:
+&lt;a href="index.php?r=controller/action"&gt;Link Text&lt;/a&gt;
+Пример 2: Ссылка на экшен с передачей дополнительных параметров:
+&lt;?php echo CHtml::link('Link Text',array('controller/action',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1')); ?&gt;
+Код HTML:
+&lt;a href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;
+Пример 3: Аналогичен предыдущему, но передаем несколько параметров:
+&lt;?php echo CHtml::link('Link Text',array('controller/action',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param2'=&gt;'value2',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param3'=&gt;'value3')); ?&gt;
+Код:
+&lt;a href="index.php?r=controller/action&amp;param1=value1&amp;param2=value2&amp;param3=value3"&gt;Link Text&lt;/a&gt;
+Пример 4: Ссылка, открывающая страницу в новой вкладке:
+&lt;?php echo CHtml::link('Link Text',array('controller/action',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1'), array('target'=&gt;'_blank'); ?&gt;
+Код:
+&lt;a target="_blank" href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;
+Пример 5: Ссылка, на экшен, внутри одного контроллера:
+(предположим что нужно добавить ссылку из PostController/view на PostController/create)
+&lt;?php echo CHtml::link('Link Text',array('action')); ?&gt;
+Пример 6: Ссылка из корневя сайта:
+(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)
+&lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&gt;
+Пример 7: Ссылка на экшен модуля:
+&lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&gt;
+Пример 8: Ссылка на экшен внутри модуля:
+&lt;?php echo CHtml::link('Link Text',array('/{$this-&gt;module-&gt;id}/controller/action')); ?&gt;
+Метод CHtml::button()
+public static string button(string $label='button', array $htmlOptions=array ( ))Генерирует кнопку.
+Пример 1: Подключение кнопки к какому-либо экшену контроллера:
+&lt;?php echo CHtml::button('Button Text', array('submit' =&gt; array('controller/action'))); ?&gt;Код:&lt;input id="yt0" type="button" value="Button Text" name="yt0"/&gt;&lt;script type="text/javascript"&gt;/*&lt;![CDATA[*/jQuery(document).ready(function() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery('#yt0').click(function( {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery.yii.submitForm(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'controller/action',{}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );return false;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });/*]]&gt;*/&lt;/script&gt;
+Метод CHtml::textField()
+public static function textField($name,$value='',$htmlOptions=array())
+Генерирует текстовое поле.
+Пример 1: Генерация пустого поля, с именем
+&lt;?php echo CHtml::textField('Text'); ?&gt;
+Пример 2: Генерация поля с именем и значением:
+&lt;?php echo CHtml::textField('Text', 'some value'); ?&gt;
+Пример 3: Генерация поля с дополнительными HTML параметрами
+&lt;?php echo CHtml::textField('Text', 'some value',array('id'=&gt;'idTextField',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'width'=&gt;100,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'maxlength'=&gt;100); ?&gt;
+Пример 4: Генерация выключенного поля
+&lt;?php echo CHtml::textField('Text', 'some value',&nbsp;&nbsp;&nbsp; array('disabled'=&gt;'disabled'); ?&gt;
+Метод CHtml::listData()
+public static function listData($models,$valueField,$textField,$groupField='')
+Генерирует данные для dropDownList и listBox в формате $key=&gt;$value
+Пример 1: Генерация категорий:
+&lt;?php&nbsp;&nbsp;&nbsp;&nbsp; /*you can use here any find method you think&nbsp;&nbsp;&nbsp;&nbsp; proper to return your data from db*/&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll();
+&nbsp;&nbsp;&nbsp;&nbsp; // format models resulting using listData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);
+Вывод HTML:
+array("1" =&gt; "Arts", "2" =&gt; "Science", "3" =&gt; "Culture");
+Пример 2: Генерация сортированных списков с использованием findAll()
+&lt;?php&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));
+&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);
+Метод CHtml::dropDownList()
+public static function dropDownList($name,$select,$data,$htmlOptions=array())Генерирует выпадающий список
+Пример 1: Генерация простого выпадающего списка для выбора пола
+&lt;?php echo CHtml::dropDownList('listname', $select,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'))
+Пример 2: Генерация выпадающего списка с пустым элементом
+&lt;?php echo CHtml::dropDownList('listname', $select,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender)'));
+Пример 3: Генерация списка с использованием данных из модели:
+В модели:public function getGenderOptions(){&nbsp;&nbsp;&nbsp; return array('M' =&gt; 'Male', 'F' =&gt; 'Female');}В представлении:&lt;?php echo CHtml::dropDownList('listname', $select,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $model-&gt;genderOptions,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender'));
+Пример 4: Использовании данных из базы
+// retrieve the models from db$models = categories::model()-&gt;findAll(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));
+// format models as $key=&gt;$value with listData$list = CHtml::listData($models,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&lt;?php echo CHtml::dropDownList('categories', $category,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $list,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a category'));
+&nbsp;";s:4:"tags";s:2:"gg";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:21:59";s:6:"update";s:19:"0000-00-00 00:00:00";}i:17;a:8:{s:2:"id";s:2:"25";s:5:"title";s:2:"gg";s:7:"content";s:13104:"Yii - Шпаргалка по методам класса CHtml
+
+Ниже в статье показаны примеры использования основных методов класса CHtml, а именно:
+
+CHtml::link()
+CHtml::button()
+CHtml::textField()
+CHtml::listData()
+CHtml::dropDownList()
+
+
+оригинал статьи -&amp;nbsp;http://www.yiiframework.com/wiki/48/by-example-chtml/
+Метод CHtml::link()
+public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))Генерирует тег &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;
+Пример 1: Ссылка на определённых экшен контроллера:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&amp;gt;
+На выходи, получаем HTML:
+&amp;lt;a href=&quot;index.php?r=controller/action&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 2: Ссылка на экшен с передачей дополнительных параметров:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1')); ?&amp;gt;
+Код HTML:
+&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 3: Аналогичен предыдущему, но передаем несколько параметров:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param2'=&amp;gt;'value2',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param3'=&amp;gt;'value3')); ?&amp;gt;
+Код:
+&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&amp;amp;param2=value2&amp;amp;param3=value3&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 4: Ссылка, открывающая страницу в новой вкладке:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1'), array('target'=&amp;gt;'_blank'); ?&amp;gt;
+Код:
+&amp;lt;a target=&quot;_blank&quot; href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 5: Ссылка, на экшен, внутри одного контроллера:
+(предположим что нужно добавить ссылку из PostController/view на PostController/create)
+&amp;lt;?php echo CHtml::link('Link Text',array('action')); ?&amp;gt;
+Пример 6: Ссылка из корневя сайта:
+(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)
+&amp;lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&amp;gt;
+Пример 7: Ссылка на экшен модуля:
+&amp;lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&amp;gt;
+Пример 8: Ссылка на экшен внутри модуля:
+&amp;lt;?php echo CHtml::link('Link Text',array('/{$this-&amp;gt;module-&amp;gt;id}/controller/action')); ?&amp;gt;
+Метод CHtml::button()
+public static string button(string $label='button', array $htmlOptions=array ( ))Генерирует кнопку.
+Пример 1: Подключение кнопки к какому-либо экшену контроллера:
+&amp;lt;?php echo CHtml::button('Button Text', array('submit' =&amp;gt; array('controller/action'))); ?&amp;gt;Код:&amp;lt;input id=&quot;yt0&quot; type=&quot;button&quot; value=&quot;Button Text&quot; name=&quot;yt0&quot;/&amp;gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;/*&amp;lt;![CDATA[*/jQuery(document).ready(function() {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery('#yt0').click(function( {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery.yii.submitForm(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; this,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'controller/action',{}&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; );return false;});&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; });/*]]&amp;gt;*/&amp;lt;/script&amp;gt;
+Метод CHtml::textField()
+public static function textField($name,$value='',$htmlOptions=array())
+Генерирует текстовое поле.
+Пример 1: Генерация пустого поля, с именем
+&amp;lt;?php echo CHtml::textField('Text'); ?&amp;gt;
+Пример 2: Генерация поля с именем и значением:
+&amp;lt;?php echo CHtml::textField('Text', 'some value'); ?&amp;gt;
+Пример 3: Генерация поля с дополнительными HTML параметрами
+&amp;lt;?php echo CHtml::textField('Text', 'some value',array('id'=&amp;gt;'idTextField',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'width'=&amp;gt;100,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'maxlength'=&amp;gt;100); ?&amp;gt;
+Пример 4: Генерация выключенного поля
+&amp;lt;?php echo CHtml::textField('Text', 'some value',&amp;nbsp;&amp;nbsp;&amp;nbsp; array('disabled'=&amp;gt;'disabled'); ?&amp;gt;
+Метод CHtml::listData()
+public static function listData($models,$valueField,$textField,$groupField='')
+Генерирует данные для dropDownList и listBox в формате $key=&amp;gt;$value
+Пример 1: Генерация категорий:
+&amp;lt;?php&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /*you can use here any find method you think&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; proper to return your data from db*/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll();
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // format models resulting using listData&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);
+Вывод HTML:
+array(&quot;1&quot; =&amp;gt; &quot;Arts&quot;, &quot;2&quot; =&amp;gt; &quot;Science&quot;, &quot;3&quot; =&amp;gt; &quot;Culture&quot;);
+Пример 2: Генерация сортированных списков с использованием findAll()
+&amp;lt;?php&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);
+Метод CHtml::dropDownList()
+public static function dropDownList($name,$select,$data,$htmlOptions=array())Генерирует выпадающий список
+Пример 1: Генерация простого выпадающего списка для выбора пола
+&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'))
+Пример 2: Генерация выпадающего списка с пустым элементом
+&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'),&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender)'));
+Пример 3: Генерация списка с использованием данных из модели:
+В модели:public function getGenderOptions(){&amp;nbsp;&amp;nbsp;&amp;nbsp; return array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female');}В представлении:&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $model-&amp;gt;genderOptions,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender'));
+Пример 4: Использовании данных из базы
+// retrieve the models from db$models = categories::model()-&amp;gt;findAll(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));
+// format models as $key=&amp;gt;$value with listData$list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;lt;?php echo CHtml::dropDownList('categories', $category,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a category'));";s:4:"tags";s:3:"ggg";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:25:28";s:6:"update";s:19:"0000-00-00 00:00:00";}i:18;a:8:{s:2:"id";s:2:"26";s:5:"title";s:2:"vv";s:7:"content";s:12687:"Метод CHtml::link()
+public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))Генерирует тег &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;
+Пример 1: Ссылка на определённых экшен контроллера:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&amp;gt;
+На выходи, получаем HTML:
+&amp;lt;a href=&quot;index.php?r=controller/action&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 2: Ссылка на экшен с передачей дополнительных параметров:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1')); ?&amp;gt;
+Код HTML:
+&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 3: Аналогичен предыдущему, но передаем несколько параметров:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param2'=&amp;gt;'value2',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param3'=&amp;gt;'value3')); ?&amp;gt;
+Код:
+&amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;param1=value1&amp;amp;param2=value2&amp;amp;param3=value3&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 4: Ссылка, открывающая страницу в новой вкладке:
+&amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'param1'=&amp;gt;'value1'), array('target'=&amp;gt;'_blank'); ?&amp;gt;
+Код:
+&amp;lt;a target=&quot;_blank&quot; href=&quot;index.php?r=controller/action&amp;amp;param1=value1&quot;&amp;gt;Link Text&amp;lt;/a&amp;gt;
+Пример 5: Ссылка, на экшен, внутри одного контроллера:
+(предположим что нужно добавить ссылку из PostController/view на PostController/create)
+&amp;lt;?php echo CHtml::link('Link Text',array('action')); ?&amp;gt;
+Пример 6: Ссылка из корневя сайта:
+(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)
+&amp;lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&amp;gt;
+Пример 7: Ссылка на экшен модуля:
+&amp;lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&amp;gt;
+Пример 8: Ссылка на экшен внутри модуля:
+&amp;lt;?php echo CHtml::link('Link Text',array('/{$this-&amp;gt;module-&amp;gt;id}/controller/action')); ?&amp;gt;
+Метод CHtml::button()
+public static string button(string $label='button', array $htmlOptions=array ( ))Генерирует кнопку.
+Пример 1: Подключение кнопки к какому-либо экшену контроллера:
+&amp;lt;?php echo CHtml::button('Button Text', array('submit' =&amp;gt; array('controller/action'))); ?&amp;gt;Код:&amp;lt;input id=&quot;yt0&quot; type=&quot;button&quot; value=&quot;Button Text&quot; name=&quot;yt0&quot;/&amp;gt;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;/*&amp;lt;![CDATA[*/jQuery(document).ready(function() {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery('#yt0').click(function( {&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; jQuery.yii.submitForm(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; this,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'controller/action',{}&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; );return false;});&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; });/*]]&amp;gt;*/&amp;lt;/script&amp;gt;
+Метод CHtml::textField()
+public static function textField($name,$value='',$htmlOptions=array())
+Генерирует текстовое поле.
+Пример 1: Генерация пустого поля, с именем
+&amp;lt;?php echo CHtml::textField('Text'); ?&amp;gt;
+Пример 2: Генерация поля с именем и значением:
+&amp;lt;?php echo CHtml::textField('Text', 'some value'); ?&amp;gt;
+Пример 3: Генерация поля с дополнительными HTML параметрами
+&amp;lt;?php echo CHtml::textField('Text', 'some value',array('id'=&amp;gt;'idTextField',&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'width'=&amp;gt;100,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'maxlength'=&amp;gt;100); ?&amp;gt;
+Пример 4: Генерация выключенного поля
+&amp;lt;?php echo CHtml::textField('Text', 'some value',&amp;nbsp;&amp;nbsp;&amp;nbsp; array('disabled'=&amp;gt;'disabled'); ?&amp;gt;
+Метод CHtml::listData()
+public static function listData($models,$valueField,$textField,$groupField='')
+Генерирует данные для dropDownList и listBox в формате $key=&amp;gt;$value
+Пример 1: Генерация категорий:
+&amp;lt;?php&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /*you can use here any find method you think&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; proper to return your data from db*/&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll();
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // format models resulting using listData&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);
+Вывод HTML:
+array(&quot;1&quot; =&amp;gt; &quot;Arts&quot;, &quot;2&quot; =&amp;gt; &quot;Science&quot;, &quot;3&quot; =&amp;gt; &quot;Culture&quot;);
+Пример 2: Генерация сортированных списков с использованием findAll()
+&amp;lt;?php&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $models = categories::model()-&amp;gt;findAll(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print_r($list);
+Метод CHtml::dropDownList()
+public static function dropDownList($name,$select,$data,$htmlOptions=array())Генерирует выпадающий список
+Пример 1: Генерация простого выпадающего списка для выбора пола
+&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'))
+Пример 2: Генерация выпадающего списка с пустым элементом
+&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female'),&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender)'));
+Пример 3: Генерация списка с использованием данных из модели:
+В модели:public function getGenderOptions(){&amp;nbsp;&amp;nbsp;&amp;nbsp; return array('M' =&amp;gt; 'Male', 'F' =&amp;gt; 'Female');}В представлении:&amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $model-&amp;gt;genderOptions,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a gender'));
+Пример 4: Использовании данных из базы
+// retrieve the models from db$models = categories::model()-&amp;gt;findAll(&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('order' =&amp;gt; 'category_name'));
+// format models as $key=&amp;gt;$value with listData$list = CHtml::listData($models,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 'category_id', 'category_name');&amp;lt;?php echo CHtml::dropDownList('categories', $category,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $list,&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; array('empty' =&amp;gt; '(Select a category'));";s:4:"tags";s:4:"vvvv";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:26:42";s:6:"update";s:19:"0000-00-00 00:00:00";}i:19;a:8:{s:2:"id";s:2:"27";s:5:"title";s:3:"eee";s:7:"content";s:18669:"&amp;amp;amp;nbsp; &amp;amp;amp;nbsp; &amp;amp;amp;nbsp; Yii - Шпаргалка по методам класса CHtml Ниже в статье показаны примеры использования основных методов класса CHtml, а именно: CHtml::link() CHtml::button() CHtml::textField() CHtml::listData() CHtml::dropDownList() оригинал статьи -&amp;amp;amp;nbsp;http://www.yiiframework.com/wiki/48/by-example-chtml/ Метод CHtml::link() public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))Генерирует тег &amp;amp;amp;lt;a&amp;amp;amp;gt;&amp;amp;amp;lt;/a&amp;amp;amp;gt; Пример 1: Ссылка на определённых экшен контроллера: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&amp;amp;amp;gt; На выходи, получаем HTML: &amp;amp;amp;lt;a href=&quot;index.php?r=controller/action&quot;&amp;amp;amp;gt;Link Text&amp;amp;amp;lt;/a&amp;amp;amp;gt; Пример 2: Ссылка на экшен с передачей дополнительных параметров: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'param1'=&amp;amp;amp;gt;'value1')); ?&amp;amp;amp;gt; Код HTML: &amp;amp;amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;amp;amp;param1=value1&quot;&amp;amp;amp;gt;Link Text&amp;amp;amp;lt;/a&amp;amp;amp;gt; Пример 3: Аналогичен предыдущему, но передаем несколько параметров: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'param1'=&amp;amp;amp;gt;'value1',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'param2'=&amp;amp;amp;gt;'value2',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'param3'=&amp;amp;amp;gt;'value3')); ?&amp;amp;amp;gt; Код: &amp;amp;amp;lt;a href=&quot;index.php?r=controller/action&amp;amp;amp;amp;param1=value1&amp;amp;amp;amp;param2=value2&amp;amp;amp;amp;param3=value3&quot;&amp;amp;amp;gt;Link Text&amp;amp;amp;lt;/a&amp;amp;amp;gt; Пример 4: Ссылка, открывающая страницу в новой вкладке: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('controller/action',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'param1'=&amp;amp;amp;gt;'value1'), array('target'=&amp;amp;amp;gt;'_blank'); ?&amp;amp;amp;gt; Код: &amp;amp;amp;lt;a target=&quot;_blank&quot; href=&quot;index.php?r=controller/action&amp;amp;amp;amp;param1=value1&quot;&amp;amp;amp;gt;Link Text&amp;amp;amp;lt;/a&amp;amp;amp;gt; Пример 5: Ссылка, на экшен, внутри одного контроллера: (предположим что нужно добавить ссылку из PostController/view на PostController/create) &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('action')); ?&amp;amp;amp;gt; Пример 6: Ссылка из корневя сайта: (предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта) &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&amp;amp;amp;gt; Пример 7: Ссылка на экшен модуля: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&amp;amp;amp;gt; Пример 8: Ссылка на экшен внутри модуля: &amp;amp;amp;lt;?php echo CHtml::link('Link Text',array('/{$this-&amp;amp;amp;gt;module-&amp;amp;amp;gt;id}/controller/action')); ?&amp;amp;amp;gt; Метод CHtml::button() public static string button(string $label='button', array $htmlOptions=array ( ))Генерирует кнопку. Пример 1: Подключение кнопки к какому-либо экшену контроллера: &amp;amp;amp;lt;?php echo CHtml::button('Button Text', array('submit' =&amp;amp;amp;gt; array('controller/action'))); ?&amp;amp;amp;gt;Код:&amp;amp;amp;lt;input id=&quot;yt0&quot; type=&quot;button&quot; value=&quot;Button Text&quot; name=&quot;yt0&quot;/&amp;amp;amp;gt;&amp;amp;amp;lt;script type=&quot;text/javascript&quot;&amp;amp;amp;gt;/*&amp;amp;amp;lt;![CDATA[*/jQuery(document).ready(function() {&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; jQuery('#yt0').click(function( {&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; jQuery.yii.submitForm(&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; this,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'controller/action',{}&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; );return false;});&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; });/*]]&amp;amp;amp;gt;*/&amp;amp;amp;lt;/script&amp;amp;amp;gt; Метод CHtml::textField() public static function textField($name,$value='',$htmlOptions=array()) Генерирует текстовое поле. Пример 1: Генерация пустого поля, с именем &amp;amp;amp;lt;?php echo CHtml::textField('Text'); ?&amp;amp;amp;gt; Пример 2: Генерация поля с именем и значением: &amp;amp;amp;lt;?php echo CHtml::textField('Text', 'some value'); ?&amp;amp;amp;gt; Пример 3: Генерация поля с дополнительными HTML параметрами &amp;amp;amp;lt;?php echo CHtml::textField('Text', 'some value',array('id'=&amp;amp;amp;gt;'idTextField',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'width'=&amp;amp;amp;gt;100,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'maxlength'=&amp;amp;amp;gt;100); ?&amp;amp;amp;gt; Пример 4: Генерация выключенного поля &amp;amp;amp;lt;?php echo CHtml::textField('Text', 'some value',&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('disabled'=&amp;amp;amp;gt;'disabled'); ?&amp;amp;amp;gt; Метод CHtml::listData() public static function listData($models,$valueField,$textField,$groupField='') Генерирует данные для dropDownList и listBox в формате $key=&amp;amp;amp;gt;$value Пример 1: Генерация категорий: &amp;amp;amp;lt;?php&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; /*you can use here any find method you think&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; proper to return your data from db*/&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $models = categories::model()-&amp;amp;amp;gt;findAll(); &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; // format models resulting using listData&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $list = CHtml::listData($models,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'category_id', 'category_name');&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; print_r($list); Вывод HTML: array(&quot;1&quot; =&amp;amp;amp;gt; &quot;Arts&quot;, &quot;2&quot; =&amp;amp;amp;gt; &quot;Science&quot;, &quot;3&quot; =&amp;amp;amp;gt; &quot;Culture&quot;); Пример 2: Генерация сортированных списков с использованием findAll() &amp;amp;amp;lt;?php&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $models = categories::model()-&amp;amp;amp;gt;findAll(&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('order' =&amp;amp;amp;gt; 'category_name')); &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $list = CHtml::listData($models,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'category_id', 'category_name');&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; print_r($list); Метод CHtml::dropDownList() public static function dropDownList($name,$select,$data,$htmlOptions=array())Генерирует выпадающий список Пример 1: Генерация простого выпадающего списка для выбора пола &amp;amp;amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('M' =&amp;amp;amp;gt; 'Male', 'F' =&amp;amp;amp;gt; 'Female')) Пример 2: Генерация выпадающего списка с пустым элементом &amp;amp;amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('M' =&amp;amp;amp;gt; 'Male', 'F' =&amp;amp;amp;gt; 'Female'),&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('empty' =&amp;amp;amp;gt; '(Select a gender)')); Пример 3: Генерация списка с использованием данных из модели: В модели:public function getGenderOptions(){&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; return array('M' =&amp;amp;amp;gt; 'Male', 'F' =&amp;amp;amp;gt; 'Female');}В представлении:&amp;amp;amp;lt;?php echo CHtml::dropDownList('listname', $select,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $model-&amp;amp;amp;gt;genderOptions,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('empty' =&amp;amp;amp;gt; '(Select a gender')); Пример 4: Использовании данных из базы // retrieve the models from db$models = categories::model()-&amp;amp;amp;gt;findAll(&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('order' =&amp;amp;amp;gt; 'category_name')); // format models as $key=&amp;amp;amp;gt;$value with listData$list = CHtml::listData($models,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; 'category_id', 'category_name');&amp;amp;amp;lt;?php echo CHtml::dropDownList('categories', $category,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; $list,&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; array('empty' =&amp;amp;amp;gt; '(Select a category')); &amp;amp;amp;nbsp; &amp;amp;amp;nbsp;";s:4:"tags";s:3:"eee";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:41:54";s:6:"update";s:19:"0000-00-00 00:00:00";}i:20;a:8:{s:2:"id";s:2:"28";s:5:"title";s:63:"Yii - Шпаргалка по методам класса CHtml";s:7:"content";s:16109:"<div id="second-navbar" class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container">
 <p>&nbsp;</p>
-<div>
-<div id="highlighter_840981" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
+</div>
+</div>
+</div>
+<div id="main-content" class="container">
+<div class="span7">
+<div class="entry-wrapper">
+<h1>Yii - Шпаргалка по методам класса CHtml</h1>
+<div class="well clearfix">
+<p>Ниже в статье показаны примеры использования основных методов класса CHtml, а именно:</p>
+<ul>
+<li>CHtml::link()</li>
+<li>CHtml::button()</li>
+<li>CHtml::textField()</li>
+<li>CHtml::listData()</li>
+<li>CHtml::dropDownList()</li>
+</ul>
+</div>
+<p><em>оригинал статьи -&nbsp;<a href="http://www.yiiframework.com/wiki/48/by-example-chtml/" target="_blank">http://www.yiiframework.com/wiki/48/by-example-chtml/</a></em></p>
+<h2>Метод CHtml::link()</h2>
+<p>public static string link(string $text, mixed $url='#', array $htmlOptions=array ( ))<br />Генерирует тег &lt;a&gt;&lt;/a&gt;</p>
+<h3>Пример 1: Ссылка на определённых экшен контроллера:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action')); ?&gt;</p>
+<p>На выходи, получаем HTML:</p>
+<p>&lt;a href="index.php?r=controller/action"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 2: Ссылка на экшен с передачей дополнительных параметров:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1')); ?&gt;</p>
+<p>Код HTML:</p>
+<p>&lt;a href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 3: Аналогичен предыдущему, но передаем несколько параметров:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param2'=&gt;'value2',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param3'=&gt;'value3')); ?&gt;</p>
+<p>Код:</p>
+<p>&lt;a href="index.php?r=controller/action&amp;param1=value1&amp;param2=value2&amp;param3=value3"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 4: Ссылка, открывающая страницу в новой вкладке:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('controller/action',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'param1'=&gt;'value1'), array('target'=&gt;'_blank'); ?&gt;</p>
+<p>Код:</p>
+<p>&lt;a target="_blank" href="index.php?r=controller/action&amp;param1=value1"&gt;Link Text&lt;/a&gt;</p>
+<h3>Пример 5: Ссылка, на экшен, внутри одного контроллера:</h3>
+<p>(предположим что нужно добавить ссылку из PostController/view на PostController/create)</p>
+<p>&lt;?php echo CHtml::link('Link Text',array('action')); ?&gt;</p>
+<h3>Пример 6: Ссылка из корневя сайта:</h3>
+<p>(предположим нужна ссылка из модуля на какой-либо контроллер корневого сайта)</p>
+<p>&lt;?php echo CHtml::link('Link Text',array('/controller/action')); ?&gt;</p>
+<h3>Пример 7: Ссылка на экшен модуля:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('/module-id/controller/action')); ?&gt;</p>
+<h3>Пример 8: Ссылка на экшен внутри модуля:</h3>
+<p>&lt;?php echo CHtml::link('Link Text',array('/{$this-&gt;module-&gt;id}/controller/action')); ?&gt;</p>
+<h2>Метод CHtml::button()</h2>
+<p>public static string button(string $label='button', array $htmlOptions=array ( ))<br />Генерирует кнопку.</p>
+<h3>Пример 1: Подключение кнопки к какому-либо экшену контроллера:</h3>
+<p>&lt;?php echo CHtml::button('Button Text', array('submit' =&gt; array('controller/action'))); ?&gt;<br />Код:<br />&lt;input id="yt0" type="button" value="Button Text" name="yt0"/&gt;<br />&lt;script type="text/javascript"&gt;<br />/*&lt;![CDATA[*/<br />jQuery(document).ready(function() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery('#yt0').click(function( {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery.yii.submitForm(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'controller/action',{}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; );return false;});<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<br />/*]]&gt;*/<br />&lt;/script&gt;</p>
+<h2>Метод CHtml::textField()</h2>
+<p>public static function textField($name,$value='',$htmlOptions=array())</p>
+<p>Генерирует текстовое поле.</p>
+<h3>Пример 1: Генерация пустого поля, с именем</h3>
+<p>&lt;?php echo CHtml::textField('Text'); ?&gt;</p>
+<h3>Пример 2: Генерация поля с именем и значением:</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value'); ?&gt;</p>
+<h3>Пример 3: Генерация поля с дополнительными HTML параметрами</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value',<br />array('id'=&gt;'idTextField',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'width'=&gt;100,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'maxlength'=&gt;100); ?&gt;</p>
+<h3>Пример 4: Генерация выключенного поля</h3>
+<p>&lt;?php echo CHtml::textField('Text', 'some value',<br />&nbsp;&nbsp;&nbsp; array('disabled'=&gt;'disabled'); ?&gt;</p>
+<h2>Метод CHtml::listData()</h2>
+<p>public static function listData($models,$valueField,$textField,$groupField='')</p>
+<p>Генерирует данные для dropDownList и listBox в формате $key=&gt;$value</p>
+<h3>Пример 1: Генерация категорий:</h3>
+<p>&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp; /*you can use here any find method you think<br />&nbsp;&nbsp;&nbsp;&nbsp; proper to return your data from db*/<br />&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; // format models resulting using listData&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);</p>
+<p>Вывод HTML:</p>
+<p>array("1" =&gt; "Arts", "2" =&gt; "Science", "3" =&gt; "Culture");</p>
+<h3>Пример 2: Генерация сортированных списков с использованием findAll()</h3>
+<p>&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp; $models = categories::model()-&gt;findAll(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; $list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; print_r($list);</p>
+<h2>Метод CHtml::dropDownList()</h2>
+<p>public static function dropDownList($name,$select,$data,$htmlOptions=array())<br />Генерирует выпадающий список</p>
+<h3>Пример 1: Генерация простого выпадающего списка для выбора пола</h3>
+<p>&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'))</p>
+<h3>Пример 2: Генерация выпадающего списка с пустым элементом</h3>
+<p>&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('M' =&gt; 'Male', 'F' =&gt; 'Female'),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender)'));</p>
+<h3>Пример 3: Генерация списка с использованием данных из модели:</h3>
+<p>В модели:<br />public function getGenderOptions(){<br />&nbsp;&nbsp;&nbsp; return array('M' =&gt; 'Male', 'F' =&gt; 'Female');<br />}<br />В представлении:<br />&lt;?php echo CHtml::dropDownList('listname', $select,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $model-&gt;genderOptions,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a gender'));</p>
+<h3>Пример 4: Использовании данных из базы</h3>
+<p>// retrieve the models from db<br />$models = categories::model()-&gt;findAll(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('order' =&gt; 'category_name'));</p>
+<p>// format models as $key=&gt;$value with listData<br />$list = CHtml::listData($models,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'category_id', 'category_name');<br />&lt;?php echo CHtml::dropDownList('categories', $category,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $list,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; array('empty' =&gt; '(Select a category'));</p>
+<br />
+<table>
 <tbody>
 <tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
+<td><iframe id="twitter-widget-0" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" src="http://platform.twitter.com/widgets/tweet_button.1401325387.html#_=1401720031453&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fbelyakov.su%2Fcontent%2Fyii-shpargalka-po-metodam-klassa-chtml&amp;size=m&amp;text=Yii%20-%20%D0%A8%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0%20CHtml%20-%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20yii%2C%20%D1%83%D1%80%D0%BE%D0%BA%D0%B8%2C%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%7C%20belyakov.su&amp;url=http%3A%2F%2Fbelyakov.su%2Fcontent%2Fyii-shpargalka-po-metodam-klassa-chtml" width="300" height="150" frameborder="0" scrolling="no" data-twttr-rendered="true"></iframe></td>
+<td>
+<div id="___plusone_0"><iframe id="I0_1401720031328" tabindex="0" title="+1" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;origin=http%3A%2F%2Fbelyakov.su&amp;url=http%3A%2F%2Fbelyakov.su%2Fcontent%2Fyii-shpargalka-po-metodam-klassa-chtml&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.ru.27kS3AgqxFw.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Fz%3Dzcms%2Frs%3DAItRSTN7APf4tD6J3ZLiWFSi-ny3TfgsiA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1401720031328&amp;parent=http%3A%2F%2Fbelyakov.su&amp;pfname=&amp;rpctoken=24210018" name="I0_1401720031328" width="100%" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" data-gapiattached="true"></iframe></div>
 </td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
-<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
+<td>
+<div id="fb-root" class=" fb_reset">
+<div>&nbsp;</div>
+<div><iframe id="fb_xdm_frame_http" tabindex="-1" title="Facebook Cross Domain Communication Frame" src="http://static.ak.facebook.com/connect/xd_arbiter/V80PAcvrynR.js?version=41#channel=f8fd59dc&amp;origin=http%3A%2F%2Fbelyakov.su" name="fb_xdm_frame_http" width="300" height="150" frameborder="0" scrolling="no"></iframe><iframe id="fb_xdm_frame_https" tabindex="-1" title="Facebook Cross Domain Communication Frame" src="https://s-static.ak.facebook.com/connect/xd_arbiter/V80PAcvrynR.js?version=41#channel=f8fd59dc&amp;origin=http%3A%2F%2Fbelyakov.su" name="fb_xdm_frame_https" width="300" height="150" frameborder="0" scrolling="no"></iframe></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<iframe class="" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/plugins/like.php?app_id=220227991326675&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FV80PAcvrynR.js%3Fversion%3D41%23cb%3Df2d8bbb93c%26domain%3Dbelyakov.su%26origin%3Dhttp%253A%252F%252Fbelyakov.su%252Ff8fd59dc%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fbelyakov.su%2Fcontent%2Fyii-shpargalka-po-metodam-klassa-chtml&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true" name="f34382f7e4" width="1000px" height="1000px" frameborder="0" scrolling="no"></iframe></td>
+<td>
+<div id="vk_like"><iframe id="vkwidget1" src="http://vk.com/widget_like.php?app=2762923&amp;width=100%&amp;_ver=1&amp;page=0&amp;url=http%3A%2F%2Fbelyakov.su%2Fcontent%2Fyii-shpargalka-po-metodam-klassa-chtml&amp;type=button&amp;verb=0&amp;color=&amp;title=Yii%20-%20%D0%A8%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BF%D0%BE%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D0%BC%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0%20CHtml%20-%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20yii%2C%20%D1%83%D1%80%D0%BE%D0%BA%D0%B8%2C%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1...&amp;description=%D0%91%D0%BB%D0%BE%D0%B3%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8%20%D0%BD%D0%B0%20yii%20framework%2C%20%D1%83%D1%80%D0%BE%D0%BA%D0%B8%2C%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9.%20%D0%A1%D0%B0%D0%BC%D0%BE%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%20%D0%B8%20%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D0%BD%D1%8B%D0%B9%20%D1%80%D0%BE%D1%81%D1%82.&amp;image=&amp;text=&amp;h=22&amp;1465d064827" name="fXDbd8f5" width="100%" height="22" frameborder="0" scrolling="no"></iframe></div>
 <p>&nbsp;</p>
-<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
-<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
-<div>
-<div id="highlighter_319108" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
-</div>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
-<p>&nbsp;</p>
-<h3>Поиск нескольких записей (findAll)</h3>
-<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
-<div>
-<div id="highlighter_277725" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
-<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>Собственно и перебирать их можно как обычный массив:</p>
-<div>
-<div id="highlighter_683104" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<h3>find, подробности</h3>
-<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
-<p>Самый простой способ мы рассматривали выше:</p>
-<div>
-<div id="highlighter_184845" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Указав критерии в массиве:</p>
-<div>
-<div id="highlighter_583795" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>С помощью класса $criteria</p>
-<div>
-<div id="highlighter_573303" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
-<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
-<div>
-<div id="highlighter_132563" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>С использованием CDbCriteria</p>
-<div>
-<div id="highlighter_302664" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
-<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Указываем сортировку в самом запросе</p>
-<div>
-<div id="highlighter_508087" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAllBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12 ORDER BY firstname'</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:06:25";s:6:"update";s:19:"0000-00-00 00:00:00";}i:16;a:8:{s:2:"id";s:2:"19";s:5:"title";s:72:"Методы моделей для поиска данных find в Yii";s:7:"content";s:13285:"<p>Пожалуй самые часто используемые методы у моделей во фреймворке Yii, это find. Они используется для выборки данных из БД и подгрузки их в модель(и). В этой заметке мы кратко рассмотрим все методы поиска как одной, так и нескольких записей.</p>
-<h3>Поиск одной записи (find)</h3>
-<p>Предположим у нас есть в БД таблица с названием&nbsp;<strong>Ankets</strong>. Мы создали для неё модель<strong>Anketa</strong>&nbsp;и теперь попробуем выбрать одну анкету с&nbsp;<strong>id</strong>&nbsp;равным 12.&nbsp;<strong>Yii</strong>&nbsp;предлагает нам 4 способа выбоки анкеты:</p>
-<p>&nbsp;</p>
-<div>
-<div id="highlighter_840981" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByPk(12);</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'id'</code> <code class="php plain">=&gt; 12));</code></div>
-<div class="line number4 index3 alt1"><code class="php variable">$model</code> <code class="php plain">= Anketa::model()-&gt;findBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12'</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p><img src="http://accross.su/images/articles/190/1.png" alt="" /></p>
-<p>Тут явно лучше использовать первый метод&nbsp;<strong>findByPk</strong>, он ищет по ключевому полю, а у нас ключевым полем является как раз id. Для поиска по другим полям модели(не ключевым), этот метод не подходит.<br />В&nbsp;<strong>find</strong>&nbsp;мы просто пишем условие, которе будет добавлено в WHERE.<br /><strong>findAllByAttributes</strong>&nbsp;удобен тогда, когда надо выполнить поиск по нескольким значениям, например по группе и фамилии:</p>
-<div>
-<div id="highlighter_319108" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findByAttributes(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'group'</code> <code class="php plain">=&gt; 3, </code><code class="php string">'sex'</code> <code class="php plain">=&gt; </code><code class="php string">'Ж'</code><code class="php plain">));</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><strong>findBySql</strong>&nbsp;требует указания полного запроса, для простых запросов как наш, этот метод не нужен, но знать о его наличии желательно.<br />А что если под наши условия подходят несколько записей? Тогда метод вернёт самую первую из них</p>
-<p>&nbsp;</p>
-<h3>Поиск нескольких записей (findAll)</h3>
-<p>Для выборки нескольких записей используются похожие методы, параметры они принимают те же, но вместо одной модели возвращают массив моделей:</p>
-<div>
-<div id="highlighter_277725" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByPk();</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAll();</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllByAttributes();</code></div>
-<div class="line number4 index3 alt1"><code class="php variable">$models</code> <code class="php plain">= Anketa::model()-&gt;findAllBySql();</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>Собственно и перебирать их можно как обычный массив:</p>
-<div>
-<div id="highlighter_683104" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php keyword">foreach</code> <code class="php plain">(</code><code class="php variable">$models</code> <code class="php keyword">as</code> <code class="php variable">$model</code><code class="php plain">) {...}</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<h3>find, подробности</h3>
-<p>Поближе посмотрим на метод find, с помощью него можно искать несколькими способами.</p>
-<p>Самый простой способ мы рассматривали выше:</p>
-<div>
-<div id="highlighter_184845" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php string">'id = 12'</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Указав критерии в массиве:</p>
-<div>
-<div id="highlighter_583795" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">));</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>С помощью класса $criteria</p>
-<div>
-<div id="highlighter_573303" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
-<div class="line number3 index2 alt2"><code class="php plain">Anketa::model()-&gt;find(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>В find, findAll, findBySql и в findAllBySql можно использовать и другие операторы SQL, например сортировку:</p>
-<div>
-<div id="highlighter_132563" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php keyword">array</code><code class="php plain">(</code><code class="php string">'condition'</code> <code class="php plain">=&gt; </code><code class="php string">'id = 12'</code><code class="php plain">, </code><code class="php string">'order'</code> <code class="php plain">=&gt; </code><code class="php string">'firstname'</code><code class="php plain">));</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>С использованием CDbCriteria</p>
-<div>
-<div id="highlighter_302664" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-<div class="line number2 index1 alt1">2</div>
-<div class="line number3 index2 alt2">3</div>
-<div class="line number4 index3 alt1">4</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php variable">$criteria</code> <code class="php plain">= </code><code class="php keyword">new</code> <code class="php plain">CDbCriteria;</code></div>
-<div class="line number2 index1 alt1"><code class="php variable">$criteria</code><code class="php plain">-&gt;compare(</code><code class="php string">'id'</code><code class="php plain">, 12);</code></div>
-<div class="line number3 index2 alt2"><code class="php variable">$criteria</code><code class="php plain">-&gt;order = </code><code class="php string">'firstname'</code><code class="php plain">;</code></div>
-<div class="line number4 index3 alt1"><code class="php plain">Anketa::model()-&gt;findAll(</code><code class="php variable">$criteria</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Указываем сортировку в самом запросе</p>
-<div>
-<div id="highlighter_508087" class="syntaxhighlighter  php">
-<div class="toolbar"><a class="toolbar_item command_help help" href="http://accross.su/blog/view/190">?</a></div>
-<table border="0" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td class="gutter">
-<div class="line number1 index0 alt2">1</div>
-</td>
-<td class="code">
-<div class="container">
-<div class="line number1 index0 alt2"><code class="php plain">Anketa::model()-&gt;findAllBySql(</code><code class="php string">'SELECT * FROM Ankets WHERE id = 12 ORDER BY firstname'</code><code class="php plain">);</code></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>Вот и всё, все методы для поиска записи в Yii похоже друг на друга, и как показано в этой заметке, разобраться с ними не составит особого труда.</p>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-05-31 18:07:24";s:6:"update";s:19:"0000-00-00 00:00:00";}}
+</div>";s:4:"tags";s:3:"yii";s:6:"status";s:1:"1";s:8:"avtor_id";s:5:"admin";s:7:"created";s:19:"2014-06-02 20:43:00";s:6:"update";s:19:"2014-06-02 20:43:29";}}

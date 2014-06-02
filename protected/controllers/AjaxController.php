@@ -27,5 +27,10 @@ class AjaxController extends Controller {
                 ));
         }
     }
+    public function actionTest(){
+          $this->layout = 'application.views.layouts.black';
+        $this->render('test');
+        
+    }
 
 }
