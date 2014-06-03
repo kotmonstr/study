@@ -113,7 +113,7 @@
 <?php }else{
     echo '<div style="width:410px;position:absolute;right:5px;top:10px"><b class="text-user">Вы вошли как <span class="light">'.'&nbsp;'.strtoupper(Yii::app()->user->name).'</span></b></div>';
 } ?>
-                                <?php include Yii::getPathOfAlias('application.views.menu').'/menu.php' ?>
+                                <?php include Yii::getPathOfAlias('application.views.menu').'/menu-black.php' ?>
                             </div>
                             <?php if (isset($this->breadcrumbs)): ?>
                                 <?php

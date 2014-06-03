@@ -2,15 +2,24 @@
 //$a='test';
 //Sys_Debug::dump($a);
 $a=new Fun;
-$a->doit();
+//$a->doit();
 ?>
 
 <script>
 
-var a=66.6;
+document.write(screen.width+'x'+screen.height+location.hostname+document.referrer);
 
-document.write(Math.round(a) + "<br />");
+var option;
+for(option in location){
+document.write(option + " : " + location[option]+"<br />");    
+}
 
-document.write(Math.min(0,150,30,20,38,-66) + "<br />");
+
+
+
+
+
+
 </script>
 
+ 

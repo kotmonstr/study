@@ -25201,3 +25201,31 @@ REQUEST_URI=/index.php?r=post/view&id=27
 in C:\server\www\study\protected\views\post\view.php (45)
 in C:\server\www\study\protected\controllers\PostController.php (56)
 in C:\server\www\study\index.php (13)
+2014/06/04 02:23:46 [error] [php] include(menu/menu-black.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\server\www\study\protected\views\layouts\black_slider.php:83)
+Stack trace:
+#0 C:\server\www\study\framework\web\CBaseController.php(95): VideoController->renderInternal()
+#1 C:\server\www\study\framework\web\CController.php(784): VideoController->renderFile()
+#2 C:\server\www\study\protected\controllers\VideoController.php(19): VideoController->render()
+#3 C:\server\www\study\framework\web\actions\CInlineAction.php(49): VideoController->actionSlider()
+#4 C:\server\www\study\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\server\www\study\framework\web\CController.php(286): VideoController->runAction()
+#6 C:\server\www\study\framework\web\CController.php(265): VideoController->runActionWithFilters()
+#7 C:\server\www\study\framework\web\CWebApplication.php(282): VideoController->run()
+#8 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\server\www\study\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=video/slider
+in C:\server\www\study\protected\views\layouts\black_slider.php (83)
+in C:\server\www\study\protected\views\layouts\black_slider.php (83)
+in C:\server\www\study\protected\controllers\VideoController.php (19)
+2014/06/04 02:34:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chanel5".' in C:\server\www\study\framework\web\CController.php:483
+Stack trace:
+#0 C:\server\www\study\framework\web\CController.php(270): CController->missingAction('chanel5')
+#1 C:\server\www\study\framework\web\CWebApplication.php(282): CController->run('chanel5')
+#2 C:\server\www\study\framework\web\CWebApplication.php(141): CWebApplication->runController('video/chanel5')
+#3 C:\server\www\study\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\server\www\study\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=video/chanel5
+HTTP_REFERER=http://study/index.php?r=video/index
+---

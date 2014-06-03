@@ -12,9 +12,76 @@
                 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
                 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
                 <link href='http://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+                    
+                             
+                <link type="text/css" href="css/skitter.styles.css" media="all" rel="stylesheet" />            
+                <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>           
+                <script type="text/javascript" src="js/jquery.skitter.min.js"></script>
+
+<script type="text/javascript" language="javascript">
+	$(document).ready(function() {		
+                $('.box_skitter_large').skitter({                                         
+                                                 dots: true, 
+                                                 preview: true,
+                                                 numbers_align: 'right',                                           
+                                                 velocity: 0.8,
+                                                 with_animations: ['cube', 
+				'cubeRandom', 
+				'block', 
+				'cubeStop', 
+				'cubeStopRandom', 
+				'cubeHide', 
+				'cubeSize', 
+				'horizontal', 
+				'showBars', 
+				'showBarsRandom', 
+				'tube',
+				'fade',
+				'fadeFour',
+				'paralell',
+				'blind',
+				'blindHeight',
+				'blindWidth',
+				'directionTop',
+				'directionBottom',
+				'directionRight',
+				'directionLeft',
+				'cubeSpread',
+				'glassCube',
+				'glassBlock',
+				'circles',
+				'circlesInside',
+				'circlesRotate',
+				'cubeShow',
+				'upBars', 
+				'downBars', 
+				'hideBars', 
+				'swapBars', 
+				'swapBarsBack', 
+				'swapBlocks',
+				'cut'] 
+                                                });
+             });
+ // cubecubeRandomblockcubeStopcubeHidecubeSizehorizontalshowBarsshowBarsRandomtubefadefadeFourparalellblindblindHeightblindWidthdirectionTopdirectionBottomdirectionRightdirectionLeftcubeStopRandomcubeSpreadcubeJellyglassCubeglassBlockcirclescirclesInsidecirclesRotatecubeShowupBarsdownBarshideBarsswapBarsswapBarsBackswapBlockscutrandomrandomSmart	
+</script>                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     </head>
                     <body>
-                          <?php include Yii::getPathOfAlias('application.views.menu').'/menu-black.php' ?>
+                  
+                        <?php include Yii::getPathOfAlias('application.views.menu').'/menu-black.php' ?>
                                                                                 <body>
 
                                                                                     <div id='content' class='row-fluid'>

@@ -9,6 +9,8 @@
 	text-align: center;
 	border-top: 1px solid #000;
         background-color: #0E4F5F;
+        z-index: 9999;
+        color:#fff;
 }
 .footer-main-row{
     margin:0px!important;
@@ -103,6 +105,8 @@ input{
 .src , .target , .src2 , .target2{
    width:100px;  
 }
-
+.main{
+    margin-bottom: 110px;
+}
 
 

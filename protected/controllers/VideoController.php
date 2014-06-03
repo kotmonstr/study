@@ -15,7 +15,7 @@ class VideoController extends Controller {
   
 
     public function actionSlider() {
-        $this->layout = 'application.views.layouts.slider';
+        $this->layout = 'application.views.layouts.black_slider';
         $this->render('slider');
     }
 

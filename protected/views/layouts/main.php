@@ -79,8 +79,16 @@
                                 ));
                                 ?><!-- breadcrumbs -->
                             <?php endif ?>
+                                <script type="text/javascript">
+    
+    document.write(document.title);
+    
+                                </script>
 
-                            <?php echo $content; ?>
+
+
+                            <?php
+                            echo $content; ?>
 
 
                             <div class="clear"></div>
