@@ -169,5 +169,6 @@ function onAjaxSuccess(data)
         };
 
 
-    </script>
+$('.video').addClass('active');
+</script>
 

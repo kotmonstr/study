@@ -1,7 +1,7 @@
 <?php
 
 class AjaxController extends Controller {
-
+ public $layout = '//layouts/black_slider';
     public function actionIndex() {
         if (Yii::app()->request->isAjaxRequest) {
             $input = $_POST['input'];

@@ -2,7 +2,7 @@
 
 class YoutubeCodeController extends Controller {
 
-    public $layout = '//layouts/black';
+    public $layout = '//layouts/black_slider';
 
     /**
      * @return array action filters
@@ -162,7 +162,7 @@ class YoutubeCodeController extends Controller {
     }
 
     public function actionLast() {
-        $this->layout = 'application.views.layouts.slider';
+        $this->layout = 'application.views.layouts.black_slider';
         $criteria = new CDbCriteria;
         $criteria->order = 'date DESC';
         $criteria->limit = 5;
@@ -173,7 +173,7 @@ class YoutubeCodeController extends Controller {
     }
 
     public function actionLastslider() {
-            
+                    //$this->layout = 'application.views.layouts.black_slider';
             
             
             if(isset($_POST['filter']) && $_POST['filter'] == 1){
@@ -191,7 +191,7 @@ class YoutubeCodeController extends Controller {
                         $limit = '20';
                     }
                  
-                    $this->layout = 'application.views.layouts.slider-min';
+            
                     $criteria = new CDbCriteria;
                     $criteria->order = 'date DESC';
                     $criteria->limit = $limit;
@@ -228,7 +228,7 @@ class YoutubeCodeController extends Controller {
             // Завершаем приложение
             Yii::app()->end();
         } else {
-            $this->layout = 'application.views.layouts.slider-min';
+            //$this->layout = 'application.views.layouts.black';
             $criteria = new CDbCriteria;
             $criteria->order = 'date DESC';
             $criteria->limit = 20;
@@ -249,7 +249,7 @@ class YoutubeCodeController extends Controller {
                 
     }
     public function actionGet() {
- $this->layout='application.views.layouts.main';
+ $this->layout = 'application.views.layouts.black_slider';
         $a = Yii::app()->request->getParam('go');
 
         if ($a == 1) {
@@ -280,7 +280,7 @@ class YoutubeCodeController extends Controller {
              $this->render('get');
         } 
     public function actionSet() {
-         $this->layout='application.views.layouts.main';
+         $this->layout = 'application.views.layouts.black_slider';
         $Iterator_of_save = 0;
         $a = Yii::app()->request->getParam('go');
         $array = array();

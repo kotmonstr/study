@@ -108,5 +108,8 @@ input{
 .main{
     margin-bottom: 110px;
 }
+.sidebar{
+    background-color: #fafafa!important;
+}
 
 

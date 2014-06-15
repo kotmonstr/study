@@ -28,3 +28,10 @@ foreach ($files as $file) {
 
     </ul>
 </div>
+
+
+<script type="text/javascript">
+$('.photo').addClass('active');
+</script>
+
+

@@ -177,7 +177,7 @@ class PostController extends Controller {
     }
 
     public function actionGet() {
- $this->layout='application.views.layouts.main';
+ $this->layout='application.views.layouts.black';
         $a = Yii::app()->request->getParam('go');
 
         if ($a == 1) {
@@ -211,7 +211,7 @@ class PostController extends Controller {
     
 
     public function actionSet() {
-         $this->layout='application.views.layouts.main';
+         $this->layout='application.views.layouts.black';
         $Iterator_of_save = 0;
         $a = Yii::app()->request->getParam('go');
         $array = array();
